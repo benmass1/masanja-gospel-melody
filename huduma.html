@@ -10,6 +10,66 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+  /* SOCIAL ICONS */
+  .socials{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:20px;
+  }
+  .socials a{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:#fff;
+    font-size:22px;
+    text-decoration:none;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);
+    transition:.3s;
+  }
+  .socials a:hover{
+    transform:translateY(-6px) scale(1.1);
+  }
+  .whatsapp{background:#25D366;}
+  .facebook{background:#1877F2;}
+  .youtube{background:#FF0000;}
+  .instagram{
+    background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+  }
+  .tiktok{background:#000;}
+  .telegram{background:#229ED9;}
+
+  /* FLOATING WHATSAPP */
+  .float-whatsapp{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    z-index:9999;
+    text-decoration:none;
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.1)}
+    100%{transform:scale(1)}
+  }
+  </style>
 </head>
 <body>
 
@@ -45,8 +105,7 @@
     <h3>Kusifu</h3>
     <p>
       Huduma ya kusifu inalenga kumshukuru Mungu kwa sauti na ala za muziki.
-      Kupitia nyimbo za sifa tunainua jina la Bwana, kuamsha furaha ya wokovu
-      na kuandaa mioyo ya waamini kuingia katika uwepo wa Mungu.
+      Kupitia nyimbo za sifa tunainua jina la Bwana.
     </p>
   </div>
 
@@ -55,8 +114,6 @@
     <h3>Kuabudu</h3>
     <p>
       Kuabudu ni huduma ya kumkaribia Mungu kwa unyenyekevu na kweli.
-      Tunawaongoza waamini kuingia katika utulivu wa rohoni,
-      kuwasiliana na Mungu kwa kina na kusikia sauti yake.
     </p>
   </div>
 
@@ -64,9 +121,7 @@
     <i class="fas fa-book-bible"></i>
     <h3>Mafundisho</h3>
     <p>
-      Huduma ya mafundisho inalenga kujenga imani na tabia ya Kikristo.
-      Tunafundisha Neno la Mungu kwa uelewa na matumizi ya vitendo
-      ili waamini wakue kiroho na kuishi maisha ya kumpendeza Mungu.
+      Tunafundisha Neno la Mungu ili waamini wakue kiroho.
     </p>
   </div>
 
@@ -74,9 +129,7 @@
     <i class="fas fa-dove"></i>
     <h3>Maombezi</h3>
     <p>
-      Maombezi ni kusimama pengoni kwa ajili ya wengine.
-      Tunaombea wagonjwa, familia, vijana, kanisa na taifa.
-      Tunaamini Mungu wa majibu, uponyaji na miujiza.
+      Tunaombea wagonjwa, familia, vijana na taifa.
     </p>
   </div>
 
@@ -84,25 +137,42 @@
     <i class="fas fa-microphone"></i>
     <h3>Tamasha</h3>
     <p>
-      Kupitia matamasha ya Injili tunahubiri Yesu Kristo kwa muziki.
-      Tunashiriki katika makanisa, mikutano na maeneo ya wazi
-      kwa lengo la kuwavuta watu kwa Injili na kuleta mabadiliko ya maisha.
+      Tunahubiri Injili kupitia matamasha ya muziki wa Injili.
     </p>
   </div>
 
 </section>
 
-<!-- ========== CTA ========== -->
+<!-- ========== CTA + SOCIALS ========== -->
 <section class="huduma-cta">
   <h2>Unahitaji Huduma Yetu?</h2>
-  <p>Wasiliana nasi kwa maombi, matamasha au ushirikiano wa huduma</p>
-  <a href="#" class="cta-btn">📲 Wasiliana Nasi</a>
+  <p>Wasiliana nasi au jiunge nasi kupitia mitandao yetu ya kijamii</p>
+
+  <!-- CTA BUTTON -->
+  <a href="https://wa.me/255765498947" class="cta-btn" target="_blank">
+    📲 Wasiliana WhatsApp
+  </a>
+
+  <!-- SOCIAL ICONS -->
+  <div class="socials">
+    <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://youtube.com/@masanjagospel" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/masanjagospelmelody2026" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@masanjagospelmelody" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://t.me/masanjagospelmelody" class="telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+  </div>
 </section>
 
 <!-- ========== FOOTER ========== -->
 <footer>
   <p>© 2026 Masanja Gospel Melody | Huduma ya Injili</p>
 </footer>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/255765498947" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 <script src="js/script.js"></script>
 </body>
