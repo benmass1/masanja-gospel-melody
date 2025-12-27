@@ -25,6 +25,46 @@ body{
   color:#FFD700;
 }
 
+/* TOP BAR */
+.top-bar{
+  max-width:650px;
+  margin:12px auto;
+  padding:0 10px;
+  display:flex;
+  gap:10px;
+}
+.top-bar a{
+  flex:1;
+  text-align:center;
+  padding:12px;
+  background:#1e7f5c;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+}
+.count{
+  text-align:center;
+  font-size:14px;
+  color:#c8f7dc;
+  margin-top:6px;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:650px;
+  margin:10px auto;
+  padding:0 10px;
+}
+.search-box input{
+  width:100%;
+  padding:14px;
+  border-radius:10px;
+  border:none;
+  font-size:16px;
+  outline:none;
+}
+
 /* LIST */
 .list{
   max-width:650px;
@@ -95,7 +135,19 @@ body{
   <h2>🎶 Nyimbo za Masanja Gospel Melody</h2>
 </div>
 
-<div class="list">
+<!-- HOME BUTTON -->
+<div class="top-bar">
+  <a href="index.html">🏠 Rudi Home</a>
+</div>
+
+<div class="count" id="count"></div>
+
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="search" placeholder="🔍 Tafuta wimbo hapa...">
+</div>
+
+<div class="list" id="songList">
 
   <div class="songs">
     <div class="left"><div class="num">1</div><a href="mifupa-mikavu.html">Mifupa Mikavu</a></div>
@@ -148,12 +200,27 @@ body{
   </div>
 
   <div class="songs">
-    <div class="left"><div class="num">11</div><a href="umetukuka-utukufu-wote-ni-wako.html">umetukuka-utukufu-wote-ni-wako</a></div>
+    <div class="left"><div class="num">11</div><a href="umetukuka-utukufu-wote-ni-wako.html">Umetukuka – Utukufu Wote Ni Wako</a></div>
     <div class="play">▶</div>
   </div>
 
 </div>
 
+<script>
+/* SONG COUNT */
+const songs = document.querySelectorAll('.songs');
+document.getElementById('count').textContent =
+  `Jumla ya nyimbo: ${songs.length}`;
+
+/* SEARCH */
+document.getElementById('search').addEventListener('keyup', function(){
+  const val = this.value.toLowerCase();
+  songs.forEach(song=>{
+    const text = song.innerText.toLowerCase();
+    song.style.display = text.includes(val) ? 'flex' : 'none';
+  });
+});
+</script>
+
 </body>
 </html>
-
