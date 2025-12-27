@@ -1,130 +1,153 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <title>Nitayainua Macho Yangu | Masanja Gospel Melody</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Nitayainua Macho Yangu | Masanja Gospel Melody</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Arial, Helvetica, sans-serif;
-      background:linear-gradient(180deg,#0f3d2e,#09251c);
-      color:white;
-    }
-    .container{
-      max-width:760px;
-      margin:20px auto;
-      background:#145a3a;
-      padding:18px;
-      border-radius:16px;
-      box-shadow:0 10px 25px rgba(0,0,0,.4);
-    }
-    h1{
-      text-align:center;
-      color:#FFD700;
-      margin:8px 0;
-      font-size:26px;
-    }
-    .artist{
-      text-align:center;
-      color:#c8f7dc;
-      margin-bottom:18px;
-      font-size:15px;
-    }
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f3d2e;
+  color:white;
+}
 
-    /* VIDEO RESPONSIVE */
-    .video-wrap{
-      position:relative;
-      width:100%;
-      padding-top:56.25%; /* 16:9 */
-      margin-bottom:16px;
-      border-radius:12px;
-      overflow:hidden;
-    }
-    .video-wrap iframe{
-      position:absolute;
-      top:0; left:0;
-      width:100%;
-      height:100%;
-      border:0;
-    }
+/* VIDEO CONTAINER */
+.video-box{
+  position:relative;
+  max-width:900px;
+  margin:20px auto;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+}
 
-    audio{
-      width:100%;
-      margin:15px 0;
-    }
-    .buttons{
-      display:flex;
-      gap:12px;
-      margin-top:10px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      flex:1;
-      padding:12px;
-      text-align:center;
-      border-radius:12px;
-      font-weight:bold;
-      text-decoration:none;
-      color:white;
-      transition:transform .15s ease, opacity .15s ease;
-    }
-    .btn:hover{transform:scale(1.03);opacity:.9}
-    .yt{background:#e63946;}
-    .back{background:#1e7f5c;}
-    .footer{
-      text-align:center;
-      margin-top:22px;
-      font-size:13px;
-      color:#d5f5e3;
-    }
-  </style>
+/* VIDEO */
+.video-box iframe{
+  width:100%;
+  height:340px;
+  border:0;
+  display:block;
+}
+
+/* OVERLAY BAR */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:40px;
+  background:rgba(0,0,0,0.75);
+  z-index:10;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* SLIDING TEXT */
+.slide-text{
+  white-space:nowrap;
+  color:#FFD700;
+  font-weight:bold;
+  font-size:14px;
+  padding-left:100%;
+  animation: slide 14s linear infinite;
+}
+@keyframes slide{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-100%); }
+}
+
+/* AUDIO SECTION */
+.audio-section{
+  max-width:900px;
+  margin:14px auto;
+  padding:14px;
+  background:#145a3a;
+  border-radius:12px;
+}
+.audio-section audio{
+  width:100%;
+  display:block;
+}
+
+/* BUTTONS */
+.buttons-wrap{
+  max-width:900px;
+  margin:14px auto 28px auto;
+  padding:0 10px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+}
+.buttons-wrap a{
+  text-align:center;
+  padding:14px;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* BUTTON COLORS */
+.buttons-wrap .youtube{ background:#e63946; }
+.buttons-wrap .download{ background:#2a9d8f; }
+.buttons-wrap .back{ background:#1e7f5c; }
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <h1>🎶 Nitayainua Macho Yangu</h1>
-    <div class="artist">Masanja Gospel Melody</div>
-
-    <!-- 1️⃣ VIDEO YA YOUTUBE (IMEUNGANISHWA VIZURI) -->
-    <div class="video-wrap">
-      <iframe
-        src="https://www.youtube.com/embed/YL97jtbPeIk"
-        title="Nitayainua Macho Yangu - Masanja Gospel Melody"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+<!-- VIDEO + OVERLAY -->
+<div class="video-box">
+  <div class="overlay">
+    <div class="slide-text" id="slideText">
+      Masanja Gospel Melody
     </div>
-
-    <!-- 2️⃣ AUDIO YA MP3 (LOCAL – FOLDER songs) -->
-    <audio controls preload="auto">
-      <source src="songs/nitayainua-macho-yangu.mp3" type="audio/mpeg">
-      Browser yako haichezi audio.
-    </audio>
-
-    <!-- 3️⃣ BUTTONS -->
-    <div class="buttons">
-      <a class="btn yt"
-         href="https://youtu.be/YL97jtbPeIk"
-         target="_blank">
-         ▶️ Fungua YouTube
-      </a>
-
-      <a class="btn back"
-         href="nyimbo.html">
-         ⬅️ Rudi Nyimbo
-      </a>
-    </div>
-
-    <div class="footer">
-      © Masanja Gospel Melody
-    </div>
-
   </div>
+
+  <!-- VIDEO YA NITAYAINUA MACHO YANGU -->
+  <iframe
+    src="https://www.youtube.com/embed/YL97jtbPeIk"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<!-- AUDIO PLAYER -->
+<div class="audio-section">
+  <audio controls>
+    <source src="songs/nitayainua-macho-yangu.mp3" type="audio/mpeg">
+    Browser yako haichezi audio.
+  </audio>
+</div>
+
+<!-- BUTTONS -->
+<div class="buttons-wrap">
+  <a class="youtube" href="https://youtu.be/YL97jtbPeIk" target="_blank">
+    ▶️ Tazama YouTube
+  </a>
+
+  <a class="download" href="songs/nitayainua-macho-yangu.mp3" download>
+    ⬇️ Pakua MP3
+  </a>
+
+  <a class="back" href="nyimbo.html">
+    ⬅️ Rudi Nyimbo
+  </a>
+</div>
+
+<script>
+/* TAREHE & SIKU YA LEO */
+const days = ["Jumapili","Jumatatu","Jumanne","Jumatano","Alhamisi","Ijumaa","Jumamosi"];
+const now = new Date();
+const dayName = days[now.getDay()];
+const date = now.toLocaleDateString("sw-TZ", { day:"numeric", month:"long", year:"numeric" });
+
+document.getElementById("slideText").textContent =
+  `🎶 Nitayainua Macho Yangu | 📅 ${dayName} — ${date} | ✝️ Masanja Gospel Melody`;
+</script>
 
 </body>
 </html>
