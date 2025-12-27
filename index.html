@@ -5,7 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Masanja Gospel Melody</title>
 
+<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME ICONS -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
@@ -27,7 +32,7 @@ nav{
  position:fixed;
  top:0;left:0;right:0;
  background:linear-gradient(90deg,var(--d),var(--p));
- padding:18px 30px;
+ padding:16px 26px;
  display:flex;
  justify-content:space-between;
  align-items:center;
@@ -35,8 +40,20 @@ nav{
  box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-nav h2{color:#fff;font-weight:700}
+/* LOGO */
+.logo{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ color:#fff;
+ font-weight:700;
+}
+.logo svg{
+ width:42px;
+ height:42px;
+}
 
+/* NAV LINKS */
 nav a{
  color:#fff;
  margin-left:20px;
@@ -81,19 +98,24 @@ nav a{
 .primary{
  background:linear-gradient(45deg,#2ECC71,#1ABC9C);
  box-shadow:0 10px 30px rgba(46,204,113,.7);
+ color:#003820;
 }
+
+/* NEWS */
+.news{
+ background:#fff;
+ padding:25px;
+ margin:90px auto 0;
+ max-width:900px;
+ border-left:6px solid var(--a);
+ box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+.news h3{color:var(--p)}
+.news p{margin-top:8px}
 
 /* SECTIONS */
 section{padding:100px 20px}
 
-.title{
- text-align:center;
- font-size:2.2rem;
- margin-bottom:50px;
- color:var(--p);
-}
-
-/* CARDS */
 .grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -103,21 +125,17 @@ section{padding:100px 20px}
 }
 
 .card{
- background:rgba(255,255,255,.8);
- backdrop-filter:blur(10px);
+ background:rgba(255,255,255,.85);
  padding:40px 25px;
  border-radius:25px;
  text-align:center;
  box-shadow:0 15px 40px rgba(0,0,0,.15);
  transition:.4s;
 }
-
 .card:hover{
- transform:translateY(-15px) scale(1.05);
+ transform:translateY(-12px);
  box-shadow:0 30px 70px rgba(0,0,0,.3);
 }
-
-.card h3{margin-top:15px}
 
 /* TOKEN */
 .token{
@@ -126,12 +144,47 @@ section{padding:100px 20px}
  text-align:center;
 }
 
-/* CTA */
+/* CTA + SOCIALS */
 .cta{
  background:radial-gradient(circle at top,#2ECC71,#0F5B3E);
  text-align:center;
  color:#003820;
 }
+
+.socials{
+ display:flex;
+ justify-content:center;
+ gap:18px;
+ flex-wrap:wrap;
+ margin-top:25px;
+}
+
+.socials a{
+ width:55px;
+ height:55px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:50%;
+ color:#fff;
+ font-size:22px;
+ text-decoration:none;
+ box-shadow:0 6px 20px rgba(0,0,0,.25);
+ transition:.3s;
+}
+.socials a:hover{
+ transform:translateY(-6px) scale(1.1);
+}
+
+/* SOCIAL COLORS */
+.whatsapp{background:#25D366;}
+.facebook{background:#1877F2;}
+.youtube{background:#FF0000;}
+.instagram{
+ background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+}
+.tiktok{background:#000;}
+.telegram{background:#229ED9;}
 
 /* FOOTER */
 footer{
@@ -145,8 +198,18 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <h2>MGM</h2>
+  <div class="logo">
+    <!-- SVG LOGO MGM -->
+    <svg viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="45" fill="#2ECC71"/>
+      <path d="M30 55 L50 35 L70 55" stroke="#06251C" stroke-width="6" fill="none"/>
+      <text x="50" y="70" text-anchor="middle" font-size="28" fill="#06251C">MGM</text>
+    </svg>
+    MGM
+  </div>
+
   <div>
     <a href="index.html">Home</a>
     <a href="nyimbo.html">Nyimbo</a>
@@ -154,17 +217,25 @@ footer{
     <a href="huduma.html">Huduma</a>
   </div>
 </nav>
+
+<!-- HERO -->
 <div class="hero">
   <div>
     <h1>Masanja Gospel Melody</h1>
     <p>Muziki wa Injili unaoinua roho na kuleta matumaini kwa kizazi cha sasa</p>
-   <a href="nyimbo.html" class="btn primary">▶ Sikiliza Sasa</a>
+    <a href="nyimbo.html" class="btn primary">▶ Sikiliza Sasa</a>
   </div>
 </div>
 
+<!-- NEWS -->
+<div class="news">
+  <h3>📰 Habari Mpya</h3>
+  <p>🎶 Karibu Masanja Gospel Melody — endelea kutufuatilia kwa nyimbo na huduma mpya.</p>
+</div>
+
+<!-- SERVICES -->
 <section>
-<section id="huduma-zetu" class="services">
-<h2>Huduma Zetu</h2>
+<h2 style="text-align:center;color:var(--p)">Huduma Zetu</h2>
  <div class="grid">
   <div class="card"><h3>Kusifu</h3></div>
   <div class="card"><h3>Kuabudu</h3></div>
@@ -173,23 +244,44 @@ footer{
  </div>
 </section>
 
+<!-- TOKEN -->
 <section class="token">
- <h2 class="title" style="color:#fff">🪙 MGM TOKEN</h2>
- <p>
-  Token rasmi ya Masanja Gospel Melody kwa kusaidia huduma,
-  miradi ya Injili, na ukuaji wa muziki wa kiroho.
- </p><br>
-
+ <h2>🪙 MGM TOKEN</h2>
+ <p>Token rasmi ya Masanja Gospel Melody kusaidia huduma na miradi ya Injili.</p><br>
  <a href="mgm-token.html">
-   <button class="btn primary">🔎 Fuatilia MGM Token</button>
+  <button class="btn primary">🔎 Fuatilia MGM Token</button>
  </a>
 </section>
 
-
+<!-- SOCIAL ICONS -->
 <section class="cta">
- <h2>Jiunge Nasi Katika Kumtukuza Mungu</h2>
- <button class="btn">WhatsApp</button>
- <button class="btn">YouTube</button>
+ <h2>Jiunge Nasi Mtandaoni</h2>
+
+ <div class="socials">
+  <a href="https://wa.me/255765498947" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook" target="_blank">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+
+  <a href="https://youtube.com/@masanjagospel" class="youtube" target="_blank">
+    <i class="fab fa-youtube"></i>
+  </a>
+
+  <a href="https://www.instagram.com/masanjagospelmelody2026" class="instagram" target="_blank">
+    <i class="fab fa-instagram"></i>
+  </a>
+
+  <a href="https://www.tiktok.com/@masanjagospelmelody" class="tiktok" target="_blank">
+    <i class="fab fa-tiktok"></i>
+  </a>
+
+  <a href="https://t.me/masanjagospelmelody" class="telegram" target="_blank">
+    <i class="fab fa-telegram-plane"></i>
+  </a>
+ </div>
 </section>
 
 <footer>
@@ -198,5 +290,3 @@ footer{
 
 </body>
 </html>
-
-
