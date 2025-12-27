@@ -9,60 +9,64 @@
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family: Arial, sans-serif;
-      background:#0f3d2e;
+      font-family: Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#0f3d2e,#09251c);
       color:white;
     }
     .container{
-      max-width:720px;
+      max-width:760px;
       margin:20px auto;
       background:#145a3a;
-      padding:16px;
-      border-radius:14px;
-      box-shadow:0 8px 20px rgba(0,0,0,.35);
+      padding:18px;
+      border-radius:16px;
+      box-shadow:0 10px 25px rgba(0,0,0,.4);
     }
-    h2{
+    h1{
       text-align:center;
       color:#FFD700;
-      margin:5px 0;
+      margin:8px 0;
+      font-size:26px;
     }
     .artist{
       text-align:center;
       color:#c8f7dc;
-      margin-bottom:15px;
+      margin-bottom:18px;
+      font-size:15px;
     }
     iframe{
       width:100%;
       height:315px;
-      border-radius:10px;
-      margin-bottom:15px;
+      border-radius:12px;
       border:none;
+      margin-bottom:16px;
     }
     audio{
       width:100%;
       margin:15px 0;
     }
-    .actions{
+    .buttons{
       display:flex;
-      gap:10px;
+      gap:12px;
       margin-top:10px;
       flex-wrap:wrap;
     }
     .btn{
       flex:1;
-      text-align:center;
       padding:12px;
-      border-radius:10px;
-      text-decoration:none;
+      text-align:center;
+      border-radius:12px;
       font-weight:bold;
+      text-decoration:none;
       color:white;
+      transition:transform .15s ease, opacity .15s ease;
     }
+    .btn:hover{transform:scale(1.03);opacity:.9}
     .yt{background:#e63946;}
     .back{background:#1e7f5c;}
     .footer{
       text-align:center;
-      margin-top:20px;
-      font-size:14px;
+      margin-top:22px;
+      font-size:13px;
       color:#d5f5e3;
     }
   </style>
@@ -72,34 +76,32 @@
 
   <div class="container">
 
-    <h2>🎶 Nifundishe Kukujua Wewe</h2>
+    <h1>🎶 Nifundishe Kukujua Wewe</h1>
     <div class="artist">Masanja Gospel Melody</div>
 
-    <!-- 1️⃣ VIDEO YA YOUTUBE (BADILISHA VIDEO ID KAMA IKIBIDI) -->
-   <iframe
-  width="100%"
-  height="315"
-  src="https://www.youtube.com/embed/KWfsdcGtHtA"
-  title="Nifundishe Kukujua Wewe - Masanja Gospel Melody"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+    <!-- 1️⃣ VIDEO YA YOUTUBE (EMBED SAHIHI) -->
+    <iframe
+      src="https://www.youtube.com/embed/KWfsdcGtHtA"
+      title="Nifundishe Kukujua Wewe - Masanja Gospel Melody"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
 
+    <!-- 2️⃣ AUDIO YA MP3 (LOCAL) -->
+    <!-- HAKIKISHA FILE IPO KWENYE FOLDER songs -->
+    <audio controls preload="auto">
+      <source src="songs/nifundishe-kukujua-wewe.mp3" type="audio/mpeg">
+      Browser yako haichezi audio.
+    </audio>
 
-    <!-- 2️⃣ AUDIO YA MP3 (LOCAL – FOLDER `songs`) -->
-   <audio controls style="width:100%">
-  <source src="songs/mifupa-mikavu.mp3" type="audio/mpeg">
-</audio>
-    
-    <!-- 3️⃣ VITENDO -->
-    <div class="actions">
+    <!-- 3️⃣ BUTTONS -->
+    <div class="buttons">
       <a class="btn yt"
-         href="https://youtu.be/KWfsdcGtHtA?si=UbZuto2CF5tqxu-Hhttps"
+         href="https://youtu.be/KWfsdcGtHtA"
          target="_blank">
          ▶️ Fungua YouTube
       </a>
-      
+
       <a class="btn back"
          href="nyimbo.html">
          ⬅️ Rudi Nyimbo
@@ -114,4 +116,3 @@
 
 </body>
 </html>
-
