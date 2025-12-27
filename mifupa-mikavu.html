@@ -1,112 +1,146 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <title>Mifupa Mikavu | Masanja Gospel Melody</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Mifupa Mikavu | Masanja Gospel Melody</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <style>
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#0f3d2e;
-      color:white;
-    }
-    .container{
-      max-width:720px;
-      margin:20px auto;
-      background:#145a3a;
-      padding:16px;
-      border-radius:14px;
-      box-shadow:0 8px 20px rgba(0,0,0,.35);
-    }
-    h2{
-      text-align:center;
-      color:#FFD700;
-      margin:5px 0;
-    }
-    .artist{
-      text-align:center;
-      color:#c8f7dc;
-      margin-bottom:15px;
-    }
-    iframe{
-      width:100%;
-      height:315px;
-      border-radius:10px;
-      margin-bottom:15px;
-      border:none;
-    }
-    audio{
-      width:100%;
-      margin:15px 0;
-    }
-    .actions{
-      display:flex;
-      gap:10px;
-      margin-top:10px;
-      flex-wrap:wrap;
-    }
-    .btn{
-      flex:1;
-      text-align:center;
-      padding:12px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:bold;
-      color:white;
-    }
-    .yt{background:#e63946;}
-    .back{background:#1e7f5c;}
-    .footer{
-      text-align:center;
-      margin-top:20px;
-      font-size:14px;
-      color:#d5f5e3;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f3d2e;
+  color:white;
+}
+
+/* VIDEO CONTAINER */
+.video-box{
+  position:relative;
+  max-width:900px;
+  margin:20px auto;
+  border-radius:10px;
+  overflow:hidden;
+  background:#000;
+}
+
+/* VIDEO */
+.video-box iframe{
+  width:100%;
+  height:315px;
+  border:0;
+  display:block;
+}
+
+/* OVERLAY BAR */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:40px;
+  background:rgba(0,0,0,0.7);
+  z-index:10;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* SLIDING TEXT */
+.slide-text{
+  white-space:nowrap;
+  color:#FFD700;
+  font-weight:bold;
+  font-size:14px;
+  padding-left:100%;
+  animation: slide 14s linear infinite;
+}
+@keyframes slide{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-100%); }
+}
+
+/* AUDIO SECTION */
+.audio-section{
+  max-width:900px;
+  margin:12px auto;
+  padding:12px;
+  background:#145a3a;
+  border-radius:10px;
+}
+.audio-section audio{
+  width:100%;
+  display:block;
+}
+
+/* BUTTONS */
+.buttons-wrap{
+  max-width:900px;
+  margin:12px auto 24px auto;
+  padding:10px;
+  display:flex;
+  gap:12px;
+}
+.buttons-wrap a{
+  flex:1;
+  text-align:center;
+  padding:14px;
+  background:#1e7f5c;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+.buttons-wrap a.youtube{
+  background:#e63946;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-
-    <h2>🎶 Mifupa Mikavu</h2>
-    <div class="artist">Masanja Gospel Melody</div>
-
-    <!-- 1️⃣ VIDEO YA YOUTUBE (EMBED SAHIHI) -->
-    <iframe
-      src="https://www.youtube.com/embed/IQ7wKssZr_k"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-
-    <!-- 2️⃣ AUDIO YA MP3 (LOCAL – FOLDER `songs`) -->
-    <audio controls preload="auto">
-      <source src="songs/mifupa-mikavu.mp3" type="audio/mpeg">
-
-    </audio>
-
-    <!-- 3️⃣ VITENDO (BUTTONS) -->
-    <div class="actions">
-      <a class="btn yt"
-         href="https://youtu.be/IQ7wKssZr_k"
-         target="_blank">
-         ▶️ Fungua YouTube
-      </a>
-
-      <a class="btn back"
-         href="nyimbo.html">
-         ⬅️ Rudi Nyimbo
-      </a>
+<!-- VIDEO + OVERLAY -->
+<div class="video-box">
+  <div class="overlay">
+    <div class="slide-text" id="slideText">
+      Masanja Gospel Melody
     </div>
-
-    <div class="footer">
-      © Masanja Gospel Melody
-    </div>
-
   </div>
+
+  <!-- VIDEO YA MIFUPA MIKAVU -->
+  <iframe
+    src="https://www.youtube.com/embed/IQ7wKssZr_k"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<!-- AUDIO PLAYER -->
+<div class="audio-section">
+  <audio controls>
+    <source src="songs/mifupa-mikavu.mp3" type="audio/mpeg">
+    Browser yako haichezi audio.
+  </audio>
+</div>
+
+<!-- BUTTONS -->
+<div class="buttons-wrap">
+  <a class="youtube" href="https://youtu.be/IQ7wKssZr_k" target="_blank">
+    ▶️ Tazama YouTube
+  </a>
+  <a href="nyimbo.html">
+    ⬅️ Rudi Nyimbo
+  </a>
+</div>
+
+<script>
+/* TAREHE & SIKU YA LEO */
+const days = ["Jumapili","Jumatatu","Jumanne","Jumatano","Alhamisi","Ijumaa","Jumamosi"];
+const now = new Date();
+const dayName = days[now.getDay()];
+const date = now.toLocaleDateString("sw-TZ", { day:"numeric", month:"long", year:"numeric" });
+
+document.getElementById("slideText").textContent =
+  `🎶 Mifupa Mikavu | 📅 ${dayName} — ${date} | ✝️ Masanja Gospel Melody`;
+</script>
 
 </body>
 </html>
