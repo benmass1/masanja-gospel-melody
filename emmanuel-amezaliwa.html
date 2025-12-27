@@ -55,13 +55,22 @@ body{
   animation: slide 14s linear infinite;
 }
 
-/* ANIMATION */
 @keyframes slide{
   from{ transform: translateX(0); }
   to{ transform: translateX(-100%); }
 }
 
-/* BUTTONS AREA */
+/* AUDIO */
+.audio-box{
+  max-width:900px;
+  margin:10px auto;
+  padding:10px;
+}
+.audio-box audio{
+  width:100%;
+}
+
+/* BUTTONS */
 .buttons-wrap{
   max-width:900px;
   margin:10px auto 20px auto;
@@ -79,7 +88,6 @@ body{
   text-decoration:none;
   border-radius:8px;
   font-weight:bold;
-  box-shadow:0 4px 8px rgba(0,0,0,0.3);
 }
 
 .buttons-wrap a.youtube{
@@ -108,7 +116,15 @@ body{
 
 </div>
 
-<!-- BUTTONS (SASA ZINAONEKANA) -->
+<!-- AUDIO PLAYER (SASA IPO WAZI) -->
+<div class="audio-box">
+  <audio controls>
+    <source src="songs/emmanuel-amezaliwa.mp3" type="audio/mpeg">
+    Audio haichezi.
+  </audio>
+</div>
+
+<!-- BUTTONS -->
 <div class="buttons-wrap">
   <a class="youtube" href="https://youtu.be/5y8LfuB-sK0" target="_blank">
     ▶️ Tazama YouTube
