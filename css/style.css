@@ -1,0 +1,742 @@
+:root{
+  --primary:#0F5B3E;
+  --accent:#2ECC71;
+  --highlight:#1ABC9C;
+  --dark:#0B2E23;
+  --light:#F4FFF9;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Poppins",sans-serif;
+}
+
+body{
+  background:linear-gradient(180deg,#F4FFF9,#ECFFF4);
+  color:#1e1e1e;
+}
+
+/* NAVBAR */
+.navbar{
+  position:sticky;
+  top:0;
+  background:linear-gradient(90deg,var(--dark),var(--primary));
+  padding:16px 25px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 8px 30px rgba(0,0,0,.25);
+}
+
+.navbar a{
+  color:#fff;
+  margin:0 12px;
+  font-weight:500;
+  position:relative;
+}
+
+.navbar a::after{
+  content:"";
+  width:0;
+  height:2px;
+  background:var(--accent);
+  position:absolute;
+  bottom:-5px;
+  left:0;
+  transition:.3s;
+}
+
+.navbar a:hover::after{
+  width:100%;
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  background:
+  linear-gradient(120deg,rgba(15,91,62,.85),rgba(11,46,35,.9)),
+  url("https://images.unsplash.com/photo-1511379938547-c1f69419868d") center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:#fff;
+}
+
+.hero h1{
+  font-size:clamp(2.2rem,5vw,4rem);
+  letter-spacing:2px;
+}
+
+.hero p{
+  max-width:600px;
+  margin:20px auto;
+  font-size:1.1rem;
+  opacity:.9;
+}
+
+/* BUTTONS */
+.btn{
+  padding:14px 32px;
+  border-radius:50px;
+  border:none;
+  cursor:pointer;
+  font-weight:600;
+  transition:.4s;
+}
+
+.primary{
+  background:linear-gradient(45deg,var(--accent),var(--highlight));
+  color:#003820;
+  box-shadow:0 10px 30px rgba(46,204,113,.6);
+}
+
+.primary:hover{
+  transform:translateY(-3px);
+  box-shadow:0 15px 40px rgba(46,204,113,.8);
+}
+
+.secondary{
+  background:transparent;
+  color:#fff;
+  border:2px solid var(--accent);
+}
+
+/* INTRO */
+.intro{
+  padding:80px 20px;
+  text-align:center;
+}
+
+.intro h2{
+  font-size:2.2rem;
+  margin-bottom:20px;
+  color:var(--primary);
+}
+
+/* SERVICES */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 25px;
+  padding: 40px 20px;
+}
+
+.card{
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(12px);
+  padding:35px;
+  border-radius:25px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.12);
+  transition:.4s;
+}
+
+.card i{
+  font-size:2.5rem;
+  color:var(--accent);
+  margin-bottom:15px;
+}
+
+.card:hover{
+  transform:translateY(-15px) scale(1.03);
+  box-shadow:0 25px 60px rgba(0,0,0,.25);
+}
+
+/* PLAYER */
+.player{
+  text-align:center;
+  padding:80px 20px;
+}
+
+.player h2{
+  color:var(--primary);
+}
+
+/* TOKEN */
+.token{
+  background:linear-gradient(135deg,var(--primary),var(--dark));
+  color:#fff;
+  padding:90px 20px;
+  text-align:center;
+}
+
+.token button{
+  margin-top:20px;
+}
+
+/* CTA */
+.cta{
+  background:radial-gradient(circle at top,var(--accent),var(--primary));
+  color:#003820;
+  padding:80px 20px;
+  text-align:center;
+}
+
+/* FOOTER */
+footer{
+  background:#000;
+  color:#aaa;
+  text-align:center;
+  padding:25px;
+}
+
+/* ANIMATION */
+.fade{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.fade.show{
+  opacity:1;
+  transform:none;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  nav{
+    position:absolute;
+    top:70px;
+    right:20px;
+    background:var(--dark);
+    flex-direction:column;
+    padding:20px;
+    border-radius:20px;
+  }
+}
+/* ================= HERO SMALL ================= */
+.hero-small {
+  height: 50vh;
+}
+
+/* ================= SERVICES ================= */
+.services {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.services h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #0b3d2e;
+}
+
+.services-intro {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.7;
+}
+
+/* ================= CARD ================= */
+.services .card {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.services .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.services .card i {
+  font-size: 34px;
+  color: #1db954;
+}
+
+.services .card h3 {
+  margin: 15px 0 10px;
+  color: #0b3d2e;
+}
+
+.services .card p {
+  line-height: 1.7;
+}
+
+/* ================= CTA ================= */
+.cta {
+  background: #0b3d2e;
+  color: #fff;
+  text-align: center;
+  padding: 50px 20px;
+}
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .services {
+    grid-template-columns: 1fr;
+  }
+}
+/* ===== HUDUMA HERO ===== */
+.huduma-hero {
+  height: 55vh;
+  background: linear-gradient(rgba(11,61,46,0.8), rgba(11,61,46,0.8)),
+    url("https://images.unsplash.com/photo-1507835661088-ac1d99b27e03")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.huduma-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.huduma-hero p {
+  max-width: 700px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+/* ===== HUDUMA WRAPPER ===== */
+.huduma-wrapper {
+  max-width: 1200px;
+  margin: -60px auto 60px;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+/* ===== HUDUMA CARD ===== */
+.huduma-card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.huduma-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+}
+
+.huduma-card i {
+  font-size: 40px;
+  color: #1db954;
+  margin-bottom: 15px;
+}
+
+.huduma-card h3 {
+  color: #0b3d2e;
+  margin-bottom: 10px;
+}
+
+.huduma-card p {
+  line-height: 1.8;
+  color: #444;
+  font-size: 0.95rem;
+}
+
+/* ===== CTA ===== */
+.huduma-cta {
+  background: linear-gradient(135deg, #0b3d2e, #1db954);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.huduma-cta h2 {
+  margin-bottom: 10px;
+}
+
+.huduma-cta p {
+  margin-bottom: 20px;
+  opacity: 0.95;
+}
+
+.cta-btn {
+  background: #fff;
+  color: #0b3d2e;
+  padding: 14px 28px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #e6fff2;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .huduma-hero h1 {
+    font-size: 2rem;
+  }
+
+  .huduma-wrapper {
+    margin-top: -40px;
+  }
+}
+/* ===== FIX HERO TEXT SIZE & SPACING (ABOUT PAGE) ===== */
+
+/* Punguza urefu wa hero kwenye about */
+.hero-small {
+  height: 40vh; /* ilikuwa kubwa sana */
+  min-height: 280px;
+}
+
+/* Punguza maandishi ya hero */
+.hero-content h1 {
+  font-size: 2rem; /* kutoka kubwa sana */
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Ongeza nafasi kati ya hero na content ya chini */
+.about-section {
+  margin-top: 20px;
+  padding-top: 40px;
+}
+
+/* Hakikisha hakuna kuingiliana */
+.about-container {
+  position: relative;
+  z-index: 2;
+}
+/* ===== FINAL CTA FIX (ABOUT PAGE) ===== */
+
+/* Hakikisha CTA iko peke yake chini */
+.cta-modern {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  clear: both;
+}
+
+/* Tenganisha CTA na content ya juu kabisa */
+.about-section + .cta-modern {
+  margin-top: 80px;
+}
+
+/* Hakikisha maandishi hayabani button */
+.cta-modern h2,
+.cta-modern p {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button ishuke chini na iwe centered */
+.cta-modern .btn {
+  margin-top: 30px;
+}
+
+/* Hakuna element ipande juu ya CTA */
+.about-section * {
+  margin-bottom: 0;
+}
+/* ================= TOKEN PAGE ================= */
+.token-hero {
+  background: linear-gradient(rgba(11,61,46,0.85), rgba(11,61,46,0.85)),
+    url("https://images.unsplash.com/photo-1622630998477-20aa696ecb05");
+  background-size: cover;
+  background-position: center;
+}
+
+.token-section {
+  padding: 70px 20px;
+  background: #f7f9fc;
+}
+
+.token-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.token-intro {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+
+.token-intro h2 {
+  color: #0b3d2e;
+  margin-bottom: 10px;
+}
+
+.token-intro p {
+  line-height: 1.7;
+  color: #555;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* TOKEN CARD */
+.token-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.token-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.token-card i {
+  font-size: 34px;
+  color: #1db954;
+  margin-bottom: 10px;
+}
+
+.token-card h3 {
+  margin-bottom: 10px;
+  color: #0b3d2e;
+}
+
+.token-card p {
+  line-height: 1.6;
+  color: #444;
+}
+
+.token-card ul {
+  padding-left: 18px;
+}
+
+.token-card ul li {
+  margin: 8px 0;
+  color: #444;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .token-section {
+    padding: 50px 15px;
+  }
+}/* ==================================================
+   ABOUT PAGE – FINAL CLEAN & RESPONSIVE STYLE
+================================================== */
+
+/* Wrapper ya ukurasa wa kuhusu */
+.about-page {
+  background: #f7f9fc;
+  padding: 70px 20px;
+}
+
+/* Container */
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+}
+
+/* Card moja moja */
+.about-card {
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* Icon */
+.about-card i {
+  font-size: 34px;
+  color: #1db954;
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* Vichwa */
+.about-card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #0b3d2e;
+}
+
+/* Maandishi */
+.about-card p {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+/* List ya maadili */
+.about-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-card ul li {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 8px 0;
+  color: #444;
+}
+
+/* ================= CTA (Kuhusu Page) ================= */
+.cta-modern {
+  margin-top: 80px;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #0b3d2e, #145a45);
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cta-modern h2 {
+  margin-bottom: 15px;
+}
+
+.cta-modern p {
+  max-width: 600px;
+  margin-bottom: 35px;
+  line-height: 1.8;
+}
+
+.cta-modern .btn {
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+/* ================= HERO SMALL FIX ================= */
+.hero-small {
+  height: 40vh;
+  min-height: 260px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 50px 15px;
+  }
+
+  .about-card {
+    padding: 30px 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+}
+/* ================= SONGS PAGE ================= */
+.songs-page {
+  padding: 70px 20px;
+  background: #f7f9fc;
+}
+
+.songs-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 35px;
+}
+
+.song-card {
+  background: #ffffff;
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.song-card h3 {
+  color: #0b3d2e;
+  margin-bottom: 5px;
+}
+
+.song-card .artist {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.song-card audio {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* ===== YOUTUBE VIDEO ===== */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  margin-bottom: 20px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .song-card {
+    padding: 25px 20px;
+  }
+}
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+

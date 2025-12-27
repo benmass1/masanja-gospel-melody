@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <title>Nyimbo | MGM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header>
+  <h1>🎵 Nyimbo</h1>
+</header>
+
+<div class="page">
+
+  <div class="card">
+    <button class="song-btn"
+      onclick="playSong('../songs/YesuAmezaliwa.mp3','Yesu Amezaliwa')">
+      ▶️ Yesu Amezaliwa
+    </button>
+
+    <button class="song-btn"
+      onclick="playSong('../songs/Baalam.mp3','Baalam')">
+      ▶️ Baalam
+    </button>
+
+    <button class="song-btn"
+      onclick="playSong('../songs/BwanaWaMabwana.mp3','Bwana wa Mabwana')">
+      ▶️ Bwana wa Mabwana
+    </button>
+  </div>
+
+  <div class="card">
+    <p id="nowPlaying">Chagua wimbo ▶️</p>
+    <audio id="audioPlayer" controls></audio>
+  </div>
+
+</div>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
