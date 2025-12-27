@@ -13,61 +13,88 @@ body{
   color:white;
 }
 
-/* VIDEO WRAP */
+/* CONTAINER */
 .video-box{
   position:relative;
   max-width:900px;
   margin:20px auto;
+  border-radius:10px;
+  overflow:hidden;
 }
 
-/* IFRAME */
+/* VIDEO */
 .video-box iframe{
   width:100%;
   height:315px;
   border:0;
 }
 
-/* OVERLAY TEXT */
+/* OVERLAY BAR */
 .overlay{
   position:absolute;
-  top:10px;
+  top:0;
   left:0;
   width:100%;
+  height:40px;
+  background:rgba(0,0,0,0.65); /* rangi ionekane */
+  z-index:10;                 /* juu ya video */
+  display:flex;
+  align-items:center;
   overflow:hidden;
-  pointer-events:none;
 }
 
 /* SLIDING TEXT */
 .slide-text{
-  display:inline-block;
   white-space:nowrap;
-  padding-left:100%;
+  color:#FFD700;
   font-weight:bold;
   font-size:14px;
-  color:#FFD700;
-  animation: slide 15s linear infinite;
-  text-shadow:1px 1px 3px #000;
+  padding-left:100%;
+  animation: slide 12s linear infinite;
 }
 
+/* ANIMATION */
 @keyframes slide{
-  from{ transform: translateX(0); }
-  to{ transform: translateX(-100%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* BUTTON AREA */
+.buttons{
+  max-width:900px;
+  margin:10px auto;
+  display:flex;
+  gap:10px;
+}
+.buttons a{
+  flex:1;
+  text-align:center;
+  padding:12px;
+  background:#1e7f5c;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:bold;
+}
+.buttons a.youtube{
+  background:#e63946;
 }
 </style>
 </head>
 
 <body>
 
+<!-- VIDEO + OVERLAY -->
 <div class="video-box">
 
-  <!-- SLIDING OVERLAY -->
+  <!-- OVERLAY SLIDING TEXT -->
   <div class="overlay">
     <div class="slide-text" id="slideText">
       Masanja Gospel Melody
     </div>
   </div>
 
-  <!-- VIDEO -->
+  <!-- YOUTUBE VIDEO -->
   <iframe
     src="https://www.youtube.com/embed/5y8LfuB-sK0"
     allowfullscreen>
@@ -75,8 +102,18 @@ body{
 
 </div>
 
+<!-- BUTTONS (RANGI ZINAONEKANA) -->
+<div class="buttons">
+  <a class="youtube" href="https://youtu.be/5y8LfuB-sK0" target="_blank">
+    ▶️ Fungua YouTube
+  </a>
+  <a href="nyimbo.html">
+    ⬅️ Rudi Nyimbo
+  </a>
+</div>
+
 <script>
-/* AUTO DATE & DAY */
+/* DATE & DAY AUTO */
 const days = [
   "Jumapili","Jumatatu","Jumanne",
   "Jumatano","Alhamisi","Ijumaa","Jumamosi"
@@ -88,7 +125,7 @@ const date = now.toLocaleDateString("sw-TZ", {
   day:"numeric", month:"long", year:"numeric"
 });
 
-document.getElementById("slideText").innerText =
+document.getElementById("slideText").textContent =
   `📅 ${dayName} — ${date} ✝️ Masanja Gospel Melody`;
 </script>
 
