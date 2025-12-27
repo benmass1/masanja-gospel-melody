@@ -12,29 +12,77 @@ body{
   background:#0f3d2e;
   color:white;
 }
+
+/* HEADER */
 .header{
-  padding:15px;
+  padding:18px;
   text-align:center;
   background:#145a3a;
 }
+.header h2{
+  margin:5px 0;
+  color:#FFD700;
+}
+
+/* SEARCH */
+.search-box{
+  max-width:600px;
+  margin:15px auto 5px auto;
+  padding:0 10px;
+}
+.search-box input{
+  width:100%;
+  padding:12px;
+  border-radius:8px;
+  border:none;
+  font-size:16px;
+  outline:none;
+}
+
+/* COUNT */
+.count{
+  text-align:center;
+  font-size:14px;
+  color:#b8f7d3;
+  margin-bottom:10px;
+}
+
+/* LIST */
 .list{
   max-width:600px;
-  margin:20px auto;
+  margin:10px auto 30px auto;
   padding:10px;
 }
-.song{
+
+/* SONG ITEM */
+.songs{
   background:#1b6b4a;
-  margin-bottom:10px;
-  padding:12px 15px;
-  border-radius:10px;
+  margin-bottom:12px;
+  padding:14px 16px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  transition:transform .2s, box-shadow .2s;
 }
-.song a{
+.songs:hover{
+  transform:scale(1.02);
+  box-shadow:0 6px 15px rgba(0,0,0,0.35);
+}
+
+/* ICON */
+.songs .icon{
+  font-size:20px;
+}
+
+/* LINK */
+.songs a{
   color:#7CFFB2;
   text-decoration:none;
   font-size:18px;
   font-weight:bold;
 }
-.song a:hover{
+.songs a:hover{
   text-decoration:underline;
 }
 </style>
@@ -46,28 +94,45 @@ body{
   <h2>🎶 Nyimbo za Masanja Gospel Melody</h2>
 </div>
 
-<div class="list">
+<!-- SEARCH -->
+<div class="search-box">
+  <input type="text" id="search" placeholder="🔍 Tafuta wimbo...">
+</div>
 
-  <div class="songs"><a href="mifupa-mikavu.html">Mifupa Mikavu</a></div>
-  <div class="songs"><a href="nifundishe-kukujua-wewe.html">Nifundishe Kukujua Wewe</a></div>
-  <div class="songs"><a href="yesu-amezaliwa.html">Yesu Amezaliwa</a></div>
-  <div class="songs"><a href="bwana-wa-mabwana.html">Bwana wa Mabwana</a></div>
-  <div class="songs"><a href="emmanuel-amezaliwa.html">Emmanuel Amezaliwa</a></div>
-  <div class="songs"><a href="mimi-ni-wa-juu.html">Mimi ni wa Juu</a></div>
-  <div class="songs"><a href="neema-ya-mungu.html">Neema ya Mungu</a></div>
-  <div class="songs"><a href="nitayainua-macho-yangu.html">Nitayainua Macho Yangu</a></div>
-  <div class="songs"><a href="shukrani.html">Shukrani</a></div>
-  <div class="songs"><a href="siku-moja-yesu.html">Siku Moja Yesu</a></div>
-  <div class="songs"><a href="umetukuka.html">Umetukuka</a></div>
+<!-- COUNT -->
+<div class="count" id="count"></div>
+
+<div class="list" id="songList">
+
+  <div class="songs"><span class="icon">🎵</span><a href="mifupa-mikavu.html">Mifupa Mikavu</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="nifundishe-kukujua-wewe.html">Nifundishe Kukujua Wewe</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="yesu-amezaliwa.html">Yesu Amezaliwa</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="bwana-wa-mabwana.html">Bwana wa Mabwana</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="emmanuel-amezaliwa.html">Emmanuel Amezaliwa</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="mimi-ni-wa-juu.html">Mimi ni wa Juu</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="neema-ya-mungu.html">Neema ya Mungu</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="nitayainua-macho-yangu.html">Nitayainua Macho Yangu</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="shukrani.html">Shukrani</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="siku-moja-yesu.html">Siku Moja Yesu</a></div>
+  <div class="songs"><span class="icon">🎵</span><a href="umetukuka.html">Umetukuka</a></div>
 
 </div>
 
+<script>
+/* SONG COUNT */
+const songs = document.querySelectorAll('.songs');
+document.getElementById('count').textContent =
+  `Jumla ya nyimbo: ${songs.length}`;
+
+/* SEARCH FUNCTION */
+document.getElementById('search').addEventListener('keyup', function(){
+  const filter = this.value.toLowerCase();
+  songs.forEach(song=>{
+    const text = song.innerText.toLowerCase();
+    song.style.display = text.includes(filter) ? 'flex' : 'none';
+  });
+});
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
