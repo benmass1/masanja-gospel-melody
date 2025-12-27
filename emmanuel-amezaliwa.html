@@ -13,13 +13,14 @@ body{
   color:white;
 }
 
-/* CONTAINER */
+/* VIDEO CONTAINER */
 .video-box{
   position:relative;
   max-width:900px;
-  margin:20px auto;
+  margin:20px auto 10px auto;
   border-radius:10px;
   overflow:hidden;
+  background:#000;
 }
 
 /* VIDEO */
@@ -27,6 +28,7 @@ body{
   width:100%;
   height:315px;
   border:0;
+  display:block;
 }
 
 /* OVERLAY BAR */
@@ -36,8 +38,8 @@ body{
   left:0;
   width:100%;
   height:40px;
-  background:rgba(0,0,0,0.65); /* rangi ionekane */
-  z-index:10;                 /* juu ya video */
+  background:rgba(0,0,0,0.65);
+  z-index:5;
   display:flex;
   align-items:center;
   overflow:hidden;
@@ -50,33 +52,37 @@ body{
   font-weight:bold;
   font-size:14px;
   padding-left:100%;
-  animation: slide 12s linear infinite;
+  animation: slide 14s linear infinite;
 }
 
 /* ANIMATION */
 @keyframes slide{
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-100%); }
 }
 
-/* BUTTON AREA */
-.buttons{
+/* BUTTONS AREA */
+.buttons-wrap{
   max-width:900px;
-  margin:10px auto;
+  margin:10px auto 20px auto;
+  padding:10px;
   display:flex;
-  gap:10px;
+  gap:12px;
 }
-.buttons a{
+
+.buttons-wrap a{
   flex:1;
   text-align:center;
-  padding:12px;
+  padding:14px;
   background:#1e7f5c;
   color:white;
   text-decoration:none;
   border-radius:8px;
   font-weight:bold;
+  box-shadow:0 4px 8px rgba(0,0,0,0.3);
 }
-.buttons a.youtube{
+
+.buttons-wrap a.youtube{
   background:#e63946;
 }
 </style>
@@ -87,7 +93,7 @@ body{
 <!-- VIDEO + OVERLAY -->
 <div class="video-box">
 
-  <!-- OVERLAY SLIDING TEXT -->
+  <!-- OVERLAY TEXT -->
   <div class="overlay">
     <div class="slide-text" id="slideText">
       Masanja Gospel Melody
@@ -102,10 +108,10 @@ body{
 
 </div>
 
-<!-- BUTTONS (RANGI ZINAONEKANA) -->
-<div class="buttons">
+<!-- BUTTONS (SASA ZINAONEKANA) -->
+<div class="buttons-wrap">
   <a class="youtube" href="https://youtu.be/5y8LfuB-sK0" target="_blank">
-    ▶️ Fungua YouTube
+    ▶️ Tazama YouTube
   </a>
   <a href="nyimbo.html">
     ⬅️ Rudi Nyimbo
@@ -113,7 +119,7 @@ body{
 </div>
 
 <script>
-/* DATE & DAY AUTO */
+/* AUTO DAY & DATE */
 const days = [
   "Jumapili","Jumatatu","Jumanne",
   "Jumatano","Alhamisi","Ijumaa","Jumamosi"
