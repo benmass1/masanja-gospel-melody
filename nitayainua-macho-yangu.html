@@ -33,13 +33,24 @@
       margin-bottom:18px;
       font-size:15px;
     }
-    iframe{
+
+    /* VIDEO RESPONSIVE */
+    .video-wrap{
+      position:relative;
       width:100%;
-      height:315px;
-      border-radius:12px;
-      border:none;
+      padding-top:56.25%; /* 16:9 */
       margin-bottom:16px;
+      border-radius:12px;
+      overflow:hidden;
     }
+    .video-wrap iframe{
+      position:absolute;
+      top:0; left:0;
+      width:100%;
+      height:100%;
+      border:0;
+    }
+
     audio{
       width:100%;
       margin:15px 0;
@@ -79,13 +90,15 @@
     <h1>🎶 Nitayainua Macho Yangu</h1>
     <div class="artist">Masanja Gospel Melody</div>
 
-    <!-- 1️⃣ VIDEO YA YOUTUBE (IMEWEKWA TAYARI) -->
-    <iframe
-      src="https://www.youtube.com/embed/YL97jtbPeIk"
-      title="Nitayainua Macho Yangu - Masanja Gospel Melody"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
+    <!-- 1️⃣ VIDEO YA YOUTUBE (IMEUNGANISHWA VIZURI) -->
+    <div class="video-wrap">
+      <iframe
+        src="https://www.youtube.com/embed/YL97jtbPeIk"
+        title="Nitayainua Macho Yangu - Masanja Gospel Melody"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
 
     <!-- 2️⃣ AUDIO YA MP3 (LOCAL – FOLDER songs) -->
     <audio controls preload="auto">
