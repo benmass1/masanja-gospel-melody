@@ -1,117 +1,283 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MGM Token | Masanja Gospel Melody</title>
+<meta charset="UTF-8">
+<title>MGM Token | Masanja Gospel Melody</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- MAIN CSS -->
-  <link rel="stylesheet" href="css/style.css">
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+ --p:#0F5B3E;
+ --a:#2ECC71;
+ --d:#06251C;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+
+body{
+ background:linear-gradient(180deg,#F4FFF9,#E9FFF3);
+ color:#111;
+}
+
+/* HEADER */
+header{
+ background:linear-gradient(135deg,var(--p),var(--d));
+ color:white;
+ text-align:center;
+ padding:60px 20px;
+}
+header h1{
+ font-size:clamp(2rem,6vw,3.2rem);
+}
+header p{
+ max-width:700px;
+ margin:15px auto 0;
+ opacity:.9;
+}
+
+/* SECTIONS */
+section{
+ padding:60px 20px;
+}
+.container{
+ max-width:1100px;
+ margin:auto;
+}
+
+/* CARDS */
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:24px;
+ margin-top:30px;
+}
+.card{
+ background:#fff;
+ padding:28px;
+ border-radius:22px;
+ box-shadow:0 12px 30px rgba(0,0,0,.15);
+ text-align:center;
+}
+.card i{
+ font-size:34px;
+ color:var(--p);
+ margin-bottom:12px;
+}
+
+/* TITLES */
+.title{
+ text-align:center;
+ color:var(--p);
+ font-size:clamp(1.6rem,5vw,2.2rem);
+ margin-bottom:15px;
+}
+
+/* TOKEN USE */
+.list{
+ margin-top:20px;
+ line-height:1.8;
+ padding-left:18px;
+}
+
+/* ROADMAP */
+.timeline{
+ border-left:4px solid var(--a);
+ padding-left:20px;
+ margin-top:30px;
+}
+.timeline div{
+ margin-bottom:20px;
+}
+.timeline h4{
+ color:var(--p);
+ margin-bottom:6px;
+}
+
+/* CTA */
+.cta{
+ background:linear-gradient(135deg,var(--a),var(--p));
+ color:white;
+ text-align:center;
+ padding:60px 20px;
+}
+.cta h2{
+ margin-bottom:15px;
+}
+.btn{
+ display:inline-block;
+ margin-top:20px;
+ padding:14px 30px;
+ background:#fff;
+ color:#003820;
+ border-radius:40px;
+ font-weight:600;
+ text-decoration:none;
+}
+
+/* SOCIALS */
+.socials{
+ display:flex;
+ justify-content:center;
+ gap:16px;
+ flex-wrap:wrap;
+ margin-top:25px;
+}
+.socials a{
+ width:52px;
+ height:52px;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ border-radius:50%;
+ color:white;
+ font-size:22px;
+ text-decoration:none;
+}
+.whatsapp{background:#25D366;}
+.facebook{background:#1877F2;}
+.youtube{background:#FF0000;}
+.instagram{background:#C13584;}
+.tiktok{background:#000;}
+.telegram{background:#229ED9;}
+
+/* FOOTER */
+footer{
+ background:#000;
+ color:#aaa;
+ text-align:center;
+ padding:24px;
+ font-size:14px;
+}
+</style>
 </head>
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-  <div class="logo">MGM</div>
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="nyimbo.html">Nyimbo</a>
-    <a href="kuhusu.html">Kuhusu</a>
-    <a href="huduma.html#huduma-zetu">Huduma</a>
-    <a href="mgm-token.html" class="active">MGM Token</a>
-  </nav>
-  <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+<!-- HEADER -->
+<header>
+ <h1>🪙 MGM Token</h1>
+ <p>
+  MGM Token ni mfumo wa kidijitali ulioundwa kusaidia,
+  kuimarisha na kupanua huduma ya Masanja Gospel Melody
+  pamoja na miradi ya Injili katika jamii.
+ </p>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero hero-small token-hero">
-  <div class="hero-content">
-    <h1>MGM TOKEN</h1>
-    <p>Token ya kusaidia huduma ya Masanja Gospel Melody</p>
-  </div>
-</section>
-
-<!-- ================= TOKEN INTRO ================= -->
-<section class="token-section">
-  <div class="token-container">
-
-    <div class="token-intro">
-      <h2>MGM Token ni Nini?</h2>
-      <p>
-        MGM Token ni mfumo wa kidijitali ulioundwa kwa lengo la kusaidia
-        huduma ya Masanja Gospel Melody. Token hii si kwa madhumuni ya
-        kamari au utajiri wa haraka, bali ni njia ya uwazi na ya hiari
-        ya kuchangia, kuunga mkono na kukuza kazi ya Injili.
-      </p>
-    </div>
-
-    <!-- TOKEN PURPOSE -->
-    <div class="token-card">
-      <i class="fas fa-hand-holding-heart"></i>
-      <h3>Lengo la MGM Token</h3>
-      <ul>
-        <li>✔ Kusaidia uzalishaji wa nyimbo na video za Injili</li>
-        <li>✔ Kusaidia maandalizi ya matamasha na mikutano</li>
-        <li>✔ Kusaidia kazi za maombezi na huduma za kijamii</li>
-        <li>✔ Kuimarisha uwazi katika michango ya huduma</li>
-      </ul>
-    </div>
-
-    <!-- HOW IT WORKS -->
-    <div class="token-card">
-      <i class="fas fa-gears"></i>
-      <h3>MGM Token Inafanyaje Kazi?</h3>
-      <p>
-        Wanaounga mkono huduma wanaweza kupokea au kushikilia MGM Token
-        kama ishara ya msaada wao. Token inaweza kutumika kama njia
-        ya kushiriki kwenye shughuli maalum za huduma, au kama
-        kumbukumbu ya mchango wako katika kazi ya Injili.
-      </p>
-    </div>
-
-    <!-- VALUES -->
-    <div class="token-card">
-      <i class="fas fa-shield-heart"></i>
-      <h3>Maadili ya MGM Token</h3>
-      <ul>
-        <li>✔ Uaminifu na uwazi</li>
-        <li>✔ Hakuna ahadi ya faida ya kifedha</li>
-        <li>✔ Kipaumbele ni Injili, si biashara</li>
-        <li>✔ Matumizi ya hiari na kwa ridhaa</li>
-      </ul>
-    </div>
-
-    <!-- TOKENOMICS -->
-    <div class="token-card">
-      <i class="fas fa-coins"></i>
-      <h3>Muhtasari wa Tokenomics</h3>
-      <p><strong>Jina:</strong> MGM Token</p>
-      <p><strong>Matumizi:</strong> Support Token</p>
-      <p><strong>Supply:</strong> Imewekwa kulingana na mahitaji ya huduma</p>
-      <p><strong>Uhamisho:</strong> Hiari na kwa madhumuni ya huduma</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta-modern">
-  <h2>Ungependa Kuunga Mkono Huduma?</h2>
+<!-- WHAT IS TOKEN -->
+<section>
+ <div class="container">
+  <h2 class="title">MGM Token ni Nini?</h2>
   <p>
-    Ikiwa una moyo wa kuunga mkono kazi ya Injili kupitia MGM Token,
-    wasiliana nasi ili kupata maelezo zaidi.
+   MGM Token ni token ya msaada (support token) inayolenga
+   kuunganisha waumini, wadau na mashabiki wa huduma ya Injili
+   katika kusaidia kazi ya Mungu kwa uwazi na uaminifu.
   </p>
-  <a href="#" class="btn primary">📲 Wasiliana Nasi</a>
+ </div>
 </section>
 
-<!-- ================= FOOTER ================= -->
+<!-- WHY MGM TOKEN -->
+<section>
+ <div class="container">
+  <h2 class="title">Kwa Nini MGM Token?</h2>
+
+  <div class="grid">
+   <div class="card">
+    <i class="fas fa-hands-helping"></i>
+    <h3>Kusaidia Huduma</h3>
+    <p>Kusaidia gharama za huduma, matamasha na uinjilisti.</p>
+   </div>
+
+   <div class="card">
+    <i class="fas fa-church"></i>
+    <h3>Kuinua Injili</h3>
+    <p>Kupanua ufikiaji wa Injili kupitia muziki na mafundisho.</p>
+   </div>
+
+   <div class="card">
+    <i class="fas fa-users"></i>
+    <h3>Kujenga Jamii</h3>
+    <p>Kuwaunganisha waumini na wadau wa huduma.</p>
+   </div>
+
+   <div class="card">
+    <i class="fas fa-eye"></i>
+    <h3>Uwazi</h3>
+    <p>Kila msaada unafuatiliwa kwa uwazi wa kidijitali.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- USE CASES -->
+<section>
+ <div class="container">
+  <h2 class="title">MGM Token Inatumika Wapi?</h2>
+  <ul class="list">
+   <li>Kusapoti matamasha na mikutano ya Injili</li>
+   <li>Kurekodi na kusambaza nyimbo za Injili</li>
+   <li>Kusaidia huduma za kijamii (vijana, yatima, jamii)</li>
+   <li>Kusaidia gharama za uzalishaji wa muziki</li>
+   <li>Kujenga mifumo ya Injili mtandaoni</li>
+  </ul>
+ </div>
+</section>
+
+<!-- ROADMAP -->
+<section>
+ <div class="container">
+  <h2 class="title">Mpango wa Baadaye (Roadmap)</h2>
+
+  <div class="timeline">
+   <div>
+    <h4>Hatua ya 1</h4>
+    <p>Utambulisho wa MGM Token kwa jamii</p>
+   </div>
+   <div>
+    <h4>Hatua ya 2</h4>
+    <p>Kuanza matumizi ya token katika kusaidia huduma</p>
+   </div>
+   <div>
+    <h4>Hatua ya 3</h4>
+    <p>Kupanua matumizi kwenye miradi ya kijamii</p>
+   </div>
+   <div>
+    <h4>Hatua ya 4</h4>
+    <p>Kujenga ecosystem ya Injili inayojitegemea</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+ <h2>Jiunge Katika Kusaidia Huduma ya Injili</h2>
+ <p>
+  Kwa kushiriki MGM Token unakuwa sehemu ya kazi ya Mungu
+  inayogusa maisha ya watu wengi.
+ </p>
+
+ <a href="index.html" class="btn">⬅ Rudi Home</a>
+
+ <div class="socials">
+  <a href="https://wa.me/255765498947" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+  <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook"><i class="fab fa-facebook-f"></i></a>
+  <a href="https://youtube.com/@masanjagospel" class="youtube"><i class="fab fa-youtube"></i></a>
+  <a href="https://www.instagram.com/masanjagospelmelody2026" class="instagram"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.tiktok.com/@masanjagospelmelody" class="tiktok"><i class="fab fa-tiktok"></i></a>
+  <a href="https://t.me/masanjagospelmelody" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+ </div>
+</section>
+
 <footer>
-  <p>© 2026 Masanja Gospel Melody | MGM Token</p>
+ © 2026 Masanja Gospel Melody | MGM Token
 </footer>
 
-<script src="js/script.js"></script>
 </body>
 </html>
