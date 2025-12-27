@@ -52,11 +52,12 @@ header{
  overflow:hidden;
  border-radius:18px;
  box-shadow:0 15px 40px rgba(0,0,0,.25);
+ touch-action:pan-y;
 }
 .slides{
  display:flex;
  width:300%;
- animation: slidePause 21s infinite;
+ transition:transform .6s ease;
 }
 .slide{
  width:100%;
@@ -84,18 +85,6 @@ header{
 .s1{background:linear-gradient(135deg,#0F5B3E,#06251C);}
 .s2{background:linear-gradient(135deg,#1ABC9C,#0F5B3E);}
 .s3{background:linear-gradient(135deg,#2ECC71,#1ABC9C);}
-
-/* SLIDE PAUSE */
-@keyframes slidePause{
- 0%{transform:translateX(0)}
- 25%{transform:translateX(0)}
-
- 35%{transform:translateX(-100%)}
- 60%{transform:translateX(-100%)}
-
- 70%{transform:translateX(-200%)}
- 100%{transform:translateX(-200%)}
-}
 
 /* CONTENT */
 .page{
@@ -128,7 +117,7 @@ header{
  border-radius:20px;
 }
 
-/* SOCIALS (NEW LOOK) */
+/* SOCIALS */
 .socials{
  display:flex;
  justify-content:center;
@@ -208,7 +197,6 @@ footer{
  <h1>📢 Matangazo & Matukio</h1>
 </header>
 
-<!-- NEWS -->
 <div class="news-ticker">
  <div class="news-text">
   📢 Mwaka 2026 Masanja Gospel Melody inaanza hatua mpya ya huduma | Tamasha | Mikesha | MGM Token | Injili kwa Jamii 🔔
@@ -216,34 +204,25 @@ footer{
 </div>
 
 <!-- SLIDER -->
-<div class="slider">
- <div class="slides">
+<div class="slider" id="slider">
+ <div class="slides" id="slides">
 
   <div class="slide s1">
    <h2>🌍 Dira ya 2026</h2>
-   <p>
-    Mwaka 2026 Masanja Gospel Melody itapanua huduma zake za Injili
-    kupitia muziki, mafundisho, maombezi na matamasha
-    katika maeneo mbalimbali ya Tanzania.
-   </p>
+   <p>Mwaka 2026 Masanja Gospel Melody itapanua huduma zake za Injili
+   kupitia muziki, mafundisho na matamasha.</p>
   </div>
 
   <div class="slide s2">
    <h2>🎶 Huduma za Injili</h2>
-   <p>
-    Kutakuwa na matamasha ya Injili, mikesha ya kusifu na kuabudu,
-    semina za muziki wa Injili na huduma za kufikia jamii
-    kwa lengo la kuleta mabadiliko ya kiroho.
-   </p>
+   <p>Matamasha, mikesha, semina za muziki wa Injili
+   na huduma za kufikia jamii.</p>
   </div>
 
   <div class="slide s3">
    <h2>🪙 MGM TOKEN</h2>
-   <p>
-    MGM Token itatumika kusaidia na kusapoti huduma za Injili,
-    miradi ya kijamii na maendeleo ya kazi ya Mungu
-    katika jamii yetu.
-   </p>
+   <p>MGM Token itasaidia kusapoti huduma za Injili
+   na miradi ya kijamii.</p>
   </div>
 
  </div>
@@ -258,26 +237,15 @@ footer{
    <li>Tamasha la Injili katika mikoa mbalimbali</li>
    <li>Mikesha ya Kusifu na Kuabudu</li>
    <li>Semina za Muziki wa Injili</li>
-   <li>Huduma za kijamii kwa vijana na jamii</li>
    <li>Uzinduzi wa MGM Token</li>
   </ul>
- </div>
-
- <div class="card">
-  <h3>🤝 Ushiriki wa Jamii</h3>
-  <p>
-   Tunawaalika waamini, waimbaji, vijana na wadau
-   kushiriki nasi katika kazi ya Injili kwa kuomba,
-   kushiriki matukio na kusapoti huduma.
-  </p>
  </div>
 
 </div>
 
 <!-- CTA -->
 <div class="cta">
- <h2>Je, Ungependa Kushiriki au Kusaidia Huduma?</h2>
-
+ <h2>Jiunge Nasi</h2>
  <div class="socials">
   <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -292,10 +260,46 @@ footer{
  © 2026 Masanja Gospel Melody | Matangazo & Matukio
 </footer>
 
-<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/255765498947" class="float-whatsapp" target="_blank">
  <i class="fab fa-whatsapp"></i>
 </a>
+
+<script>
+let index = 0;
+const slides = document.getElementById("slides");
+const total = slides.children.length;
+let auto = setInterval(nextSlide, 5000);
+
+function showSlide(i){
+ slides.style.transform = `translateX(-${i*100}%)`;
+}
+
+function nextSlide(){
+ index = (index + 1) % total;
+ showSlide(index);
+}
+
+/* TOUCH SUPPORT */
+let startX = 0;
+let endX = 0;
+
+slides.addEventListener("touchstart", e=>{
+ startX = e.touches[0].clientX;
+ clearInterval(auto);
+});
+
+slides.addEventListener("touchend", e=>{
+ endX = e.changedTouches[0].clientX;
+ if(startX - endX > 50){
+  index = (index + 1) % total;
+ }
+ if(endX - startX > 50){
+  index = (index - 1 + total) % total;
+ }
+ showSlide(index);
+ auto = setInterval(nextSlide, 5000);
+});
+</script>
 
 </body>
 </html>
