@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Masanja Gospel Melody</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --p:#0F5B3E;
+ --a:#2ECC71;
+ --d:#06251C;
+ --l:#F4FFF9;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+
+body{
+ background:linear-gradient(180deg,#F4FFF9,#E9FFF3);
+ color:#111;
+}
+
+/* NAV */
+nav{
+ position:fixed;
+ top:0;left:0;right:0;
+ background:linear-gradient(90deg,var(--d),var(--p));
+ padding:18px 30px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ z-index:999;
+ box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+nav h2{color:#fff;font-weight:700}
+
+nav a{
+ color:#fff;
+ margin-left:20px;
+ text-decoration:none;
+ font-weight:500;
+}
+
+/* HERO */
+.hero{
+ height:100vh;
+ background:
+ linear-gradient(rgba(6,37,28,.85),rgba(6,37,28,.85)),
+ url("https://images.unsplash.com/photo-1511379938547-c1f69419868d") center/cover;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ text-align:center;
+ color:#fff;
+ padding:20px;
+}
+
+.hero h1{
+ font-size:clamp(2.5rem,6vw,4rem);
+ letter-spacing:2px;
+}
+
+.hero p{
+ margin:20px auto;
+ max-width:600px;
+ opacity:.9;
+}
+
+.btn{
+ padding:14px 34px;
+ border-radius:50px;
+ border:none;
+ font-weight:600;
+ cursor:pointer;
+ margin:10px;
+}
+
+.primary{
+ background:linear-gradient(45deg,#2ECC71,#1ABC9C);
+ box-shadow:0 10px 30px rgba(46,204,113,.7);
+}
+
+/* SECTIONS */
+section{padding:100px 20px}
+
+.title{
+ text-align:center;
+ font-size:2.2rem;
+ margin-bottom:50px;
+ color:var(--p);
+}
+
+/* CARDS */
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+ gap:30px;
+ max-width:1100px;
+ margin:auto;
+}
+
+.card{
+ background:rgba(255,255,255,.8);
+ backdrop-filter:blur(10px);
+ padding:40px 25px;
+ border-radius:25px;
+ text-align:center;
+ box-shadow:0 15px 40px rgba(0,0,0,.15);
+ transition:.4s;
+}
+
+.card:hover{
+ transform:translateY(-15px) scale(1.05);
+ box-shadow:0 30px 70px rgba(0,0,0,.3);
+}
+
+.card h3{margin-top:15px}
+
+/* TOKEN */
+.token{
+ background:linear-gradient(135deg,var(--p),var(--d));
+ color:#fff;
+ text-align:center;
+}
+
+/* CTA */
+.cta{
+ background:radial-gradient(circle at top,#2ECC71,#0F5B3E);
+ text-align:center;
+ color:#003820;
+}
+
+/* FOOTER */
+footer{
+ background:#000;
+ color:#aaa;
+ text-align:center;
+ padding:30px;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>MGM</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="nyimbo.html">Nyimbo</a>
+    <a href="kuhusu.html">Kuhusu</a>
+    <a href="huduma.html">Huduma</a>
+  </div>
+</nav>
+
+
+<div class="hero">
+  <div>
+    <h1>Masanja Gospel Melody</h1>
+    <p>Muziki wa Injili unaoinua roho na kuleta matumaini kwa kizazi cha sasa</p>
+   <a href="nyimbo.html" class="btn primary">▶ Sikiliza Sasa</a>
+  </div>
+</div>
+
+<section>
+<section id="huduma-zetu" class="services">
+<h2>Huduma Zetu</h2>
+ <div class="grid">
+  <div class="card"><h3>Kusifu</h3></div>
+  <div class="card"><h3>Kuabudu</h3></div>
+  <div class="card"><h3>Mafundisho</h3></div>
+  <div class="card"><h3>Tamasha</h3></div>
+ </div>
+</section>
+
+<section class="token">
+ <h2 class="title" style="color:#fff">🪙 MGM TOKEN</h2>
+ <p>
+  Token rasmi ya Masanja Gospel Melody kwa kusaidia huduma,
+  miradi ya Injili, na ukuaji wa muziki wa kiroho.
+ </p><br>
+
+ <a href="mgm-token.html">
+   <button class="btn primary">🔎 Fuatilia MGM Token</button>
+ </a>
+</section>
+
+
+<section class="cta">
+ <h2>Jiunge Nasi Katika Kumtukuza Mungu</h2>
+ <button class="btn">WhatsApp</button>
+ <button class="btn">YouTube</button>
+</section>
+
+<footer>
+ © 2026 Masanja Gospel Melody
+</footer>
+
+</body>
+</html>

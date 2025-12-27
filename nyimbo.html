@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nyimbo | Masanja Gospel Melody</title>
+
+  <!-- ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="logo">MGM</div>
+  <nav id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="nyimbo.html" class="active">Nyimbo</a>
+    <a href="kuhusu.html">Kuhusu</a>
+    <a href="huduma.html#huduma-zetu">Huduma</a>
+  </nav>
+  <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero hero-small">
+  <div class="hero-content">
+    <h1>Nyimbo za Masanja Gospel Melody</h1>
+    <p>Sikiliza, tazama na uabudu pamoja nasi</p>
+  </div>
+</section>
+
+<!-- ================= SONGS ================= -->
+<section class="songs-page">
+
+  <div class="songs-grid">
+
+    <!-- ===== SONG 1 ===== -->
+    <div class="song-card">
+      <h3>Mimi ni wa Juu</h3>
+      <p class="artist">Masanja Gospel Melody</p>
+
+      <!-- AUDIO -->
+      <audio controls>
+        <source src="songs/mimi-ni-wa-juu.mp3" type="audio/mpeg">
+      </audio>
+
+      <!-- YOUTUBE VIDEO -->
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/VIDEO_ID_HAPA"
+          title="Mimi ni wa Juu - Masanja Gospel Melody"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <!-- YOUTUBE LINK -->
+      <a href="https://www.youtube.com/watch?v=VIDEO_ID_HAPA"
+         target="_blank"
+         class="btn secondary">
+        ▶️ Tazama YouTube
+      </a>
+    </div>
+
+    <!-- ===== SONG 2 ===== -->
+    <div class="song-card">
+      <h3>Nifundishe Kukujua Wewe</h3>
+      <p class="artist">Masanja Gospel Melody</p>
+
+      <audio controls>
+        <source src="songs/nifundishe-kukujua-wewe.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="video-wrapper">
+        <iframe 
+          src="https://www.youtube.com/embed/KWfsdcGtHtA"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <a href="https://www.youtube.com/watch?v=VIDEO_ID_HAPA_2"
+         target="_blank"
+         class="btn secondary">
+        ▶️ Tazama YouTube
+      </a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p>© 2026 Masanja Gospel Melody | Nyimbo za Injili</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
