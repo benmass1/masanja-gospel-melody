@@ -6,195 +6,148 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-*{box-sizing:border-box}
-
 body{
   margin:0;
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   background:#0f3d2e;
-  color:#ffffff;
+  color:white;
 }
 
-/* HEADER */
-.header{
-  background:#145a3a;
-  padding:16px 12px;
-  border-bottom:2px solid #FFD700;
-}
-.header h1{
-  margin:0;
-  color:#FFD700;
-  font-size:22px;
-  text-align:center;
-}
-.header p{
-  margin:6px 0 0;
-  text-align:center;
-  color:#c8f7dc;
-  font-size:14px;
-}
-
-/* HERO */
-.hero{
-  max-width:1000px;
-  margin:16px auto 0 auto;
-  padding:20px;
-  background:linear-gradient(135deg,#1e7f5c,#145a3a);
-  border-radius:16px;
-  text-align:center;
-}
-.hero h2{
-  margin:0;
-  font-size:20px;
-}
-.hero p{
-  margin-top:6px;
-  font-size:14px;
-  color:#e9fff4;
-}
-
-/* CARD */
-.card{
-  max-width:1000px;
-  margin:18px auto 28px auto;
-  background:#145a3a;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 8px 22px rgba(0,0,0,.35);
-}
-
-/* VIDEO (SPACE IMEPANULIWA) */
-.video{
+/* VIDEO CONTAINER */
+.video-box{
   position:relative;
-  width:100%;
-  padding-top:56.25%; /* 16:9 */
-  background:#000;
-  border-radius:14px;
+  max-width:900px;
+  margin:20px auto;
+  border-radius:12px;
   overflow:hidden;
-  margin-bottom:18px;
+  background:#000;
 }
-.video iframe{
-  position:absolute;
-  inset:0;
+
+/* VIDEO */
+.video-box iframe{
   width:100%;
-  height:100%;
+  height:340px;
   border:0;
-}
-
-/* AUDIO */
-.audio{
-  margin:16px 0;
-  padding:14px;
-  background:#1e7f5c;
-  border-radius:14px;
-}
-.audio h3{
-  margin:0 0 8px 0;
-  color:#FFD700;
-  font-size:14px;
-}
-.audio audio{
-  width:100%;
-}
-
-/* LYRICS */
-.lyrics{
-  margin:16px 0;
-  padding:14px;
-  background:#0f3d2e;
-  border-radius:14px;
-  border:1px dashed rgba(255,215,0,.45);
-}
-.lyrics h3{
-  margin:0 0 8px 0;
-  color:#FFD700;
-  font-size:14px;
-}
-.lyrics p{
-  margin:0;
-  font-size:14px;
-  line-height:1.7;
-  color:#e9fff4;
-}
-
-/* ACTION BUTTONS (ZIMESAWAZISHWA) */
-.actions{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:14px;
-  margin-top:18px;
-}
-.actions a{
   display:block;
+}
+
+/* OVERLAY BAR */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:40px;
+  background:rgba(0,0,0,0.75);
+  z-index:10;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* SLIDING TEXT */
+.slide-text{
+  white-space:nowrap;
+  color:#FFD700;
+  font-weight:bold;
+  font-size:14px;
+  padding-left:100%;
+  animation: slide 14s linear infinite;
+}
+@keyframes slide{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-100%); }
+}
+
+/* AUDIO SECTION */
+.audio-section{
+  max-width:900px;
+  margin:14px auto;
+  padding:14px;
+  background:#145a3a;
+  border-radius:12px;
+}
+.audio-section audio{
+  width:100%;
+  display:block;
+}
+
+/* BUTTONS */
+.buttons-wrap{
+  max-width:900px;
+  margin:14px auto 28px auto;
+  padding:0 10px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+}
+.buttons-wrap a{
   text-align:center;
-  padding:15px;
-  border-radius:14px;
-  color:#fff;
+  padding:14px;
+  color:white;
   text-decoration:none;
+  border-radius:10px;
   font-weight:bold;
   font-size:15px;
 }
-.actions .yt{background:#e63946}
-.actions .dl{background:#2a9d8f}
-.actions .back{background:#1e7f5c}
 
-/* FOOTER */
-.footer{
-  text-align:center;
-  font-size:12px;
-  color:#c8f7dc;
-  margin-top:14px;
-}
+/* BUTTON COLORS */
+.buttons-wrap .youtube{ background:#e63946; }
+.buttons-wrap .download{ background:#2a9d8f; }
+.buttons-wrap .back{ background:#1e7f5c; }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <h1>🎶 Neema ya Mungu</h1>
-  <p>Masanja Gospel Melody</p>
+<!-- VIDEO + OVERLAY -->
+<div class="video-box">
+  <div class="overlay">
+    <div class="slide-text" id="slideText">
+      Masanja Gospel Melody
+    </div>
+  </div>
+
+  <!-- VIDEO YA NEEMA YA MUNGU -->
+  <iframe
+    src="https://www.youtube.com/embed/PrXl79mcS6k"
+    allowfullscreen>
+  </iframe>
 </div>
 
-<!-- HERO -->
-<div class="hero">
-  <h2>Wimbo wa Ibada</h2>
-  <p>Neema isiyostahiliwa, upendo wa Mungu usio na mipaka</p>
+<!-- AUDIO PLAYER -->
+<div class="audio-section">
+  <audio controls>
+    <source src="songs/neema-ya-mungu.mp3" type="audio/mpeg">
+    Browser yako haichezi audio.
+  </audio>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="card">
+<!-- BUTTONS -->
+<div class="buttons-wrap">
+  <a class="youtube" href="https://youtu.be/PrXl79mcS6k" target="_blank">
+    ▶️ Tazama YouTube
+  </a>
 
-  <!-- VIDEO -->
-  <div class="video">
-    <iframe
-      src="https://www.youtube.com/embed/PrXl79mcS6k"
-      title="Neema ya Mungu - Masanja Gospel Melody"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </div>
+  <a class="download" href="songs/neema-ya-mungu.mp3" download>
+    ⬇️ Pakua MP3
+  </a>
 
-  <!-- AUDIO -->
-  <div class="audio">
-    <h3>🎧 Sikiliza Audio</h3>
-    <audio controls>
-      <source src="songs/neema-ya-mungu.mp3" type="audio/mpeg">
-      Audio haichezi.
-    </audio>
-  </div>
-
-  </div>
-
-  <!-- ACTIONS -->
-  <div class="actions">
-    <a class="yt" href="https://youtu.be/PrXl79mcS6k" target="_blank">▶️ Tazama YouTube</a>
-    <a class="dl" href="songs/neema-ya-mungu.mp3" download>⬇️ Pakua MP3</a>
-    <a class="back" href="nyimbo.html">⬅️ Rudi Nyimbo</a>
-  </div>
-
-  <div class="footer">© Masanja Gospel Melody</div>
+  <a class="back" href="nyimbo.html">
+    ⬅️ Rudi Nyimbo
+  </a>
 </div>
+
+<script>
+/* TAREHE & SIKU YA LEO */
+const days = ["Jumapili","Jumatatu","Jumanne","Jumatano","Alhamisi","Ijumaa","Jumamosi"];
+const now = new Date();
+const dayName = days[now.getDay()];
+const date = now.toLocaleDateString("sw-TZ", { day:"numeric", month:"long", year:"numeric" });
+
+document.getElementById("slideText").textContent =
+  `🎶 Neema ya Mungu | 📅 ${dayName} — ${date} | ✝️ Masanja Gospel Melody`;
+</script>
 
 </body>
 </html>
