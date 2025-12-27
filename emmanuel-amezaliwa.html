@@ -2,7 +2,7 @@
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
-<title>Masanja Gospel Melody</title>
+<title>Emmanuel Amezaliwa | Masanja Gospel Melody</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
@@ -18,7 +18,7 @@ body{
   position:relative;
   max-width:900px;
   margin:20px auto;
-  border-radius:10px;
+  border-radius:12px;
   overflow:hidden;
   background:#000;
 }
@@ -26,7 +26,7 @@ body{
 /* VIDEO */
 .video-box iframe{
   width:100%;
-  height:315px;
+  height:340px;
   border:0;
   display:block;
 }
@@ -38,7 +38,7 @@ body{
   left:0;
   width:100%;
   height:40px;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,0.75);
   z-index:10;
   display:flex;
   align-items:center;
@@ -59,13 +59,13 @@ body{
   to{ transform: translateX(-100%); }
 }
 
-/* AUDIO SECTION — HII NDIO MUHIMU */
+/* AUDIO SECTION */
 .audio-section{
   max-width:900px;
-  margin:12px auto;
-  padding:12px;
-  background:#145a3a;       /* background ili ionekane */
-  border-radius:10px;
+  margin:14px auto;
+  padding:14px;
+  background:#145a3a;
+  border-radius:12px;
 }
 .audio-section audio{
   width:100%;
@@ -75,24 +75,26 @@ body{
 /* BUTTONS */
 .buttons-wrap{
   max-width:900px;
-  margin:12px auto 24px auto;
-  padding:10px;
-  display:flex;
-  gap:12px;
+  margin:14px auto 28px auto;
+  padding:0 10px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
 }
 .buttons-wrap a{
-  flex:1;
   text-align:center;
   padding:14px;
-  background:#1e7f5c;
   color:white;
   text-decoration:none;
-  border-radius:8px;
+  border-radius:10px;
   font-weight:bold;
+  font-size:15px;
 }
-.buttons-wrap a.youtube{
-  background:#e63946;
-}
+
+/* BUTTON COLORS */
+.buttons-wrap .youtube{ background:#e63946; }
+.buttons-wrap .download{ background:#2a9d8f; }
+.buttons-wrap .back{ background:#1e7f5c; }
 </style>
 </head>
 
@@ -106,17 +108,16 @@ body{
     </div>
   </div>
 
-  <!-- BADILISHA VIDEO ID KAMA UNATAKA -->
+  <!-- VIDEO YA EMMANUEL AMEZALIWA -->
   <iframe
     src="https://www.youtube.com/embed/5y8LfuB-sK0"
     allowfullscreen>
   </iframe>
 </div>
 
-<!-- AUDIO PLAYER (INARUDISHWA HAPA) -->
+<!-- AUDIO PLAYER -->
 <div class="audio-section">
   <audio controls>
-    <!-- BADILISHA JINA KAMA MP3 YAKO NI TOFAUTI -->
     <source src="songs/emmanuel-amezaliwa.mp3" type="audio/mpeg">
     Browser yako haichezi audio.
   </audio>
@@ -127,20 +128,25 @@ body{
   <a class="youtube" href="https://youtu.be/5y8LfuB-sK0" target="_blank">
     ▶️ Tazama YouTube
   </a>
-  <a href="nyimbo.html">
+
+  <a class="download" href="songs/emmanuel-amezaliwa.mp3" download>
+    ⬇️ Pakua MP3
+  </a>
+
+  <a class="back" href="nyimbo.html">
     ⬅️ Rudi Nyimbo
   </a>
 </div>
 
 <script>
-/* TAREHE & SIKU YA LEO (AUTO) */
+/* TAREHE & SIKU YA LEO */
 const days = ["Jumapili","Jumatatu","Jumanne","Jumatano","Alhamisi","Ijumaa","Jumamosi"];
 const now = new Date();
 const dayName = days[now.getDay()];
 const date = now.toLocaleDateString("sw-TZ", { day:"numeric", month:"long", year:"numeric" });
 
 document.getElementById("slideText").textContent =
-  `📅 ${dayName} — ${date} ✝️ Masanja Gospel Melody`;
+  `🎶 Emmanuel Amezaliwa | 📅 ${dayName} — ${date} | ✝️ Masanja Gospel Melody`;
 </script>
 
 </body>
