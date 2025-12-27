@@ -7,7 +7,7 @@
 
 <!-- FONT AWESOME -->
 <link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
 
 <style>
 body{
@@ -15,6 +15,7 @@ body{
  font-family:Arial, sans-serif;
  background:linear-gradient(180deg,#F4FFF9,#E9FFF3);
  color:#111;
+ padding-top:80px;
 }
 
 /* HEADER */
@@ -36,7 +37,7 @@ header{
  display:inline-block;
  padding:12px 0;
  padding-left:100%;
- animation:ticker 20s linear infinite;
+ animation:ticker 22s linear infinite;
 }
 @keyframes ticker{
  from{transform:translateX(0)}
@@ -55,14 +56,19 @@ header{
 .slides{
  display:flex;
  width:300%;
- animation:slide 18s infinite;
+ animation: slidePause 21s infinite;
 }
 .slide{
  width:100%;
- padding:60px 30px;
  flex-shrink:0;
  color:#fff;
  text-align:center;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ align-items:center;
+ padding:60px 30px;
+ min-height:280px;
 }
 .slide h2{
  font-size:28px;
@@ -70,8 +76,7 @@ header{
 }
 .slide p{
  font-size:17px;
- max-width:700px;
- margin:auto;
+ max-width:720px;
  line-height:1.6;
 }
 
@@ -80,12 +85,15 @@ header{
 .s2{background:linear-gradient(135deg,#1ABC9C,#0F5B3E);}
 .s3{background:linear-gradient(135deg,#2ECC71,#1ABC9C);}
 
-@keyframes slide{
+/* SLIDE PAUSE */
+@keyframes slidePause{
  0%{transform:translateX(0)}
- 33%{transform:translateX(0)}
- 38%{transform:translateX(-100%)}
- 66%{transform:translateX(-100%)}
- 71%{transform:translateX(-200%)}
+ 25%{transform:translateX(0)}
+
+ 35%{transform:translateX(-100%)}
+ 60%{transform:translateX(-100%)}
+
+ 70%{transform:translateX(-200%)}
  100%{transform:translateX(-200%)}
 }
 
@@ -106,8 +114,6 @@ header{
  color:#0F5B3E;
  margin-bottom:12px;
 }
-
-/* LIST */
 .card ul{
  margin-left:20px;
  line-height:1.8;
@@ -121,50 +127,44 @@ header{
  padding:50px 20px;
  border-radius:20px;
 }
-.cta a{
- display:inline-block;
- margin-top:20px;
- padding:14px 30px;
- background:#25D366;
- color:white;
- border-radius:30px;
- text-decoration:none;
- font-weight:bold;
-}
 
-/* SOCIALS */
+/* SOCIALS (NEW LOOK) */
 .socials{
  display:flex;
  justify-content:center;
- gap:16px;
+ gap:18px;
  flex-wrap:wrap;
  margin-top:25px;
 }
 .socials a{
- width:52px;
- height:52px;
+ width:56px;
+ height:56px;
  display:flex;
  align-items:center;
  justify-content:center;
- border-radius:50%;
+ border-radius:14px;
  color:white;
- font-size:22px;
+ font-size:24px;
  text-decoration:none;
- box-shadow:0 6px 20px rgba(0,0,0,.25);
- transition:.3s;
+ box-shadow:
+  0 8px 25px rgba(0,0,0,.25),
+  inset 0 0 0 2px rgba(255,255,255,.15);
+ transition:all .35s ease;
 }
 .socials a:hover{
- transform:translateY(-6px) scale(1.1);
+ transform:translateY(-8px) scale(1.12);
+ box-shadow:
+  0 18px 40px rgba(0,0,0,.4),
+  inset 0 0 0 2px rgba(255,255,255,.35);
 }
 
-.whatsapp{background:#25D366;}
-.facebook{background:#1877F2;}
-.youtube{background:#FF0000;}
-.instagram{
- background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
-}
-.tiktok{background:#000;}
-.telegram{background:#229ED9;}
+/* SOCIAL COLORS */
+.whatsapp{background:linear-gradient(135deg,#25D366,#1EBE5D);}
+.facebook{background:linear-gradient(135deg,#1877F2,#1459B5);}
+.youtube{background:linear-gradient(135deg,#FF0000,#C70000);}
+.instagram{background:linear-gradient(135deg,#F58529,#DD2A7B,#8134AF);}
+.tiktok{background:linear-gradient(135deg,#000,#333);}
+.telegram{background:linear-gradient(135deg,#229ED9,#1677B7);}
 
 /* FLOATING WHATSAPP */
 .float-whatsapp{
@@ -223,8 +223,8 @@ footer{
    <h2>🌍 Dira ya 2026</h2>
    <p>
     Mwaka 2026 Masanja Gospel Melody itapanua huduma zake za Injili
-    kwa nguvu mpya kupitia muziki, mafundisho, maombezi na matamasha
-    katika mikoa mbalimbali ya Tanzania.
+    kupitia muziki, mafundisho, maombezi na matamasha
+    katika maeneo mbalimbali ya Tanzania.
    </p>
   </div>
 
@@ -232,7 +232,7 @@ footer{
    <h2>🎶 Huduma za Injili</h2>
    <p>
     Kutakuwa na matamasha ya Injili, mikesha ya kusifu na kuabudu,
-    semina za muziki wa Injili pamoja na huduma za kufikia jamii
+    semina za muziki wa Injili na huduma za kufikia jamii
     kwa lengo la kuleta mabadiliko ya kiroho.
    </p>
   </div>
@@ -240,9 +240,9 @@ footer{
   <div class="slide s3">
    <h2>🪙 MGM TOKEN</h2>
    <p>
-    Masanja Gospel Melody itazindua MGM Token
-    kwa ajili ya kusaidia na kusapoti huduma za Injili,
-    miradi ya kijamii na maendeleo ya kazi ya Mungu.
+    MGM Token itatumika kusaidia na kusapoti huduma za Injili,
+    miradi ya kijamii na maendeleo ya kazi ya Mungu
+    katika jamii yetu.
    </p>
   </div>
 
@@ -250,7 +250,7 @@ footer{
 </div>
 
 <!-- CONTENT -->
-<div class="pages">
+<div class="page">
 
  <div class="card">
   <h3>📌 Mambo Makuu Yanayokuja</h3>
@@ -277,9 +277,6 @@ footer{
 <!-- CTA -->
 <div class="cta">
  <h2>Je, Ungependa Kushiriki au Kusaidia Huduma?</h2>
- <a href="https://wa.me/255765498947" target="_blank">
-  📲 Wasiliana nasi WhatsApp
- </a>
 
  <div class="socials">
   <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -302,6 +299,3 @@ footer{
 
 </body>
 </html>
-
-
-
