@@ -7,6 +7,7 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
   margin:0;
   font-family:Arial, Helvetica, sans-serif;
@@ -17,56 +18,60 @@ body{
 /* HEADER */
 .header{
   background:#145a3a;
-  padding:14px 12px;
+  padding:16px 12px;
   border-bottom:2px solid #FFD700;
 }
 .header h1{
   margin:0;
   color:#FFD700;
   font-size:22px;
+  text-align:center;
 }
-.header .crumb{
-  font-size:12px;
-  color:#c8f7dc;
-  margin-top:4px;
-}
-
-/* HERO / COVER */
-.hero{
-  max-width:980px;
-  margin:16px auto 0 auto;
-  padding:18px;
-  background:linear-gradient(135deg,#1e7f5c,#145a3a);
-  border-radius:14px;
-}
-.hero h2{
-  margin:0;
-  color:#fff;
-}
-.hero p{
+.header p{
   margin:6px 0 0;
-  color:#e9fff4;
+  text-align:center;
+  color:#c8f7dc;
   font-size:14px;
 }
 
-/* MAIN CARD */
+/* HERO */
+.hero{
+  max-width:1000px;
+  margin:16px auto 0 auto;
+  padding:20px;
+  background:linear-gradient(135deg,#1e7f5c,#145a3a);
+  border-radius:16px;
+  text-align:center;
+}
+.hero h2{
+  margin:0;
+  font-size:20px;
+}
+.hero p{
+  margin-top:6px;
+  font-size:14px;
+  color:#e9fff4;
+}
+
+/* CARD */
 .card{
-  max-width:980px;
-  margin:14px auto 24px auto;
+  max-width:1000px;
+  margin:18px auto 28px auto;
   background:#145a3a;
-  padding:16px;
-  border-radius:14px;
+  padding:18px;
+  border-radius:16px;
   box-shadow:0 8px 22px rgba(0,0,0,.35);
 }
 
-/* VIDEO (RESPONSIVE) */
+/* VIDEO (SPACE IMEPANULIWA) */
 .video{
   position:relative;
   width:100%;
-  padding-top:56.25%;
+  padding-top:56.25%; /* 16:9 */
   background:#000;
-  border-radius:12px;
+  border-radius:14px;
   overflow:hidden;
+  margin-bottom:18px;
 }
 .video iframe{
   position:absolute;
@@ -78,25 +83,27 @@ body{
 
 /* AUDIO */
 .audio{
-  margin:14px 0;
-  padding:12px;
+  margin:16px 0;
+  padding:14px;
   background:#1e7f5c;
-  border-radius:12px;
+  border-radius:14px;
 }
 .audio h3{
-  margin:0 0 6px 0;
+  margin:0 0 8px 0;
   color:#FFD700;
   font-size:14px;
 }
-.audio audio{ width:100%; }
+.audio audio{
+  width:100%;
+}
 
 /* LYRICS */
 .lyrics{
-  margin:14px 0;
-  padding:12px;
+  margin:16px 0;
+  padding:14px;
   background:#0f3d2e;
-  border-radius:12px;
-  border:1px dashed rgba(255,215,0,.4);
+  border-radius:14px;
+  border:1px dashed rgba(255,215,0,.45);
 }
 .lyrics h3{
   margin:0 0 8px 0;
@@ -106,26 +113,26 @@ body{
 .lyrics p{
   margin:0;
   font-size:14px;
-  line-height:1.6;
+  line-height:1.7;
   color:#e9fff4;
 }
 
-/* BUTTONS */
+/* ACTION BUTTONS (ZIMESAWAZISHWA) */
 .actions{
-  display:flex;
-  gap:10px;
-  margin-top:12px;
-  flex-wrap:wrap;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:14px;
+  margin-top:18px;
 }
 .actions a{
-  flex:1;
-  min-width:160px;
+  display:block;
   text-align:center;
-  padding:14px;
-  border-radius:12px;
+  padding:15px;
+  border-radius:14px;
   color:#fff;
   text-decoration:none;
   font-weight:bold;
+  font-size:15px;
 }
 .actions .yt{background:#e63946}
 .actions .dl{background:#2a9d8f}
@@ -136,7 +143,7 @@ body{
   text-align:center;
   font-size:12px;
   color:#c8f7dc;
-  margin-top:10px;
+  margin-top:14px;
 }
 </style>
 </head>
@@ -146,16 +153,16 @@ body{
 <!-- HEADER -->
 <div class="header">
   <h1>🎶 Neema ya Mungu</h1>
-  <div class="crumb">Nyimbo › Neema ya Mungu</div>
+  <p>Masanja Gospel Melody</p>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-  <h2>Masanja Gospel Melody</h2>
-  <p>Wimbo wa Ibada — neema isiyostahiliwa</p>
+  <h2>Wimbo wa Ibada</h2>
+  <p>Neema isiyostahiliwa, upendo wa Mungu usio na mipaka</p>
 </div>
 
-<!-- CONTENT -->
+<!-- MAIN CONTENT -->
 <div class="card">
 
   <!-- VIDEO -->
@@ -175,6 +182,14 @@ body{
       <source src="songs/neema-ya-mungu.mp3" type="audio/mpeg">
       Audio haichezi.
     </audio>
+  </div>
+
+  <!-- LYRICS (HIARI) -->
+  <div class="lyrics">
+    <h3>📝 Maneno ya Wimbo</h3>
+    <p>
+      (Hapa unaweza kuweka maneno kamili ya wimbo bila kuathiri layout.)
+    </p>
   </div>
 
   <!-- ACTIONS -->
