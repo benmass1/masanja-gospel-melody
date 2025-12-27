@@ -5,133 +5,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nyimbo | Masanja Gospel Melody</title>
 
-  <!-- ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #333;
+    }
 
-  <!-- MAIN CSS -->
-  <link rel="stylesheet" href="css/style.css">
+    /* NAVBAR */
+    header {
+      background: #0a5c3d;
+      padding: 15px;
+      text-align: center;
+    }
+
+    header a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    /* TITLE */
+    .title {
+      text-align: center;
+      padding: 40px 15px 20px;
+      background: linear-gradient(135deg, #0a5c3d, #1fa774);
+      color: #fff;
+    }
+
+    /* SONGS CONTAINER */
+    .songs-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 25px;
+    }
+
+    /* SONG CARD */
+    .song-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .song-card h3 {
+      margin: 0 0 5px;
+      color: #0a5c3d;
+    }
+
+    .song-card p {
+      margin: 0 0 15px;
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    audio {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    /* VIDEO */
+    .video-box {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      margin-bottom: 12px;
+    }
+
+    .video-box iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* YOUTUBE LINK */
+    .youtube-link {
+      display: inline-block;
+      color: #ff0000;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: 5px;
+    }
+
+    footer {
+      background: #0a5c3d;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- ================= NAVBAR ================= -->
-<header class="navbar">
-  <div class="logo">MGM</div>
-  <nav id="navMenu">
-    <a href="index.html">Home</a>
-    <a href="nyimbo.html" class="active">Nyimbo</a>
-    <a href="kuhusu.html">Kuhusu</a>
-    <a href="huduma.html#huduma-zetu">Huduma</a>
-  </nav>
-  <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+<!-- NAVBAR -->
+<header>
+  <a href="index.html">Home</a>
+  <a href="nyimbo.html">Nyimbo</a>
+  <a href="kuhusu.html">Kuhusu</a>
+  <a href="huduma.html">Huduma</a>
 </header>
 
-<!-- ================= HERO ================= -->
-<section class="hero hero-small">
-  <div class="hero-content">
-    <h1>Nyimbo za Masanja Gospel Melody</h1>
-    <p>Sikiliza, tazama na uabudu pamoja nasi</p>
-  </div>
+<!-- TITLE -->
+<section class="title">
+  <h1>🎶 Nyimbo za Masanja Gospel Melody</h1>
+  <p>Sikiliza Audio • Tazama Video • Nenda YouTube</p>
 </section>
 
-<!-- ================= SONGS ================= -->
-<section class="songs-page">
+<!-- SONGS -->
+<section class="songs-container">
 
-  <div class="songs-grid">
-
-    <!-- ===== SONG 1 ===== -->
-    <div class="song-card">
-      <h3>Mimi ni wa Juu</h3>
-      <p class="artist">Masanja Gospel Melody</p>
-
-      <!-- AUDIO -->
-      <audio controls>
-        <source src="songs/mimi-ni-wa-juu.mp3" type="audio/mpeg">
-      </audio>
-
-      <!-- YOUTUBE VIDEO -->
-      <div class="video-wrapper">
-        <iframe 
-          src="https://www.youtube.com/embed/VIDEO_ID_HAPA"
-          title="Mimi ni wa Juu - Masanja Gospel Melody"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <!-- YOUTUBE LINK -->
-      <a href="https://www.youtube.com/watch?v=VIDEO_ID_HAPA"
-         target="_blank"
-         class="btn secondary">
-        ▶️ Tazama YouTube
-      </a>
+  <!-- WIMBO 1 -->
+  <div class="song-card">
+    <h3>Mimi ni wa Juu</h3>
+    <p>Masanja Gospel Melody</p>
+    <audio controls>
+      <source src="songs/mimi-ni-wa-juu.mp3" type="audio/mpeg">
+    </audio>
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" allowfullscreen></iframe>
     </div>
-
-    <!-- ===== SONG 2 ===== -->
-    <div class="song-card">
-      <h3>Nifundishe Kukujua Wewe</h3>
-      <p class="artist">Masanja Gospel Melody</p>
-
-      <audio controls>
-        <source src="songs/nifundishe-kukujua-wewe.mp3" type="audio/mpeg">
-      </audio>
-
-      <div class="video-wrapper">
-        <iframe 
-          src="https://www.youtube.com/embed/KWfsdcGtHtA"
-          allowfullscreen>
-        </iframe>
-      </div>
-
-      <a href="https://www.youtube.com/watch?v=VIDEO_ID_HAPA_2"
-         target="_blank"
-         class="btn secondary">
-        ▶️ Tazama YouTube
-      </a>
-    </div>
-
+    <a class="youtube-link" href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank">
+      ▶️ Tazama YouTube
+    </a>
   </div>
+
+  <!-- WIMBO 2 -->
+  <div class="song-card">
+    <h3>Nifundishe Kukujua Wewe</h3>
+    <p>Masanja Gospel Melody</p>
+    <audio controls>
+      <source src="songs/nifundishe-kukujua-wewe.mp3" type="audio/mpeg">
+    </audio>
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+    </div>
+    <a class="youtube-link" href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank">
+      ▶️ Tazama YouTube
+    </a>
+  </div>
+
+  <!-- WIMBO 3 -->
+  <div class="song-card">
+    <h3>Mifupa Mikavu</h3>
+    <p>Masanja Gospel Melody</p>
+    <audio controls>
+      <source src="songs/mifupa-mikavu.mp3" type="audio/mpeg">
+    </audio>
+    <div class="video-box">
+      <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+    </div>
+    <a class="youtube-link" href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank">
+      ▶️ Tazama YouTube
+    </a>
+  </div>
+
+  <!-- ONGEZA NYIMBO ZAIDI CHINI KWA KUNAKILI BLOCK HII -->
 
 </section>
 
-<!-- ================= FOOTER ================= -->
 <footer>
-  <p>© 2026 Masanja Gospel Melody | Nyimbo za Injili</p>
+  © 2026 Masanja Gospel Melody | Nyimbo za Injili
 </footer>
 
-<script src="js/script.js"></script>
 </body>
 </html>
-<!-- WIMBO 1 -->
-<div class="song-card">
-
-  <h3>Mimi ni wa Juu</h3>
-  <p>Masanja Gospel Melody</p>
-
-  <!-- AUDIO -->
-  <audio controls>
-    <source src="songs/mimi-ni-wa-juu.mp3" type="audio/mpeg">
-    Browser yako haiungi mkono audio.
-  </audio>
-
-  <!-- VIDEO (YouTube) -->
-  <div class="video-box">
-    <iframe
-      src="https://youtu.be/fiFT3AeYN5k?si=0mMZfkNGnY4Jysxt"
-      title="Mimi ni wa Juu - Masanja Gospel Melody"
-      frameborder="0"
-      allowfullscreen>
-    </iframe>
-  </div>
-
-  <!-- LINK YA YOUTUBE -->
-  <a 
-    href="https://youtu.be/fiFT3AeYN5k?si=0mMZfkNGnY4Jysxt"
-    target="_blank"
-    class="youtube-link">
-    ▶️ Tazama YouTube
-  </a>
-
-</div>
-
-
-
