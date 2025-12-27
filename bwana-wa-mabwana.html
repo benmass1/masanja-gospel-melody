@@ -1,55 +1,153 @@
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
-<title>Bwana wa Mabwana</title>
+<title>Bwana wa Mabwana | Masanja Gospel Melody</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#0f3d2e;
+  color:white;
+}
+
+/* VIDEO CONTAINER */
+.video-box{
+  position:relative;
+  max-width:900px;
+  margin:20px auto;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+}
+
+/* VIDEO */
+.video-box iframe{
+  width:100%;
+  height:340px;
+  border:0;
+  display:block;
+}
+
+/* OVERLAY BAR */
+.overlay{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:40px;
+  background:rgba(0,0,0,0.75);
+  z-index:10;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+}
+
+/* SLIDING TEXT */
+.slide-text{
+  white-space:nowrap;
+  color:#FFD700;
+  font-weight:bold;
+  font-size:14px;
+  padding-left:100%;
+  animation: slide 14s linear infinite;
+}
+@keyframes slide{
+  from{ transform: translateX(0); }
+  to{ transform: translateX(-100%); }
+}
+
+/* AUDIO SECTION */
+.audio-section{
+  max-width:900px;
+  margin:14px auto;
+  padding:14px;
+  background:#145a3a;
+  border-radius:12px;
+}
+.audio-section audio{
+  width:100%;
+  display:block;
+}
+
+/* BUTTONS */
+.buttons-wrap{
+  max-width:900px;
+  margin:14px auto 28px auto;
+  padding:0 10px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:14px;
+}
+.buttons-wrap a{
+  text-align:center;
+  padding:14px;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:15px;
+}
+
+/* BUTTON COLORS */
+.buttons-wrap .youtube{ background:#e63946; }
+.buttons-wrap .download{ background:#2a9d8f; }
+.buttons-wrap .back{ background:#1e7f5c; }
+</style>
 </head>
 
-<body style="margin:0; font-family:Arial; background:#0f3d2e; color:white;">
+<body>
 
-<!-- HAYA MAANDISHI LAZIMA YAONEKANE -->
-<h1 style="text-align:center; color:#FFD700; padding:15px;">
-🎶 Bwana wa Mabwana
-</h1>
+<!-- VIDEO + OVERLAY -->
+<div class="video-box">
+  <div class="overlay">
+    <div class="slide-text" id="slideText">
+      Masanja Gospel Melody
+    </div>
+  </div>
 
-<p style="text-align:center;">
-Masanja Gospel Melody
-</p>
+  <!-- VIDEO YA BWANA WA MABWANA -->
+  <iframe
+    src="https://www.youtube.com/embed/nOZxEPU9J0k"
+    allowfullscreen>
+  </iframe>
+</div>
 
-<hr style="margin:20px;">
+<!-- AUDIO PLAYER -->
+<div class="audio-section">
+  <audio controls>
+    <source src="songs/bwana-wa-mabwana.mp3" type="audio/mpeg">
+    Browser yako haichezi audio.
+  </audio>
+</div>
 
-<!-- VIDEO -->
-<p style="text-align:center;">🎥 Video</p>
-<iframe
-  src="https://www.youtube.com/embed/nOZxEPU9J0k"
-  width="100%"
-  height="315"
-  style="border:0; background:#000;">
-</iframe>
-
-<hr style="margin:20px;">
-
-<!-- AUDIO -->
-<p style="text-align:center;">🎧 Audio</p>
-<audio controls style="width:100%;">
-  <source src="songs/bwana-wa-mabwana.mp3" type="audio/mpeg">
-</audio>
-
-<hr style="margin:20px;">
-
-<!-- LINKS -->
-<p style="text-align:center;">
-  <a href="https://youtu.be/nOZxEPU9J0k" target="_blank" style="color:#7CFFB2;">
-    ▶️ Fungua YouTube
+<!-- BUTTONS -->
+<div class="buttons-wrap">
+  <a class="youtube" href="https://youtu.be/nOZxEPU9J0k" target="_blank">
+    ▶️ Tazama YouTube
   </a>
-</p>
 
-<p style="text-align:center;">
-  <a href="nyimbo.html" style="color:white;">
+  <a class="download" href="songs/bwana-wa-mabwana.mp3" download>
+    ⬇️ Pakua MP3
+  </a>
+
+  <a class="back" href="nyimbo.html">
     ⬅️ Rudi Nyimbo
   </a>
-</p>
+</div>
+
+<script>
+/* TAREHE & SIKU YA LEO */
+const days = ["Jumapili","Jumatatu","Jumanne","Jumatano","Alhamisi","Ijumaa","Jumamosi"];
+const now = new Date();
+const dayName = days[now.getDay()];
+const date = now.toLocaleDateString("sw-TZ", { day:"numeric", month:"long", year:"numeric" });
+
+document.getElementById("slideText").textContent =
+  `🎶 Bwana wa Mabwana | 📅 ${dayName} — ${date} | ✝️ Masanja Gospel Melody`;
+</script>
 
 </body>
 </html>
