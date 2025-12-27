@@ -2,13 +2,97 @@
 <html lang="sw">
 <head>
   <meta charset="UTF-8">
-  <title>Kuhusu MGM</title>
+  <title>Kuhusu MGM | Masanja Gospel Melody</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+  /* CTA + SOCIALS */
+  .kuhusu-cta{
+    text-align:center;
+    margin:40px auto;
+    padding:30px 20px;
+  }
+
+  .kuhusu-cta h2{
+    margin-bottom:10px;
+  }
+
+  .kuhusu-cta p{
+    margin-bottom:20px;
+    opacity:.85;
+  }
+
+  .socials{
+    display:flex;
+    justify-content:center;
+    gap:18px;
+    flex-wrap:wrap;
+    margin-top:20px;
+  }
+  .socials a{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:#fff;
+    font-size:22px;
+    text-decoration:none;
+    box-shadow:0 6px 20px rgba(0,0,0,.25);
+    transition:.3s;
+  }
+  .socials a:hover{
+    transform:translateY(-6px) scale(1.1);
+  }
+
+  .whatsapp{background:#25D366;}
+  .facebook{background:#1877F2;}
+  .youtube{background:#FF0000;}
+  .instagram{
+    background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
+  }
+  .tiktok{background:#000;}
+  .telegram{background:#229ED9;}
+
+  /* FLOATING WHATSAPP */
+  .float-whatsapp{
+    position:fixed;
+    bottom:22px;
+    right:22px;
+    width:60px;
+    height:60px;
+    background:#25D366;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:28px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    z-index:9999;
+    text-decoration:none;
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1)}
+    50%{transform:scale(1.1)}
+    100%{transform:scale(1)}
+  }
+  </style>
 </head>
+
 <body>
 
-<header><h1>Kuhusu MGM</h1></header>
+<header>
+  <h1>Kuhusu Masanja Gospel Melody</h1>
+</header>
 
 <div class="page">
   <div class="card">
@@ -19,6 +103,32 @@
     </p>
   </div>
 </div>
+
+<!-- CTA + SOCIALS -->
+<section class="kuhusu-cta">
+  <h2>Jiunge Nasi / Wasiliana Nasi</h2>
+  <p>Tupate kupitia mitandao yetu ya kijamii au WhatsApp</p>
+
+  <!-- CTA BUTTON -->
+  <a href="https://wa.me/255765498947" class="cta-btn" target="_blank">
+    📲 Wasiliana WhatsApp
+  </a>
+
+  <!-- SOCIAL ICONS -->
+  <div class="socials">
+    <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://youtube.com/@masanjagospel" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://www.instagram.com/masanjagospelmelody2026" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.tiktok.com/@masanjagospelmelody" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+    <a href="https://t.me/masanjagospelmelody" class="telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+  </div>
+</section>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/255765498947" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
