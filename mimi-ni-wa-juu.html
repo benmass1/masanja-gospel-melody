@@ -1,1 +1,140 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<title>Mimi ni wa Juu | Masanja Gospel Melody</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f3d2e;
+  color:white;
+}
+
+/* HEADER */
+.header{
+  text-align:center;
+  padding:18px 10px;
+  background:#145a3a;
+  border-bottom:2px solid #FFD700;
+}
+.header h2{
+  margin:0;
+  color:#FFD700;
+}
+.header p{
+  margin:4px 0 0;
+  color:#c8f7dc;
+  font-size:14px;
+}
+
+/* VIDEO */
+.video-box{
+  position:relative;
+  max-width:900px;
+  margin:20px auto 10px auto;
+  background:#000;
+  border-radius:12px;
+  overflow:hidden;
+}
+.video-box::before{
+  content:"";
+  display:block;
+  padding-top:56.25%; /* 16:9 ratio */
+}
+.video-box iframe{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* AUDIO */
+.audio-section{
+  max-width:900px;
+  margin:14px auto;
+  padding:14px;
+  background:#145a3a;
+  border-radius:12px;
+}
+.audio-section h4{
+  margin:0 0 8px 0;
+  color:#FFD700;
+  font-size:14px;
+}
+.audio-section audio{
+  width:100%;
+  display:block;
+}
+
+/* BUTTONS */
+.buttons-wrap{
+  max-width:900px;
+  margin:14px auto 30px auto;
+  padding:0 5px;
+  display:flex;
+  gap:12px;
+}
+.buttons-wrap a{
+  flex:1;
+  text-align:center;
+  padding:14px;
+  color:white;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+}
+.buttons-wrap a.youtube{ background:#e63946; }
+.buttons-wrap a.back{ background:#1e7f5c; }
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <h2>🎶 Mimi ni wa Juu</h2>
+  <p>Masanja Gospel Melody</p>
+</div>
+
+<!-- VIDEO YA YOUTUBE -->
+<div class="video-box">
+  <iframe
+    src="https://www.youtube.com/embed/fiFT3AeYN5k"
+    title="Mimi ni wa Juu - Masanja Gospel Melody"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+</div>
+
+<!-- AUDIO PLAYER -->
+<div class="audio-section">
+  <h4>🎧 Sikiliza Audio</h4>
+  <audio controls>
+    <source src="songs/mimi-ni-wa-juu.mp3" type="audio/mpeg">
+    Browser yako haichezi audio.
+  </audio>
+</div>
+
+<!-- BUTTONS -->
+<div class="buttons-wrap">
+  <a class="youtube"
+     href="https://youtu.be/fiFT3AeYN5k"
+     target="_blank">
+     ▶️ Tazama YouTube
+  </a>
+
+  <a class="back" href="nyimbo.html">
+     ⬅️ Rudi Nyimbo
+  </a>
+</div>
+
+</body>
+</html>
 
