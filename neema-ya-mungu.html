@@ -7,10 +7,9 @@
 
 <style>
 *{box-sizing:border-box}
-
 body{
   margin:0;
-  font-family:Arial, sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
   background:#0f3d2e;
   color:#ffffff;
 }
@@ -18,39 +17,56 @@ body{
 /* HEADER */
 .header{
   background:#145a3a;
-  padding:18px 10px;
-  text-align:center;
+  padding:14px 12px;
   border-bottom:2px solid #FFD700;
 }
 .header h1{
   margin:0;
   color:#FFD700;
+  font-size:22px;
 }
-.header p{
-  margin:6px 0 0;
+.header .crumb{
+  font-size:12px;
   color:#c8f7dc;
+  margin-top:4px;
+}
+
+/* HERO / COVER */
+.hero{
+  max-width:980px;
+  margin:16px auto 0 auto;
+  padding:18px;
+  background:linear-gradient(135deg,#1e7f5c,#145a3a);
+  border-radius:14px;
+}
+.hero h2{
+  margin:0;
+  color:#fff;
+}
+.hero p{
+  margin:6px 0 0;
+  color:#e9fff4;
   font-size:14px;
 }
 
 /* MAIN CARD */
 .card{
-  max-width:900px;
-  margin:20px auto;
+  max-width:980px;
+  margin:14px auto 24px auto;
   background:#145a3a;
   padding:16px;
   border-radius:14px;
-  box-shadow:0 6px 18px rgba(0,0,0,.35);
+  box-shadow:0 8px 22px rgba(0,0,0,.35);
 }
 
-/* VIDEO RESPONSIVE */
+/* VIDEO (RESPONSIVE) */
 .video{
   position:relative;
   width:100%;
-  padding-top:56.25%; /* 16:9 */
+  padding-top:56.25%;
   background:#000;
   border-radius:12px;
   overflow:hidden;
-  margin-bottom:15px;
 }
 .video iframe{
   position:absolute;
@@ -61,46 +77,66 @@ body{
 }
 
 /* AUDIO */
-.audio-box{
-  margin:10px 0 15px 0;
+.audio{
+  margin:14px 0;
+  padding:12px;
+  background:#1e7f5c;
+  border-radius:12px;
 }
-.audio-box h3{
+.audio h3{
   margin:0 0 6px 0;
   color:#FFD700;
   font-size:14px;
 }
-.audio-box audio{
-  width:100%;
+.audio audio{ width:100%; }
+
+/* LYRICS */
+.lyrics{
+  margin:14px 0;
+  padding:12px;
+  background:#0f3d2e;
+  border-radius:12px;
+  border:1px dashed rgba(255,215,0,.4);
+}
+.lyrics h3{
+  margin:0 0 8px 0;
+  color:#FFD700;
+  font-size:14px;
+}
+.lyrics p{
+  margin:0;
+  font-size:14px;
+  line-height:1.6;
+  color:#e9fff4;
 }
 
 /* BUTTONS */
-.buttons{
+.actions{
   display:flex;
-  gap:12px;
-  margin-top:10px;
+  gap:10px;
+  margin-top:12px;
+  flex-wrap:wrap;
 }
-.buttons a{
+.actions a{
   flex:1;
+  min-width:160px;
   text-align:center;
   padding:14px;
+  border-radius:12px;
+  color:#fff;
   text-decoration:none;
   font-weight:bold;
-  color:#ffffff;
-  border-radius:10px;
 }
-.buttons a.youtube{
-  background:#e63946;
-}
-.buttons a.back{
-  background:#1e7f5c;
-}
+.actions .yt{background:#e63946}
+.actions .dl{background:#2a9d8f}
+.actions .back{background:#1e7f5c}
 
-/* FOOTER NOTE */
-.footer-note{
+/* FOOTER */
+.footer{
   text-align:center;
   font-size:12px;
-  opacity:.8;
-  margin-top:14px;
+  color:#c8f7dc;
+  margin-top:10px;
 }
 </style>
 </head>
@@ -110,10 +146,16 @@ body{
 <!-- HEADER -->
 <div class="header">
   <h1>🎶 Neema ya Mungu</h1>
-  <p>Masanja Gospel Melody</p>
+  <div class="crumb">Nyimbo › Neema ya Mungu</div>
 </div>
 
-<!-- CONTENT CARD -->
+<!-- HERO -->
+<div class="hero">
+  <h2>Masanja Gospel Melody</h2>
+  <p>Wimbo wa Ibada — neema isiyostahiliwa</p>
+</div>
+
+<!-- CONTENT -->
 <div class="card">
 
   <!-- VIDEO -->
@@ -127,7 +169,7 @@ body{
   </div>
 
   <!-- AUDIO -->
-  <div class="audio-box">
+  <div class="audio">
     <h3>🎧 Sikiliza Audio</h3>
     <audio controls>
       <source src="songs/neema-ya-mungu.mp3" type="audio/mpeg">
@@ -135,20 +177,23 @@ body{
     </audio>
   </div>
 
-  <!-- BUTTONS -->
-  <div class="buttons">
-    <a class="youtube" href="https://youtu.be/PrXl79mcS6k" target="_blank">
-      ▶️ Tazama YouTube
-    </a>
-    <a class="back" href="nyimbo.html">
-      ⬅️ Rudi Nyimbo
-    </a>
+  <!-- LYRICS (HIARI) -->
+  <div class="lyrics">
+    <h3>📝 Maneno ya Wimbo</h3>
+    <p>
+      (Unaweza kuongeza maneno ya wimbo hapa.<br>
+      Kama hutaki, unaweza kufuta section hii bila kuathiri kitu.)
+    </p>
   </div>
 
-  <div class="footer-note">
-    © Masanja Gospel Melody
+  <!-- ACTIONS -->
+  <div class="actions">
+    <a class="yt" href="https://youtu.be/PrXl79mcS6k" target="_blank">▶️ Tazama YouTube</a>
+    <a class="dl" href="songs/neema-ya-mungu.mp3" download>⬇️ Pakua MP3</a>
+    <a class="back" href="nyimbo.html">⬅️ Rudi Nyimbo</a>
   </div>
 
+  <div class="footer">© Masanja Gospel Melody</div>
 </div>
 
 </body>
