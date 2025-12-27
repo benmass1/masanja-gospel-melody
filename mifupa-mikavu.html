@@ -1,76 +1,95 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="UTF-8">
-<title>Mifupa Mikavu | MGM</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Mifupa Mikavu | Masanja Gospel Melody</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style>
-body{
-  font-family:Arial;
-  background:#0f3d2e;
-  color:white;
-  margin:0;
-}
-.container{
-  max-width:700px;
-  margin:20px auto;
-  background:#145a3a;
-  padding:15px;
-  border-radius:12px;
-}
-h2{color:#FFD700;text-align:center}
-audio, iframe{width:100%;margin-top:10px}
-.link{
-  display:block;
-  text-align:center;
-  margin-top:15px;
-  color:#7CFFB2;
-  font-weight:bold;
-  text-decoration:none;
-}
-.back{
-  display:block;
-  text-align:center;
-  margin-top:20px;
-  color:#fff;
-}
-</style>
+  <style>
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:#0f3d2e;
+      color:white;
+    }
+    .container{
+      max-width:700px;
+      margin:20px auto;
+      background:#145a3a;
+      padding:16px;
+      border-radius:12px;
+      box-shadow:0 6px 15px rgba(0,0,0,.3);
+    }
+    h2{
+      text-align:center;
+      color:#FFD700;
+      margin-top:5px;
+    }
+    p{
+      text-align:center;
+      margin-top:0;
+      color:#d5f5e3;
+    }
+    iframe{
+      width:100%;
+      height:315px;
+      border-radius:8px;
+      margin-top:10px;
+    }
+    audio{
+      width:100%;
+      margin-top:15px;
+    }
+    .link{
+      display:block;
+      text-align:center;
+      margin-top:15px;
+      color:#7CFFB2;
+      font-weight:bold;
+      text-decoration:none;
+    }
+    .back{
+      display:block;
+      text-align:center;
+      margin-top:20px;
+      color:white;
+      text-decoration:none;
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <h2>🎶 Mifupa Mikavu</h2>
-  <p style="text-align:center">Masanja Gospel Melody</p>
+    <h2>🎶 Mifupa Mikavu</h2>
+    <p>Masanja Gospel Melody</p>
 
-  <!-- 1️⃣ VIDEO -->
-  <iframe
-  width="100%"
-  height="315"
-  src="https://www.youtube.com/embed/IQ7wKssZr_k"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+    <!-- 1️⃣ VIDEO YA YOUTUBE (EMBED SAHIHI) -->
+    <iframe
+      src="https://www.youtube.com/embed/IQ7wKssZr_k"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
 
+    <!-- 2️⃣ AUDIO YA MP3 (LOCAL) -->
+    <!-- HAKIKISHA FILE IPO KWENYE FOLDER song -->
+    <audio src="song/mifupa-mikavu.mp3" controls preload="auto">
+      Browser yako haichezi audio.
+    </audio>
 
-  <!-- 2️⃣ AUDIO -->
-  <audio controls>
-   <audio src="song/mifupa-mikavu.mp3" controls preload="auto"></audio>
-    Audio haichezi.
-  </audio>
+    <!-- 3️⃣ LINK YA YOUTUBE -->
+    <a class="link"
+       href="https://youtu.be/IQ7wKssZr_k"
+       target="_blank">
+       ▶️ Fungua kwenye YouTube
+    </a>
 
-  <!-- 3️⃣ LINK YA YOUTUBE -->
-  <a class="link" href="https://youtu.be/IQ7wKssZr_k?si=e0Qh_lr6VcR2ut2k" target="_blank">
-    ▶️ Fungua kwenye YouTube
-  </a>
+    <!-- RUDI DASHBOARD -->
+    <a class="back" href="nyimbo.html">⬅ Rudi kwenye Nyimbo</a>
 
-  <a class="back" href="nyimbo.html">⬅ Rudi kwenye Nyimbo</a>
-
-</div>
+  </div>
 
 </body>
 </html>
-
