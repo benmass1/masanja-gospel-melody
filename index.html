@@ -124,6 +124,19 @@ nav{
  color:#003820;
 }
 
+/* ================= VIDEO ================= */
+.video-wrapper{
+ display:flex;
+ justify-content:center;
+ margin:40px 0;
+}
+.video-wrapper video{
+ width:90%;
+ max-width:360px;
+ border-radius:18px;
+ box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
 /* ================= NEWS ================= */
 .news-ticker{
  background:var(--d);
@@ -264,9 +277,21 @@ footer{
 <div class="hero">
  <div>
   <h1>Masanja Gospel Melody</h1>
-  <p>Muziki wa Injili unaoinua roho </p>
+  <p>Muziki wa Injili unaoinua roho</p>
   <a href="nyimbo.html" class="btn primary">▶ Sikiliza Sasa</a>
  </div>
+</div>
+
+<!-- VIDEO -->
+<div class="video-wrapper">
+ <video
+  src="songs/snapsave-app_1238159271709448_hd.mp4"
+  autoplay
+  muted
+  loop
+  playsinline
+  controls>
+ </video>
 </div>
 
 <!-- NEWS -->
@@ -329,4 +354,3 @@ function toggleMenu(){
 
 </body>
 </html>
-
