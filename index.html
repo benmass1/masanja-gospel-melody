@@ -1,4 +1,5 @@
-here<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
@@ -100,7 +101,7 @@ nav{
  justify-content:center;
  text-align:center;
  color:#fff;
- padding:100px 20px 60px;
+ padding:110px 20px 60px;
 }
 .hero h1{
  font-size:clamp(2rem,6vw,3.5rem);
@@ -109,6 +110,15 @@ nav{
  margin:18px auto;
  max-width:600px;
  opacity:.9;
+}
+
+/* VISITOR COUNTER */
+.visitor-box{
+ margin-bottom:12px;
+ font-size:15px;
+ font-weight:600;
+ color:#2ECC71;
+ letter-spacing:1px;
 }
 
 /* BUTTON */
@@ -124,7 +134,7 @@ nav{
  color:#003820;
 }
 
-/* ================= MWAKA MPYA BANNER ================= */
+/* ================= MWAKA MPYA ================= */
 .year-banner{
  background:linear-gradient(90deg,#0F5B3E,#2ECC71,#0F5B3E);
  overflow:hidden;
@@ -140,8 +150,8 @@ nav{
  text-shadow:0 6px 20px rgba(0,0,0,.45);
 }
 @keyframes mwakaSlide{
- 0%{ transform:translateX(100%); }
- 100%{ transform:translateX(-100%); }
+ 0%{transform:translateX(100%)}
+ 100%{transform:translateX(-100%)}
 }
 
 /* ================= VIDEO ================= */
@@ -179,10 +189,6 @@ nav{
 section{
  padding:60px 20px;
 }
-@media(max-width:768px){
- section{padding:40px 16px}
-}
-
 .grid{
  display:grid;
  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -197,51 +203,6 @@ section{
  text-align:center;
  box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
-
-/* ================= MATANGAZO ================= */
-.matangazo-box{
- max-width:800px;
- margin:20px auto;
- background:#fff;
- padding:24px;
- border-radius:16px;
- box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-.matangazo-box ul{
- margin-left:18px;
- line-height:1.7;
-}
-
-/* ================= SOCIALS ================= */
-.cta{
- background:radial-gradient(circle at top,#2ECC71,#0F5B3E);
- text-align:center;
- color:#003820;
-}
-.socials{
- display:flex;
- justify-content:center;
- gap:16px;
- flex-wrap:wrap;
- margin-top:20px;
-}
-.socials a{
- width:52px;
- height:52px;
- display:flex;
- align-items:center;
- justify-content:center;
- border-radius:50%;
- color:#fff;
- font-size:22px;
- text-decoration:none;
-}
-.whatsapp{background:#25D366}
-.facebook{background:#1877F2}
-.youtube{background:#FF0000}
-.instagram{background:#C13584}
-.tiktok{background:#000}
-.telegram{background:#229ED9}
 
 /* ================= FOOTER ================= */
 footer{
@@ -296,9 +257,16 @@ footer{
 <!-- HERO -->
 <div class="hero">
  <div>
+
+  <!-- VISITOR COUNTER -->
+  <div class="visitor-box">
+   👥 Watembeleaji wa Tovuti: <span id="visitorCount">0</span>
+  </div>
+
   <h1>Masanja Gospel Melody</h1>
   <p>Muziki wa Injili unaoinua roho</p>
   <a href="nyimbo.html" class="btn primary">▶ Sikiliza Sasa</a>
+
  </div>
 </div>
 
@@ -311,54 +279,15 @@ footer{
 
 <!-- VIDEO -->
 <div class="video-wrapper">
- <video src="songs/snapsave-app_1238159271709448_hd.mp4"
-  autoplay muted loop playsinline controls>
+ <video
+  src="songs/snapsave-app_1238159271709448_hd.mp4"
+  autoplay
+  muted
+  loop
+  playsinline
+  controls>
  </video>
 </div>
-
-<!-- NEWS -->
-<div class="news-ticker">
- <div class="news-text">
-  📢 Tamasha la Injili – Mwanza | Mkesha wa Kusifu | Semina ya Muziki | Tazama Matangazo 🔔
- </div>
-</div>
-
-<!-- SERVICES -->
-<section>
- <h2 style="text-align:center;color:var(--p)">Huduma Zetu</h2>
- <div class="grid">
-  <div class="card">Kusifu</div>
-  <div class="card">Kuabudu</div>
-  <div class="card">Mafundisho</div>
-  <div class="card">Tamasha</div>
- </div>
-</section>
-
-<!-- MATANGAZO -->
-<section>
- <h2 style="text-align:center;color:var(--p)">📢 Matangazo</h2>
- <div class="matangazo-box">
-  <ul>
-   <li>Tamasha la Injili – Mwanza</li>
-   <li>Mkesha wa Kusifu na Kuabudu</li>
-   <li>Semina ya Muziki wa Injili</li>
-  </ul><br>
-  <a href="matangazo.html" class="btn primary">Tazama Yote</a>
- </div>
-</section>
-
-<!-- SOCIALS -->
-<section class="cta">
- <h2>Jiunge Nasi Mtandaoni</h2>
- <div class="socials">
-  <a href="https://wa.me/255765498947" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://youtube.com/@masanjagospel" class="youtube"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/masanjagospelmelody2026" class="instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.tiktok.com/@masanjagospelmelody" class="tiktok"><i class="fab fa-tiktok"></i></a>
-  <a href="https://t.me/masanjagospelmelody" class="telegram"><i class="fab fa-telegram-plane"></i></a>
- </div>
-</section>
 
 <footer>
  © 2026 Masanja Gospel Melody
@@ -372,7 +301,13 @@ footer{
 function toggleMenu(){
  document.getElementById("navLinks").classList.toggle("show");
 }
+
+/* VISITOR COUNTER */
+let count = localStorage.getItem("mgmVisitors");
+if(!count){count = 1}else{count = parseInt(count)+1}
+localStorage.setItem("mgmVisitors", count);
+document.getElementById("visitorCount").textContent = count;
 </script>
 
 </body>
- </html>
+</html>
