@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+here<!DOCTYPE html>
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
@@ -122,6 +122,27 @@ nav{
 .primary{
  background:linear-gradient(45deg,#2ECC71,#1ABC9C);
  color:#003820;
+}
+
+/* ================= MWAKA MPYA BANNER ================= */
+.year-banner{
+ background:linear-gradient(90deg,#0F5B3E,#2ECC71,#0F5B3E);
+ overflow:hidden;
+ padding:20px 0;
+}
+.year-text{
+ white-space:nowrap;
+ font-size:clamp(1.8rem,6vw,3rem);
+ font-weight:800;
+ color:#fff;
+ letter-spacing:2px;
+ padding-left:100%;
+ animation: mwakaSlide 16s linear infinite;
+ text-shadow:0 6px 20px rgba(0,0,0,.45);
+}
+@keyframes mwakaSlide{
+ from{ transform:translateX(0); }
+ to{ transform:translateX(-100%); }
 }
 
 /* ================= VIDEO ================= */
@@ -279,6 +300,13 @@ footer{
   <h1>Masanja Gospel Melody</h1>
   <p>Muziki wa Injili unaoinua roho</p>
   <a href="nyimbo.html" class="btn primary">▶ Sikiliza Sasa</a>
+ </div>
+</div>
+
+<!-- MWAKA MPYA -->
+<div class="year-banner">
+ <div class="year-text">
+  🎉 Kwa Heri 2025 — Karibu 2026 🎊
  </div>
 </div>
 
