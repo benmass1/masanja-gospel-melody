@@ -3,283 +3,241 @@
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
-<title>Nyimbo na Video | Masanja Gospel Melody</title>
+<title>Nyimbo | Masanja Gospel Melody</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-/* RANGI NA MSINGI */
 :root {
   --kijani-kizito: #0f3d2e;
-  --kijani-angavu: #145a3a;
+  --kijani-bibi: #145a3a;
   --dhahabu: #FFD700;
-  --maandishi-kijani: #7CFFB2;
+  --maandishi: #7CFFB2;
 }
 
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
-  background: linear-gradient(180deg, var(--kijani-kizito), #061a14);
+  background: var(--kijani-kizito);
   color: white;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
 }
 
 /* HEADER */
 .header {
-  padding: 30px 10px;
+  padding: 25px 10px;
   text-align: center;
-  background: linear-gradient(135deg, var(--kijani-angavu), var(--kijani-kizito));
+  background: var(--kijani-bibi);
   border-bottom: 3px solid var(--dhahabu);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-.header h2 {
-  margin: 0;
-  color: var(--dhahabu);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 24px;
-}
+.header h2 { margin: 0; color: var(--dhahabu); font-size: 22px; }
 
-/* TOP BAR */
-.top-bar {
-  max-width: 650px;
-  margin: 15px auto;
-  padding: 0 15px;
-}
+/* NAV */
+.top-bar { max-width: 600px; margin: 15px auto; padding: 0 15px; }
 .top-bar a {
-  display: block;
-  text-align: center;
-  padding: 14px;
-  background: var(--kijani-angavu);
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  border: 1px solid rgba(255,215,0,0.2);
-  transition: 0.3s;
-}
-.top-bar a:hover {
-  background: #1e7f5c;
-  transform: scale(1.02);
+  display: block; text-align: center; padding: 12px;
+  background: var(--kijani-bibi); color: white;
+  text-decoration: none; border-radius: 10px; font-weight: bold;
 }
 
-.count {
-  text-align: center;
-  font-size: 15px;
-  color: var(--maandishi-kijani);
-  margin: 10px 0;
-  font-weight: bold;
-}
+.count { text-align: center; font-size: 14px; color: var(--maandishi); margin-bottom: 10px; }
 
 /* SEARCH */
-.search-box {
-  max-width: 650px;
-  margin: 15px auto;
-  padding: 0 15px;
-}
+.search-box { max-width: 600px; margin: 0 auto 20px; padding: 0 15px; }
 .search-box input {
-  width: 100%;
-  padding: 16px;
+  width: 100%; padding: 15px; border-radius: 10px; border: none;
+  font-size: 16px; outline: none; background: white; color: #111;
+}
+
+/* LIST */
+.list { max-width: 600px; margin: 0 auto; padding: 0 15px; }
+
+/* SONG ITEM - KADI NZIMA INABONYEZEKA */
+.song-card {
+  background: rgba(255, 255, 255, 0.1);
+  margin-bottom: 12px;
   border-radius: 12px;
-  border: 2px solid transparent;
-  font-size: 16px;
-  outline: none;
-  background: white;
-  color: #111;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-}
-.search-box input:focus {
-  border-color: var(--dhahabu);
+  border-left: 5px solid var(--dhahabu);
+  transition: 0.3s;
+  cursor: pointer;
+  display: block; /* Inafanya kadi iwe link */
+  text-decoration: none; /* Inatoa mstari chini ya maandishi */
 }
 
-/* LIST AREA */
-.list {
-  max-width: 650px;
-  margin: 20px auto;
-  padding: 0 15px;
+.song-card:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
 }
 
-/* SONG ITEM (MUUNDO WAKO ULIOBORESHWA) */
-.songs {
+.song-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(255, 255, 255, 0.08);
-  margin-bottom: 12px;
   padding: 16px;
-  border-radius: 15px;
-  border-left: 6px solid var(--dhahabu);
-  backdrop-filter: blur(5px);
-  transition: all .25s ease;
-}
-.songs:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateX(8px);
 }
 
-/* LEFT SIDE */
-.left {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
+.left-side { display: flex; align-items: center; gap: 15px; }
 
-/* NUMBER */
 .num {
-  background: var(--dhahabu);
-  color: #000;
-  font-weight: bold;
-  width: 30px;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  font-size: 14px;
-  flex-shrink: 0;
+  background: var(--dhahabu); color: #000;
+  width: 28px; height: 28px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; font-weight: bold; font-size: 14px;
 }
 
-/* SONG LINK */
-.songs a {
-  color: var(--maandishi-kijani);
-  text-decoration: none;
+.song-title {
+  color: var(--maandishi);
   font-size: 17px;
-  font-weight: 600;
-  line-height: 1.3;
+  font-weight: bold;
 }
 
-/* ICONS SECTION */
-.actions {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-.play-icon { color: var(--dhahabu); font-size: 18px; }
-.video-icon { color: #FF0000; font-size: 18px; }
+.play-icon { color: var(--dhahabu); font-size: 20px; }
 
 </style>
 </head>
-
 <body>
 
 <div class="header">
-  <h2>🎶 Masanja Gospel Melody</h2>
+  <h2>🎶 Nyimbo na Video</h2>
 </div>
 
 <div class="top-bar">
-  <a href="index.html"><i class="fas fa-home"></i> Rudi Nyumbani</a>
+  <a href="index.html">🏠 Rudi Nyumbani</a>
 </div>
 
-<div class="count" id="count">Tunapakia nyimbo...</div>
+<div class="count" id="count"></div>
 
 <div class="search-box">
-  <input type="text" id="search" placeholder="🔍 Tafuta wimbo au video hapa...">
+  <input type="text" id="search" placeholder="🔍 Tafuta wimbo hapa...">
 </div>
 
 <div class="list" id="songList">
 
-  <div class="songs">
-    <div class="left"><div class="num">1</div><a href="mifupa-mikavu.html">Mifupa Mikavu</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="mifupa-mikavu.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">1</div>
+        <div class="song-title">Mifupa Mikavu</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">2</div><a href="nifundishe-kukujua-wewe.html">Nifundishe Kukujua Wewe</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="nifundishe-kukujua-wewe.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">2</div>
+        <div class="song-title">Nifundishe Kukujua Wewe</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">3</div><a href="yesu-amezaliwa.html">Yesu Amezaliwa</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="yesu-amezaliwa.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">3</div>
+        <div class="song-title">Yesu Amezaliwa</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">4</div><a href="bwana-wa-mabwana.html">Bwana wa Mabwana</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="bwana-wa-mabwana.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">4</div>
+        <div class="song-title">Bwana wa Mabwana</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">5</div><a href="emmanuel-amezaliwa.html">Emmanuel Amezaliwa</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="emmanuel-amezaliwa.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">5</div>
+        <div class="song-title">Emmanuel Amezaliwa</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">6</div><a href="mimi-ni-wa-juu.html">Mimi ni wa Juu</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="mimi-ni-wa-juu.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">6</div>
+        <div class="song-title">Mimi ni wa Juu</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">7</div><a href="neema-ya-mungu.html">Neema ya Mungu</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="neema-ya-mungu.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">7</div>
+        <div class="song-title">Neema ya Mungu</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">8</div><a href="nitayainua-macho-yangu.html">Nitayainua Macho Yangu</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="nitayainua-macho-yangu.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">8</div>
+        <div class="song-title">Nitayainua Macho Yangu</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">9</div><a href="shukrani.html">Shukrani</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="shukrani.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">9</div>
+        <div class="song-title">Shukrani</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">10</div><a href="siku-moja-yesu.html">Siku Moja Yesu</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="siku-moja-yesu.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">10</div>
+        <div class="song-title">Siku Moja Yesu</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
-  <div class="songs">
-    <div class="left"><div class="num">11</div><a href="umetukuka-utukufu-wote-ni-wako.html">Umetukuka – Utukufu Wote Ni Wako</a></div>
-    <div class="actions">
-      <i class="fas fa-video video-icon"></i>
+  <a href="umetukuka-utukufu-wote-ni-wako.html" class="song-card">
+    <div class="song-content">
+      <div class="left-side">
+        <div class="num">11</div>
+        <div class="song-title">Umetukuka - Utukufu Wote</div>
+      </div>
       <div class="play-icon"><i class="fas fa-play-circle"></i></div>
     </div>
-  </div>
+  </a>
 
 </div>
 
 <script>
-/* HESABU NYIMBO */
-const songElements = document.querySelectorAll('.songs');
-document.getElementById('count').textContent = `Jumla ya nyimbo: ${songElements.length}`;
+/* HESABU */
+const cards = document.querySelectorAll('.song-card');
+document.getElementById('count').textContent = `Jumla ya nyimbo: ${cards.length}`;
 
-/* TAFUTA WIMBO */
+/* SEARCH */
 document.getElementById('search').addEventListener('keyup', function(){
   const val = this.value.toLowerCase();
-  songElements.forEach(song => {
-    const title = song.querySelector('a').innerText.toLowerCase();
-    song.style.display = title.includes(val) ? 'flex' : 'none';
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(val) ? 'block' : 'none';
   });
 });
 </script>
