@@ -2,303 +2,217 @@
 <!DOCTYPE html>
 <html lang="sw">
 <head>
-<meta charset="UTF-8">
-<title>Matangazo | Masanja Gospel Melody</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Huduma Zetu | Masanja Gospel Melody</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-:root {
+  <style>
+  :root {
     --primary: #0F5B3E;
     --accent: #1ABC9C;
+    --dark: #06251C;
     --light: #F4FFF9;
-    --white: #ffffff;
-}
+  }
 
-*{box-sizing:border-box; transition: all 0.3s ease;}
+  *{box-sizing:border-box; margin:0; padding:0; transition: .3s ease;}
 
-body{
- margin:0;
- font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
- background: linear-gradient(180deg, var(--light), #E9FFF3);
- color:#111;
- padding-top:20px;
-}
+  body{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--light);
+    color: #333;
+    line-height: 1.6;
+  }
 
-/* HEADER */
-header{
- background: var(--primary);
- color:white;
- padding:30px 16px;
- text-align:center;
- border-radius: 0 0 30px 30px;
- box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
+  /* NAVBAR */
+  .navbar {
+    position: fixed; top: 0; width: 100%;
+    background: var(--primary);
+    padding: 15px 5%;
+    display: flex; justify-content: space-between; align-items: center;
+    z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    color: white;
+  }
+  .logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+  .nav-links { display: flex; gap: 20px; }
+  .nav-links a { color: white; text-decoration: none; font-weight: 500; font-size: 15px; }
+  .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+  .menu-icon { display: none; font-size: 24px; cursor: pointer; }
 
-header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
+  /* HERO */
+  .huduma-hero {
+    height: 60vh;
+    background: linear-gradient(rgba(15, 91, 62, 0.8), rgba(6, 37, 28, 0.9)), 
+                url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?auto=format&fit=crop&w=1000');
+    background-size: cover; background-position: center;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; color: white; padding: 0 20px;
+    margin-top: 50px;
+  }
+  .huduma-hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 15px; }
+  .huduma-hero p { max-width: 700px; font-size: 1.1rem; opacity: 0.9; }
 
-/* BACK HOME */
-.back-home{
- max-width:1000px;
- margin:20px auto 0;
- padding:0 16px;
-}
-.back-home a{
- display:inline-flex;
- align-items: center;
- gap: 8px;
- padding:12px 20px;
- background: var(--accent);
- color: #003820;
- border-radius:50px;
- text-decoration:none;
- font-weight:bold;
- font-size:14px;
- box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3);
-}
-.back-home a:hover { transform: translateX(-5px); }
+  /* HUDUMA GRID */
+  .huduma-wrapper {
+    max-width: 1100px; margin: -50px auto 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px; padding: 0 20px;
+  }
+  .huduma-card {
+    background: white; padding: 40px 30px;
+    border-radius: 20px; text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-bottom: 5px solid transparent;
+  }
+  .huduma-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 5px solid var(--accent);
+  }
+  .huduma-card i {
+    font-size: 45px; color: var(--primary); margin-bottom: 20px;
+  }
+  .huduma-card h3 { margin-bottom: 15px; color: var(--dark); font-size: 22px; }
 
-/* SLIDER */
-.slider{
- position:relative;
- max-width:1000px;
- margin:30px auto;
- overflow:hidden;
- border-radius:30px;
- box-shadow:0 20px 40px rgba(0,0,0,0.2);
-}
-.slides{
- display:flex;
- transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.slide{
- min-width:100%;
- padding:80px 20px;
- display:flex;
- justify-content:center;
- align-items:center;
- position: relative;
-}
+  /* CTA SECTION */
+  .huduma-cta {
+    background: var(--dark); color: white;
+    padding: 80px 20px; text-align: center;
+  }
+  .cta-btn {
+    display: inline-block; padding: 15px 35px;
+    background: var(--accent); color: var(--dark);
+    text-decoration: none; border-radius: 50px;
+    font-weight: bold; margin: 30px 0;
+    box-shadow: 0 5px 15px rgba(26, 188, 156, 0.4);
+  }
+  .cta-btn:hover { background: #fff; transform: scale(1.05); }
 
-/* SLIDE CARD */
-.slide-card{
- width:90%;
- max-width:700px;
- background: rgba(255, 255, 255, 0.15);
- backdrop-filter: blur(15px);
- -webkit-backdrop-filter: blur(15px);
- padding:40px 30px;
- border-radius:25px;
- border: 1px solid rgba(255,255,255,0.2);
- text-align:center;
- color: white;
-}
+  /* SOCIAL ICONS */
+  .socials{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+  .socials a{
+    width:50px; height:50px; display:flex; align-items:center; justify-content:center;
+    border-radius:50%; color:#fff; font-size:20px; text-decoration:none;
+  }
+  .socials a:hover{ transform:translateY(-5px) rotate(10deg); }
+  .whatsapp{background:#25D366;}
+  .facebook{background:#1877F2;}
+  .youtube{background:#FF0000;}
+  .instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);}
+  .tiktok{background:#000;}
+  .telegram{background:#229ED9;}
 
-.slide h2{ font-size: clamp(24px, 6vw, 32px); margin-bottom: 15px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
-.slide p{ font-size: 17px; line-height: 1.7; opacity: 0.95; }
+  /* FLOATING WHATSAPP */
+  .float-whatsapp{
+    position:fixed; bottom:25px; right:25px;
+    width:60px; height:60px; background:#25D366;
+    border-radius:50%; display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:30px; z-index:9999;
+    box-shadow:0 10px 25px rgba(37, 211, 102, 0.5);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+  }
 
-/* SLIDE COLORS */
-.s1{background: linear-gradient(45deg, #06251C, #0F5B3E);}
-.s2{background: linear-gradient(45deg, #0F5B3E, #1ABC9C);}
-.s3{background: linear-gradient(45deg, #1ABC9C, #2ECC71);}
+  footer { background: #000; color: #777; padding: 30px; text-align: center; font-size: 14px; }
 
-/* ARROWS */
-.arrow{
- position:absolute;
- top:50%;
- transform:translateY(-50%);
- width:50px;
- height:50px;
- border-radius:50%;
- background: rgba(255, 255, 255, 0.2);
- backdrop-filter: blur(5px);
- color:#fff;
- display:flex;
- align-items:center;
- justify-content:center;
- font-size:20px;
- cursor:pointer;
- z-index:10;
- border: 1px solid rgba(255,255,255,0.3);
-}
-.arrow:hover { background: var(--accent); color: var(--primary); }
-.arrow.left{left:15px;}
-.arrow.right{right:15px;}
-
-/* CONTENT CARD */
-.page{ max-width:1000px; margin:40px auto; padding:0 20px; }
-.card{
- background: var(--white);
- padding:35px;
- border-radius:25px;
- box-shadow: 0 15px 35px rgba(0,0,0,0.08);
- border: 1px solid #eee;
-}
-.card h3{ color: var(--primary); font-size: 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
-.card ul{ list-style: none; padding: 0; }
-.card li{ 
-    padding: 12px 0; 
-    border-bottom: 1px solid #f0f0f0; 
-    display: flex; 
-    align-items: center; 
-    gap: 12px;
-}
-.card li::before { content: '✦'; color: var(--accent); font-weight: bold; }
-.card li:last-child { border: none; }
-
-/* CTA & SOCIALS */
-.cta{
- text-align:center;
- background: var(--primary);
- color:white;
- padding:50px 20px;
- border-radius:40px;
- margin: 0 20px;
-}
-.socials{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:25px; }
-.socials a{
- width:55px; height:55px;
- display:flex; align-items:center; justify-content:center;
- border-radius:18px; color:white; font-size:24px;
- text-decoration:none;
-}
-.socials a:hover { transform: translateY(-5px) rotate(8deg); }
-
-.whatsapp{background:#25D366;}
-.facebook{background:#1877F2;}
-.youtube{background:#FF0000;}
-.instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);}
-.tiktok{background:#000;}
-.telegram{background:#229ED9;}
-
-/* FLOATING WHATSAPP */
-.float-whatsapp{
- position:fixed; bottom:25px; right:25px;
- width:65px; height:65px;
- background:#25D366; border-radius:50%;
- display:flex; align-items:center; justify-content:center;
- color:#fff; font-size:30px;
- box-shadow:0 10px 30px rgba(37, 211, 102, 0.5);
- z-index:999;
-}
-
-footer{ background:#06251C; color:#888; text-align:center; padding:30px; margin-top:50px; font-size:14px; }
-
-@media(max-width:768px){
-    .slide-card { padding: 30px 15px; }
-    .arrow { width: 40px; height: 40px; }
-}
-</style>
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .menu-icon { display: block; }
+    .nav-links {
+      position: absolute; top: 60px; left: -100%;
+      flex-direction: column; background: var(--primary);
+      width: 100%; padding: 20px; text-align: center;
+      transition: 0.4s;
+    }
+    .nav-links.active { left: 0; }
+  }
+  </style>
 </head>
-
 <body>
 
-<header>
- <h1>📢 MATANGAZO NA MATUKIO</h1>
+<header class="navbar">
+  <div class="logo">MGM</div>
+  <nav class="nav-links" id="navMenu">
+    <a href="index.html">Home</a>
+    <a href="nyimbo.html">Nyimbo</a>
+    <a href="kuhusu.html">Kuhusu</a>
+    <a href="huduma.html" class="active">Huduma</a>
+    <a href="mgm-token.html">MGM Token</a>
+  </nav>
+  <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
 </header>
 
-<div class="back-home">
- <a href="index.html"><i class="fas fa-arrow-left"></i> Rudi Nyumbani</a>
-</div>
+<section class="huduma-hero">
+  <div class="huduma-hero-content">
+    <h1>Huduma Zetu</h1>
+    <p>Tunamtumikia Mungu kwa kusifu, kuabudu, kufundisha Neno, na kuhubiri Injili ya kweli kupitia muziki unaogusa mioyo.</p>
+  </div>
+</section>
 
-<div class="slider">
- <div class="arrow left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></div>
- <div class="arrow right" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></div>
-
- <div class="slides" id="slides">
-  <div class="slide s1">
-   <div class="slide-card">
-    <h2>🌍 Dira ya 2026</h2>
-    <p>Mwaka 2026 Masanja Gospel Melody itatambulisha huduma zake za Injili kwa upana zaidi kupitia muziki, maombezi na matamasha makubwa nchi nzima.</p>
-   </div>
+<section id="huduma-zetu" class="huduma-wrapper">
+  <div class="huduma-card">
+    <i class="fas fa-music"></i>
+    <h3>Kusifu</h3>
+    <p>Inua sifa za dhati kwa sauti na ala za muziki tukimshukuru Mungu kwa makuu aliyotutendea.</p>
   </div>
 
-  <div class="slide s2">
-   <div class="slide-card">
-    <h2>🎶 Huduma za Injili</h2>
-    <p>Jiandae kwa mikesha ya kusifu na kuabudu, semina za uimbaji na huduma za kijamii zitakazogusa maisha ya wengi.</p>
-   </div>
+  <div class="huduma-card">
+    <i class="fas fa-hands-praying"></i>
+    <h3>Kuabudu</h3>
+    <p>Karibia kiti cha enzi kwa unyenyekevu, ukisujudu mbele za Mungu kwa roho na kweli.</p>
   </div>
 
-  <div class="slide s3">
-   <div class="slide-card">
-    <h2>🪙 MGM TOKEN</h2>
-    <p>Mfumo mpya wa MGM Token utasaidia kusapoti miradi ya huduma na kusaidia wasiojiweza. Kuwa sehemu ya mabadiliko haya.</p>
-   </div>
+  <div class="huduma-card">
+    <i class="fas fa-book-bible"></i>
+    <h3>Mafundisho</h3>
+    <p>Pata misingi bora ya Neno la Mungu itakayokusaidia kukua kiroho na kusimama imara.</p>
   </div>
- </div>
-</div>
 
-<div class="page">
- <div class="card">
-  <h3><i class="fas fa-calendar-star"></i> Mambo Yanayokuja</h3>
-  <ul>
-   <li>Tamasha la Injili - Mikoa ya Kanda ya Ziwa</li>
-   <li>Mkesha Maalum wa "Sifa za Shukurani"</li>
-   <li>Semina za Muziki kwa Waimbaji Chipukizi</li>
-   <li>Uzinduzi Rasmi wa MGM Token na Website</li>
-  </ul>
- </div>
-</div>
+  <div class="huduma-card">
+    <i class="fas fa-dove"></i>
+    <h3>Maombezi</h3>
+    <p>Tunaamini katika nguvu ya maombi. Tunaombea mahitaji yote kwa imani katika jina la Yesu.</p>
+  </div>
 
-<div class="cta">
- <h2>Ungana Nasi Kwenye Huduma</h2>
- <p>Tufuate kwenye mitandao ya kijamii kupata habari zaidi kila siku.</p>
- <div class="socials">
-  <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://youtube.com/@masanjagospel" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/masanjagospelmelody2026" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.tiktok.com/@masanjagospelmelody" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-  <a href="https://t.me/masanjagospelmelody" class="telegram" target="_blank"><i class="fab fa-telegram-plane"></i></a>
- </div>
-</div>
+  <div class="huduma-card">
+    <i class="fas fa-microphone"></i>
+    <h3>Tamasha</h3>
+    <p>Ungana nasi katika matamasha ya kusifu nchi nzima tukihubiri Injili kupitia uimbaji.</p>
+  </div>
+</section>
+
+<section class="huduma-cta">
+  <h2>Je, Ungependa Tuungane Katika Huduma?</h2>
+  <p>Karibu wasiliana nasi kwa huduma ya uimbaji, semina, au maombezi.</p>
+  
+  <a href="https://wa.me/255765498947" class="cta-btn" target="_blank">📲 Wasiliana WhatsApp</a>
+
+  <div class="socials">
+    <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="https://fb.com" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://youtube.com/@masanjagospel" class="youtube" target="_blank"><i class="fab fa-youtube"></i></a>
+    <a href="https://instagram.com" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="https://tiktok.com" class="tiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+  </div>
+</section>
 
 <footer>
- &copy; 2026 Masanja Gospel Melody | Huduma Isiyo na Mipaka
+  <p>© 2026 Masanja Gospel Melody | Huduma ya Injili Iliyotakaswa</p>
 </footer>
 
 <a href="https://wa.me/255765498947" class="float-whatsapp" target="_blank">
- <i class="fab fa-whatsapp"></i>
+  <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
-let current = 0;
-const slides = document.getElementById("slides");
-const total = slides.children.length;
-
-function showSlide(){
- slides.style.transform = `translateX(-${current*100}%)`;
+function toggleMenu() {
+  document.getElementById("navMenu").classList.toggle("active");
 }
-
-function nextSlide(){
- current = (current + 1) % total;
- showSlide();
-}
-
-function prevSlide(){
- current = (current - 1 + total) % total;
- showSlide();
-}
-
-// Auto-play kila sekunde 5
-let autoSlide = setInterval(nextSlide, 5000);
-
-// Simamisha auto-play mtumiaji akigusa mishale
-document.querySelectorAll('.arrow').forEach(arr => {
-    arr.addEventListener('click', () => clearInterval(autoSlide));
-});
-
-/* TOUCH SWIPE kwa Mobile */
-let startX = 0;
-slides.addEventListener("touchstart", e => { startX = e.touches[0].clientX; clearInterval(autoSlide); });
-slides.addEventListener("touchend", e => {
-    const endX = e.changedTouches[0].clientX;
-    if(startX - endX > 50) nextSlide();
-    if(endX - startX > 50) prevSlide();
-});
 </script>
-
 </body>
 </html>
