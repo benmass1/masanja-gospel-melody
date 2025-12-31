@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sw">
 <head>
@@ -5,213 +6,188 @@
 <title>Matangazo | Masanja Gospel Melody</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- FONT AWESOME -->
-<link rel="stylesheet"
- href="https://use.fontawesome.com/releases/v6.5.1/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
-*{box-sizing:border-box}
+:root {
+    --primary: #0F5B3E;
+    --accent: #1ABC9C;
+    --light: #F4FFF9;
+    --white: #ffffff;
+}
+
+*{box-sizing:border-box; transition: all 0.3s ease;}
 
 body{
  margin:0;
- font-family:Arial, sans-serif;
- background:linear-gradient(180deg,#F4FFF9,#E9FFF3);
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ background: linear-gradient(180deg, var(--light), #E9FFF3);
  color:#111;
- padding-top:65px;
+ padding-top:20px;
 }
 
 /* HEADER */
 header{
- background:#0F5B3E;
+ background: var(--primary);
  color:white;
- padding:16px;
+ padding:30px 16px;
  text-align:center;
+ border-radius: 0 0 30px 30px;
+ box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
+
+header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 1px; }
 
 /* BACK HOME */
 .back-home{
  max-width:1000px;
- margin:16px auto 0;
+ margin:20px auto 0;
  padding:0 16px;
 }
 .back-home a{
- display:inline-block;
- padding:10px 16px;
- background:#1ABC9C;
- color:#003820;
- border-radius:24px;
+ display:inline-flex;
+ align-items: center;
+ gap: 8px;
+ padding:12px 20px;
+ background: var(--accent);
+ color: #003820;
+ border-radius:50px;
  text-decoration:none;
  font-weight:bold;
  font-size:14px;
+ box-shadow: 0 4px 10px rgba(26, 188, 156, 0.3);
 }
+.back-home a:hover { transform: translateX(-5px); }
 
 /* SLIDER */
 .slider{
  position:relative;
  max-width:1000px;
- margin:20px auto;
+ margin:30px auto;
  overflow:hidden;
- border-radius:20px;
- box-shadow:0 12px 30px rgba(0,0,0,.25);
- touch-action:pan-y;
+ border-radius:30px;
+ box-shadow:0 20px 40px rgba(0,0,0,0.2);
 }
 .slides{
  display:flex;
- transition:transform .35s ease;
+ transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .slide{
  min-width:100%;
- padding:48px 20px;
+ padding:80px 20px;
  display:flex;
  justify-content:center;
  align-items:center;
+ position: relative;
 }
 
 /* SLIDE CARD */
 .slide-card{
- width:100%;
- max-width:760px;
- background:rgba(255,255,255,.18);
- backdrop-filter:blur(8px);
- padding:28px 22px;
- border-radius:22px;
- box-shadow:0 12px 28px rgba(0,0,0,.35);
+ width:90%;
+ max-width:700px;
+ background: rgba(255, 255, 255, 0.15);
+ backdrop-filter: blur(15px);
+ -webkit-backdrop-filter: blur(15px);
+ padding:40px 30px;
+ border-radius:25px;
+ border: 1px solid rgba(255,255,255,0.2);
  text-align:center;
+ color: white;
 }
 
-.slide h2{
- font-size:clamp(22px,5vw,28px);
- margin-bottom:12px;
- color:#fff;
-}
-.slide p{
- font-size:clamp(15px,4vw,17px);
- line-height:1.6;
- color:#fff;
-}
+.slide h2{ font-size: clamp(24px, 6vw, 32px); margin-bottom: 15px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+.slide p{ font-size: 17px; line-height: 1.7; opacity: 0.95; }
 
-/* COLORS */
-.s1{background:linear-gradient(135deg,#0F5B3E,#06251C);}
-.s2{background:linear-gradient(135deg,#1ABC9C,#0F5B3E);}
-.s3{background:linear-gradient(135deg,#2ECC71,#1ABC9C);}
+/* SLIDE COLORS */
+.s1{background: linear-gradient(45deg, #06251C, #0F5B3E);}
+.s2{background: linear-gradient(45deg, #0F5B3E, #1ABC9C);}
+.s3{background: linear-gradient(45deg, #1ABC9C, #2ECC71);}
 
 /* ARROWS */
 .arrow{
  position:absolute;
  top:50%;
  transform:translateY(-50%);
- width:42px;
- height:42px;
+ width:50px;
+ height:50px;
  border-radius:50%;
- background:rgba(0,0,0,.45);
+ background: rgba(255, 255, 255, 0.2);
+ backdrop-filter: blur(5px);
  color:#fff;
  display:flex;
  align-items:center;
  justify-content:center;
- font-size:18px;
+ font-size:20px;
  cursor:pointer;
  z-index:10;
+ border: 1px solid rgba(255,255,255,0.3);
 }
-.arrow.left{left:10px;}
-.arrow.right{right:10px;}
+.arrow:hover { background: var(--accent); color: var(--primary); }
+.arrow.left{left:15px;}
+.arrow.right{right:15px;}
 
-/* CONTENT */
-.page{
- max-width:1000px;
- margin:30px auto;
- padding:0 16px;
-}
+/* CONTENT CARD */
+.page{ max-width:1000px; margin:40px auto; padding:0 20px; }
 .card{
- background:#fff;
- padding:26px;
- border-radius:20px;
- box-shadow:0 10px 25px rgba(0,0,0,.15);
- margin-bottom:24px;
+ background: var(--white);
+ padding:35px;
+ border-radius:25px;
+ box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+ border: 1px solid #eee;
 }
-.card h3{
- color:#0F5B3E;
- margin-bottom:10px;
+.card h3{ color: var(--primary); font-size: 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.card ul{ list-style: none; padding: 0; }
+.card li{ 
+    padding: 12px 0; 
+    border-bottom: 1px solid #f0f0f0; 
+    display: flex; 
+    align-items: center; 
+    gap: 12px;
 }
-.card ul{
- margin-left:18px;
- line-height:1.7;
-}
+.card li::before { content: '✦'; color: var(--accent); font-weight: bold; }
+.card li:last-child { border: none; }
 
-/* CTA */
+/* CTA & SOCIALS */
 .cta{
  text-align:center;
- background:#0F5B3E;
+ background: var(--primary);
  color:white;
- padding:40px 16px;
- border-radius:26px;
+ padding:50px 20px;
+ border-radius:40px;
+ margin: 0 20px;
 }
-
-/* SOCIALS */
-.socials{
- display:flex;
- justify-content:center;
- gap:14px;
- flex-wrap:wrap;
- margin-top:20px;
-}
+.socials{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:25px; }
 .socials a{
- width:52px;
- height:52px;
- display:flex;
- align-items:center;
- justify-content:center;
- border-radius:14px;
- color:white;
- font-size:22px;
+ width:55px; height:55px;
+ display:flex; align-items:center; justify-content:center;
+ border-radius:18px; color:white; font-size:24px;
  text-decoration:none;
 }
+.socials a:hover { transform: translateY(-5px) rotate(8deg); }
 
-/* SOCIAL COLORS */
 .whatsapp{background:#25D366;}
 .facebook{background:#1877F2;}
 .youtube{background:#FF0000;}
-.instagram{
- background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);
-}
+.instagram{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);}
 .tiktok{background:#000;}
 .telegram{background:#229ED9;}
 
 /* FLOATING WHATSAPP */
 .float-whatsapp{
- position:fixed;
- bottom:18px;
- right:18px;
- width:56px;
- height:56px;
- background:#25D366;
- border-radius:50%;
- display:flex;
- align-items:center;
- justify-content:center;
- color:#fff;
- font-size:26px;
- box-shadow:0 10px 25px rgba(0,0,0,.4);
- z-index:9999;
+ position:fixed; bottom:25px; right:25px;
+ width:65px; height:65px;
+ background:#25D366; border-radius:50%;
+ display:flex; align-items:center; justify-content:center;
+ color:#fff; font-size:30px;
+ box-shadow:0 10px 30px rgba(37, 211, 102, 0.5);
+ z-index:999;
 }
 
-/* FOOTER */
-footer{
- background:#000;
- color:#aaa;
- text-align:center;
- padding:22px;
- margin-top:40px;
- font-size:14px;
-}
+footer{ background:#06251C; color:#888; text-align:center; padding:30px; margin-top:50px; font-size:14px; }
 
-/* DESKTOP ENHANCEMENT */
-@media(min-width:768px){
- .slide{padding:70px 40px;}
- .arrow{
-  width:50px;
-  height:50px;
-  font-size:22px;
- }
+@media(max-width:768px){
+    .slide-card { padding: 30px 15px; }
+    .arrow { width: 40px; height: 40px; }
 }
 </style>
 </head>
@@ -219,73 +195,56 @@ footer{
 <body>
 
 <header>
- <h1>📢 Matangazo & Matukio</h1>
+ <h1>📢 MATANGAZO NA MATUKIO</h1>
 </header>
 
 <div class="back-home">
- <a href="index.html">⬅ Rudi Home</a>
+ <a href="index.html"><i class="fas fa-arrow-left"></i> Rudi Nyumbani</a>
 </div>
 
-<!-- SLIDER -->
 <div class="slider">
- <div class="arrow left" onclick="prevSlide()">
-  <i class="fas fa-chevron-left"></i>
- </div>
- <div class="arrow right" onclick="nextSlide()">
-  <i class="fas fa-chevron-right"></i>
- </div>
+ <div class="arrow left" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></div>
+ <div class="arrow right" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></div>
 
  <div class="slides" id="slides">
-
   <div class="slide s1">
    <div class="slide-card">
     <h2>🌍 Dira ya 2026</h2>
-    <p>
-     Mwaka 2026 Masanja Gospel Melody itatambulisha
-     huduma zake za Injili kwa upana zaidi kupitia
-     muziki, maombezi na matamasha.
-    </p>
+    <p>Mwaka 2026 Masanja Gospel Melody itatambulisha huduma zake za Injili kwa upana zaidi kupitia muziki, maombezi na matamasha makubwa nchi nzima.</p>
    </div>
   </div>
 
   <div class="slide s2">
    <div class="slide-card">
     <h2>🎶 Huduma za Injili</h2>
-    <p>
-     Kutakuwa na mikesha ya kusifu na kuabudu,
-     semina za muziki wa Injili na huduma
-     za kuwafikia watu katika jamii.
-    </p>
+    <p>Jiandae kwa mikesha ya kusifu na kuabudu, semina za uimbaji na huduma za kijamii zitakazogusa maisha ya wengi.</p>
    </div>
   </div>
 
   <div class="slide s3">
    <div class="slide-card">
     <h2>🪙 MGM TOKEN</h2>
-    <p>
-     MGM Token itatumika kusaidia na kusapoti
-     huduma za Injili pamoja na miradi ya kijamii.
-    </p>
+    <p>Mfumo mpya wa MGM Token utasaidia kusapoti miradi ya huduma na kusaidia wasiojiweza. Kuwa sehemu ya mabadiliko haya.</p>
    </div>
   </div>
-
  </div>
 </div>
 
 <div class="page">
  <div class="card">
-  <h3>📌 Mambo Yanayokuja</h3>
+  <h3><i class="fas fa-calendar-star"></i> Mambo Yanayokuja</h3>
   <ul>
-   <li>Tamasha la Injili mikoa mbalimbali</li>
-   <li>Mikesha ya Kusifu na Kuabudu</li>
-   <li>Semina za Muziki wa Injili</li>
-   <li>Uzinduzi wa MGM Token</li>
+   <li>Tamasha la Injili - Mikoa ya Kanda ya Ziwa</li>
+   <li>Mkesha Maalum wa "Sifa za Shukurani"</li>
+   <li>Semina za Muziki kwa Waimbaji Chipukizi</li>
+   <li>Uzinduzi Rasmi wa MGM Token na Website</li>
   </ul>
  </div>
 </div>
 
 <div class="cta">
- <h2>Jiunge Nasi / Wasiliana Nasi</h2>
+ <h2>Ungana Nasi Kwenye Huduma</h2>
+ <p>Tufuate kwenye mitandao ya kijamii kupata habari zaidi kila siku.</p>
  <div class="socials">
   <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
   <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -297,7 +256,7 @@ footer{
 </div>
 
 <footer>
- © 2026 Masanja Gospel Melody | Matangazo
+ &copy; 2026 Masanja Gospel Melody | Huduma Isiyo na Mipaka
 </footer>
 
 <a href="https://wa.me/255765498947" class="float-whatsapp" target="_blank">
@@ -312,25 +271,32 @@ const total = slides.children.length;
 function showSlide(){
  slides.style.transform = `translateX(-${current*100}%)`;
 }
+
 function nextSlide(){
- if(current < total-1) current++;
- showSlide();
-}
-function prevSlide(){
- if(current > 0) current--;
+ current = (current + 1) % total;
  showSlide();
 }
 
-/* TOUCH SWIPE */
-let startX = 0;
-slides.addEventListener("touchstart", e=>{
- startX = e.touches[0].clientX;
-});
-slides.addEventListener("touchend", e=>{
- const endX = e.changedTouches[0].clientX;
- if(startX - endX > 60 && current < total-1) current++;
- if(endX - startX > 60 && current > 0) current--;
+function prevSlide(){
+ current = (current - 1 + total) % total;
  showSlide();
+}
+
+// Auto-play kila sekunde 5
+let autoSlide = setInterval(nextSlide, 5000);
+
+// Simamisha auto-play mtumiaji akigusa mishale
+document.querySelectorAll('.arrow').forEach(arr => {
+    arr.addEventListener('click', () => clearInterval(autoSlide));
+});
+
+/* TOUCH SWIPE kwa Mobile */
+let startX = 0;
+slides.addEventListener("touchstart", e => { startX = e.touches[0].clientX; clearInterval(autoSlide); });
+slides.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    if(startX - endX > 50) nextSlide();
+    if(endX - startX > 50) prevSlide();
 });
 </script>
 
