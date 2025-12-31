@@ -2,281 +2,315 @@
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
-<title>MGM Token | Masanja Gospel Melody</title>
+<title>MGM Token | Future of Gospel Support</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- GOOGLE FONT -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- FONT AWESOME -->
-<link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root{
  --p:#0F5B3E;
  --a:#2ECC71;
  --d:#06251C;
+ --gold: #FFD700;
+ --white: #ffffff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins', sans-serif;}
 
 body{
- background:linear-gradient(180deg,#F4FFF9,#E9FFF3);
+ background: #f0fdf4;
  color:#111;
+ overflow-x: hidden;
+}
+
+/* BACKGROUND DECORATION */
+body::before {
+    content: "";
+    position: fixed; top: -10%; left: -10%;
+    width: 40%; height: 40%;
+    background: radial-gradient(circle, rgba(46, 204, 113, 0.15) 0%, transparent 70%);
+    z-index: -1;
 }
 
 /* HEADER */
 header{
- background:linear-gradient(135deg,var(--p),var(--d));
+ background: linear-gradient(135deg, var(--d) 0%, var(--p) 100%);
  color:white;
  text-align:center;
- padding:60px 20px;
-}
-header h1{
- font-size:clamp(2rem,6vw,3.2rem);
-}
-header p{
- max-width:700px;
- margin:15px auto 0;
- opacity:.9;
+ padding:100px 20px;
+ position: relative;
+ clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
 }
 
-/* SECTIONS */
-section{
- padding:60px 20px;
+.token-logo {
+    font-size: 80px;
+    color: var(--gold);
+    text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
 }
-.container{
- max-width:1100px;
- margin:auto;
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+header h1{ font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; }
+header h1 span { color: var(--gold); }
+header p{ max-width:750px; margin:20px auto 0; font-size: 1.1rem; opacity:.9; line-height: 1.8; }
+
+/* SECTIONS */
+section{ padding:80px 20px; }
+.container{ max-width:1100px; margin:auto; }
+
+.title{
+ text-align:center;
+ color:var(--p);
+ font-size: clamp(1.8rem, 5vw, 2.5rem);
+ margin-bottom: 40px;
+ position: relative;
+}
+.title::after {
+    content: ""; display: block; width: 60px; height: 4px; 
+    background: var(--gold); margin: 10px auto; border-radius: 10px;
 }
 
 /* CARDS */
 .grid{
  display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:24px;
- margin-top:30px;
+ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+ gap:30px;
 }
 .card{
- background:#fff;
- padding:28px;
- border-radius:22px;
- box-shadow:0 12px 30px rgba(0,0,0,.15);
+ background: var(--white);
+ padding:40px 30px;
+ border-radius:30px;
+ box-shadow: 0 15px 45px rgba(0,0,0,0.05);
  text-align:center;
+ border: 1px solid rgba(15, 91, 62, 0.05);
+ transition: 0.4s;
+}
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(15, 91, 62, 0.15);
+    border-color: var(--a);
 }
 .card i{
- font-size:34px;
- color:var(--p);
- margin-bottom:12px;
+ font-size:45px;
+ background: linear-gradient(to bottom, var(--gold), #b8860b);
+ -webkit-background-clip: text;
+ -webkit-text-fill-color: transparent;
+ margin-bottom:20px;
 }
+.card h3 { margin-bottom: 15px; color: var(--d); }
 
-/* TITLES */
-.title{
- text-align:center;
- color:var(--p);
- font-size:clamp(1.6rem,5vw,2.2rem);
- margin-bottom:15px;
+/* LIST SECTION */
+.use-cases {
+    background: var(--d);
+    color: white;
+    border-radius: 50px;
+    padding: 60px 40px;
 }
-
-/* TOKEN USE */
 .list{
- margin-top:20px;
- line-height:1.8;
- padding-left:18px;
+ list-style: none;
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+ gap: 20px;
+}
+.list li {
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--gold);
 }
 
 /* ROADMAP */
 .timeline{
- border-left:4px solid var(--a);
- padding-left:20px;
- margin-top:30px;
+ position: relative;
+ max-width: 800px;
+ margin: 40px auto;
 }
-.timeline div{
- margin-bottom:20px;
+.timeline-item {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-left: 8px solid var(--p);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-.timeline h4{
- color:var(--p);
- margin-bottom:6px;
+.step-num {
+    background: var(--p);
+    color: var(--gold);
+    width: 50px; height: 50px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; font-weight: bold; flex-shrink: 0;
 }
 
 /* CTA */
 .cta{
- background:linear-gradient(135deg,var(--a),var(--p));
+ background: linear-gradient(135deg, var(--p) 0%, var(--d) 100%);
  color:white;
  text-align:center;
- padding:60px 20px;
-}
-.cta h2{
- margin-bottom:15px;
+ padding:80px 20px;
+ border-radius: 50px 50px 0 0;
 }
 .btn{
  display:inline-block;
- margin-top:20px;
- padding:14px 30px;
- background:#fff;
- color:#003820;
- border-radius:40px;
- font-weight:600;
+ margin-top:30px;
+ padding:18px 45px;
+ background: var(--gold);
+ color: var(--d);
+ border-radius:50px;
+ font-weight:700;
  text-decoration:none;
+ text-transform: uppercase;
+ letter-spacing: 1px;
+ box-shadow: 0 10px 25px rgba(255, 215, 0, 0.3);
 }
+.btn:hover { background: white; transform: scale(1.05); }
 
 /* SOCIALS */
-.socials{
- display:flex;
- justify-content:center;
- gap:16px;
- flex-wrap:wrap;
- margin-top:25px;
-}
+.socials{ display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:40px; }
 .socials a{
- width:52px;
- height:52px;
- display:flex;
- align-items:center;
- justify-content:center;
- border-radius:50%;
- color:white;
- font-size:22px;
- text-decoration:none;
+ width:55px; height:55px;
+ display:flex; align-items:center; justify-content:center;
+ border-radius:15px; color:white; font-size:24px;
+ text-decoration:none; transition: 0.3s;
 }
+.socials a:hover { transform: translateY(-10px); filter: brightness(1.2); }
+
 .whatsapp{background:#25D366;}
 .facebook{background:#1877F2;}
 .youtube{background:#FF0000;}
-.instagram{background:#C13584;}
+.instagram{background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
 .tiktok{background:#000;}
 .telegram{background:#229ED9;}
 
-/* FOOTER */
-footer{
- background:#000;
- color:#aaa;
- text-align:center;
- padding:24px;
- font-size:14px;
-}
+footer{ background:#000; color:#666; text-align:center; padding:30px; font-size:14px; }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
- <h1>🪙 MGM Token</h1>
+ <div class="token-logo"><i class="fas fa-coins"></i></div>
+ <h1>MGM <span>TOKEN</span></h1>
  <p>
-  MGM Token ni mfumo wa kidijitali ulioundwa kusaidia,
-  kuimarisha na kupanua huduma ya Masanja Gospel Melody
-  pamoja na miradi ya Injili katika jamii.
+  Daraja la kidijitali linalounganisha imani na teknolojia. 
+  Tumia MGM Token kuwezesha uinjilisti, kusaidia matamasha 
+  na kubadilisha maisha kupitia injili ya Masanja Gospel Melody.
  </p>
 </header>
 
-<!-- WHAT IS TOKEN -->
-<section>
- <div class="container">
-  <h2 class="title">MGM Token ni Nini?</h2>
+<section class="container">
+ <h2 class="title">MGM Token ni Nini?</h2>
+ <div style="text-align: center; max-width: 800px; margin: auto; font-size: 1.1rem; line-height: 1.8;">
   <p>
-   MGM Token ni token ya msaada (support token) inayolenga
-   kuunganisha waumini, wadau na mashabiki wa huduma ya Injili
-   katika kusaidia kazi ya Mungu kwa uwazi na uaminifu.
+   Sio fedha tu, bali ni <strong>Alama ya Mapenzi</strong> kwa kazi ya Mungu. MGM Token imetengenezwa 
+   kama mfumo rafiki na salama wa kusaidia miradi ya Gospel bila vikwazo vya kijiografia.
   </p>
  </div>
-</section>
 
-<!-- WHY MGM TOKEN -->
-<section>
- <div class="container">
-  <h2 class="title">Kwa Nini MGM Token?</h2>
-
-  <div class="grid">
-   <div class="card">
-    <i class="fas fa-hands-helping"></i>
-    <h3>Kusaidia Huduma</h3>
-    <p>Kusaidia gharama za huduma, matamasha na uinjilisti.</p>
-   </div>
-
-   <div class="card">
-    <i class="fas fa-church"></i>
-    <h3>Kuinua Injili</h3>
-    <p>Kupanua ufikiaji wa Injili kupitia muziki na mafundisho.</p>
-   </div>
-
-   <div class="card">
-    <i class="fas fa-users"></i>
-    <h3>Kujenga Jamii</h3>
-    <p>Kuwaunganisha waumini na wadau wa huduma.</p>
-   </div>
-
-   <div class="card">
-    <i class="fas fa-eye"></i>
-    <h3>Uwazi</h3>
-    <p>Kila msaada unafuatiliwa kwa uwazi wa kidijitali.</p>
-   </div>
+ <div class="grid" style="margin-top: 50px;">
+  <div class="card">
+   <i class="fas fa-rocket"></i>
+   <h3>Kasi ya Huduma</h3>
+   <p>Inawezesha huduma kufika mbali zaidi kwa muda mfupi.</p>
+  </div>
+  <div class="card">
+   <i class="fas fa-shield-halved"></i>
+   <h3>Usalama wa Juu</h3>
+   <p>Kila muamala unarekodiwa kwa uaminifu na uwazi mkuu.</p>
+  </div>
+  <div class="card">
+   <i class="fas fa-globe"></i>
+   <h3>Ufikiaji wa Dunia</h3>
+   <p>Wadau kutoka popote duniani wanaweza kusapoti Injili.</p>
   </div>
  </div>
 </section>
 
-<!-- USE CASES -->
-<section>
- <div class="container">
-  <h2 class="title">MGM Token Inatumika Wapi?</h2>
+<section style="padding-top: 0;">
+ <div class="container use-cases">
+  <h2 class="title" style="color: var(--gold);">Matumizi ya Token</h2>
   <ul class="list">
-   <li>Kusapoti matamasha na mikutano ya Injili</li>
-   <li>Kurekodi na kusambaza nyimbo za Injili</li>
-   <li>Kusaidia huduma za kijamii (vijana, yatima, jamii)</li>
-   <li>Kusaidia gharama za uzalishaji wa muziki</li>
-   <li>Kujenga mifumo ya Injili mtandaoni</li>
+   <li>Gharama za Matamasha ya Nchi Nzima</li>
+   <li>Uzalishaji wa Video na Nyimbo (Studio)</li>
+   <li>Kusaidia Watoto Yatima na Wasiojiweza</li>
+   <li>Semina za Vijana na Mafunzo ya Injili</li>
+   <li>Ujenzi wa Mifumo ya Kisasa ya Uinjilisti</li>
+   <li>Kusambaza Vitabu na Mafundisho ya Kiroho</li>
   </ul>
  </div>
 </section>
 
-<!-- ROADMAP -->
-<section>
- <div class="container">
-  <h2 class="title">Mpango wa Baadaye (Roadmap)</h2>
-
-  <div class="timeline">
+<section class="container">
+ <h2 class="title">Safari Yetu (Roadmap)</h2>
+ <div class="timeline">
+  <div class="timeline-item">
+   <div class="step-num">01</div>
    <div>
-    <h4>Hatua ya 1</h4>
-    <p>Utambulisho wa MGM Token kwa jamii</p>
+    <h4>Uzinduzi & Elimu</h4>
+    <p>Kuelimisha jamii juu ya faida na matumizi ya MGM Token katika ufalme wa Mungu.</p>
    </div>
+  </div>
+  <div class="timeline-item">
+   <div class="step-num 02">02</div>
    <div>
-    <h4>Hatua ya 2</h4>
-    <p>Kuanza matumizi ya token katika kusaidia huduma</p>
+    <h4>Utekelezaji wa Miradi</h4>
+    <p>Kuanza kutumia token kusaidia matamasha makubwa ya kikanda na kurekodi nyimbo mpya.</p>
    </div>
+  </div>
+  <div class="timeline-item">
+   <div class="step-num">03</div>
    <div>
-    <h4>Hatua ya 3</h4>
-    <p>Kupanua matumizi kwenye miradi ya kijamii</p>
+    <h4>Upanuzi wa Kijamii</h4>
+    <p>Kuingia kwenye miradi ya kusaidia jamii kama vituo vya afya na elimu kwa wasiojiweza.</p>
    </div>
+  </div>
+  <div class="timeline-item">
+   <div class="step-num">04</div>
    <div>
-    <h4>Hatua ya 4</h4>
-    <p>Kujenga ecosystem ya Injili inayojitegemea</p>
+    <h4>Ecosystem Imara</h4>
+    <p>MGM Token kuwa mfumo mkuu wa sapoti ya Gospel Afrika Mashariki na Kati.</p>
    </div>
   </div>
  </div>
 </section>
 
-<!-- CTA -->
 <section class="cta">
- <h2>Jiunge Katika Kusaidia Huduma ya Injili</h2>
- <p>
-  Kwa kushiriki MGM Token unakuwa sehemu ya kazi ya Mungu
-  inayogusa maisha ya watu wengi.
- </p>
+ <div class="container">
+  <h2>Kuwa Sehemu ya Mabadiliko Haya</h2>
+  <p>Jiunge na maelfu ya wadau wanaotumia teknolojia kupeleka Injili mbele.</p>
 
- <a href="index.html" class="btn">⬅ Rudi Home</a>
+  <a href="index.html" class="btn">Rudi Nyumbani</a>
 
- <div class="socials">
-  <a href="https://wa.me/255765498947" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
-  <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook"><i class="fab fa-facebook-f"></i></a>
-  <a href="https://youtube.com/@masanjagospel" class="youtube"><i class="fab fa-youtube"></i></a>
-  <a href="https://www.instagram.com/masanjagospelmelody2026" class="instagram"><i class="fab fa-instagram"></i></a>
-  <a href="https://www.tiktok.com/@masanjagospelmelody" class="tiktok"><i class="fab fa-tiktok"></i></a>
-  <a href="https://t.me/masanjagospelmelody" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+  <div class="socials">
+   <a href="https://wa.me/255765498947" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+   <a href="#" class="facebook"><i class="fab fa-facebook-f"></i></a>
+   <a href="#" class="youtube"><i class="fab fa-youtube"></i></a>
+   <a href="#" class="instagram"><i class="fab fa-instagram"></i></a>
+   <a href="#" class="tiktok"><i class="fab fa-tiktok"></i></a>
+   <a href="#" class="telegram"><i class="fab fa-telegram-plane"></i></a>
+  </div>
  </div>
 </section>
 
 <footer>
- © 2026 Masanja Gospel Melody | MGM Token
+ &copy; 2026 Masanja Gospel Melody | MGM Token: Faith in the Digital Age
 </footer>
 
 </body>
