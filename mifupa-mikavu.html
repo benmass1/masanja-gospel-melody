@@ -1,246 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="sw">
 <head>
 <meta charset="UTF-8">
-<title>Nyimbo | Masanja Gospel Melody</title>
+<title>Mifupa Mikavu - Masanja Gospel Melody</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root {
-  --kijani-kizito: #0f3d2e;
-  --kijani-bibi: #145a3a;
-  --dhahabu: #FFD700;
-  --maandishi: #7CFFB2;
-}
+  :root { --p: #0f3d2e; --a: #FFD700; --s: #145a3a; }
+  body { margin: 0; font-family: sans-serif; background: #061a14; color: white; text-align: center; }
+  
+  .header { padding: 20px; background: var(--p); border-bottom: 3px solid var(--a); }
+  .btn-back { display: inline-block; margin: 15px; color: var(--a); text-decoration: none; font-weight: bold; }
 
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--kijani-kizito);
-  color: white;
-  padding-bottom: 50px;
-}
+  .video-container { max-width: 800px; margin: 20px auto; padding: 10px; }
+  iframe { width: 100%; height: 350px; border-radius: 15px; border: 2px solid var(--s); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
 
-/* HEADER */
-.header {
-  padding: 25px 10px;
-  text-align: center;
-  background: var(--kijani-bibi);
-  border-bottom: 3px solid var(--dhahabu);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
-.header h2 { margin: 0; color: var(--dhahabu); font-size: 22px; }
+  .details { padding: 20px; }
+  .details h1 { color: var(--a); margin-bottom: 10px; }
+  
+  .player-box { background: var(--s); max-width: 500px; margin: 20px auto; padding: 20px; border-radius: 50px; }
+  audio { width: 100%; filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%); }
 
-/* NAV */
-.top-bar { max-width: 600px; margin: 15px auto; padding: 0 15px; }
-.top-bar a {
-  display: block; text-align: center; padding: 12px;
-  background: var(--kijani-bibi); color: white;
-  text-decoration: none; border-radius: 10px; font-weight: bold;
-}
-
-.count { text-align: center; font-size: 14px; color: var(--maandishi); margin-bottom: 10px; }
-
-/* SEARCH */
-.search-box { max-width: 600px; margin: 0 auto 20px; padding: 0 15px; }
-.search-box input {
-  width: 100%; padding: 15px; border-radius: 10px; border: none;
-  font-size: 16px; outline: none; background: white; color: #111;
-}
-
-/* LIST */
-.list { max-width: 600px; margin: 0 auto; padding: 0 15px; }
-
-/* SONG ITEM - KADI NZIMA INABONYEZEKA */
-.song-card {
-  background: rgba(255, 255, 255, 0.1);
-  margin-bottom: 12px;
-  border-radius: 12px;
-  border-left: 5px solid var(--dhahabu);
-  transition: 0.3s;
-  cursor: pointer;
-  display: block; /* Inafanya kadi iwe link */
-  text-decoration: none; /* Inatoa mstari chini ya maandishi */
-}
-
-.song-card:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateX(5px);
-}
-
-.song-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 16px;
-}
-
-.left-side { display: flex; align-items: center; gap: 15px; }
-
-.num {
-  background: var(--dhahabu); color: #000;
-  width: 28px; height: 28px;
-  display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; font-weight: bold; font-size: 14px;
-}
-
-.song-title {
-  color: var(--maandishi);
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.play-icon { color: var(--dhahabu); font-size: 20px; }
-
+  .lyrics { max-width: 600px; margin: 30px auto; line-height: 1.8; color: #ccc; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 15px; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h2>🎶 Nyimbo na Video</h2>
+  <a href="nyimbo.html" class="btn-back"><i class="fas fa-arrow-left"></i> Rudi kwenye Nyimbo</a>
+  <h2>MGM Player</h2>
 </div>
 
-<div class="top-bar">
-  <a href="index.html">🏠 Rudi Nyumbani</a>
+<div class="details">
+  <h1>Mifupa Mikavu</h1>
+  <p>Masanja Gospel Melody</p>
 </div>
 
-<div class="count" id="count"></div>
-
-<div class="search-box">
-  <input type="text" id="search" placeholder="🔍 Tafuta wimbo hapa...">
+<div class="video-container">
+  <iframe src="https://www.youtube.com/embed/VIDEO_ID_HAPA" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<div class="list" id="songList">
-
-  <a href="mifupa-mikavu.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">1</div>
-        <div class="song-title">Mifupa Mikavu</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="nifundishe-kukujua-wewe.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">2</div>
-        <div class="song-title">Nifundishe Kukujua Wewe</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="yesu-amezaliwa.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">3</div>
-        <div class="song-title">Yesu Amezaliwa</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="bwana-wa-mabwana.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">4</div>
-        <div class="song-title">Bwana wa Mabwana</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="emmanuel-amezaliwa.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">5</div>
-        <div class="song-title">Emmanuel Amezaliwa</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="mimi-ni-wa-juu.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">6</div>
-        <div class="song-title">Mimi ni wa Juu</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="neema-ya-mungu.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">7</div>
-        <div class="song-title">Neema ya Mungu</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="nitayainua-macho-yangu.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">8</div>
-        <div class="song-title">Nitayainua Macho Yangu</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="shukrani.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">9</div>
-        <div class="song-title">Shukrani</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="siku-moja-yesu.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">10</div>
-        <div class="song-title">Siku Moja Yesu</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
-  <a href="umetukuka-utukufu-wote-ni-wako.html" class="song-card">
-    <div class="song-content">
-      <div class="left-side">
-        <div class="num">11</div>
-        <div class="song-title">Umetukuka - Utukufu Wote</div>
-      </div>
-      <div class="play-icon"><i class="fas fa-play-circle"></i></div>
-    </div>
-  </a>
-
+<div class="player-box">
+  <p><i class="fas fa-music"></i> Sikiliza Audio</p>
+  <audio controls>
+    <source src="audio/mifupa-mikavu.mp3" type="audio/mpeg">
+    Browser yako haisapoti audio.
+  </audio>
 </div>
 
-<script>
-/* HESABU */
-const cards = document.querySelectorAll('.song-card');
-document.getElementById('count').textContent = `Jumla ya nyimbo: ${cards.length}`;
+<div class="lyrics">
+  <h3>Mashairi (Lyrics)</h3>
+  <p>
+    "Ee Bwana, mifupa hii inaweza kuishi?<br>
+    Wewe wajua...<br>
+    Tabiri juu ya mifupa hii..."
+  </p>
+</div>
 
-/* SEARCH */
-document.getElementById('search').addEventListener('keyup', function(){
-  const val = this.value.toLowerCase();
-  cards.forEach(card => {
-    const text = card.innerText.toLowerCase();
-    card.style.display = text.includes(val) ? 'block' : 'none';
-  });
-});
-</script>
+<footer>
+  <p>© 2026 Masanja Gospel Melody</p>
+</footer>
 
 </body>
 </html>
