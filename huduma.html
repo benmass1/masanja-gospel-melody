@@ -5,126 +5,293 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Huduma Zetu | Masanja Gospel Melody</title>
 
-
-  <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-<!-- Definitions for Gradients and Glows -->
-<defs>
-<linearGradient id="coinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-<stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
-<stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
-</linearGradient>
-<linearGradient id="innerGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-  <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.2" />
-  <stop offset="100%" style="stop-color:#FFFFFF;stop-opacity:0.05" />
-</linearGradient>
-
-<filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
-  <feGaussianBlur stdDeviation="15" result="blur" />
-  <feComposite in="SourceGraphic" in2="blur" operator="over" />
-</filter>
-
-</defs>
-<!-- Outer Ring (The Coin Rim) -->
-<circle cx="250" cy="250" r="220" stroke="url(#coinGradient)" stroke-width="12" fill="rgba(15, 15, 20, 0.8)" />
-<circle cx="250" cy="250" r="195" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none" />
-<!-- The Main MGM Monogram Symbol -->
-<g transform="translate(110, 160) scale(1.2)">
-<!-- Stylized "M" Structure (Left) -->
-<path d="M20 120 V40 L60 80 L100 40 V120" stroke="url(#coinGradient)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" filter="url(#softGlow)" />
-<!-- Central "G" Integration -->
-<path d="M60 80 L100 120 H140 V40 H110" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" opacity="0.9" />
-
-<!-- Right side finish to complete the second "M" feel -->
-<path d="M140 120 V40 L180 80 L220 40 V120" stroke="url(#coinGradient)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
-
-</g>
-<!-- Orbital Ring (Visualizing Decentralization) -->
-<path d="M100 250 A150 150 0 0 1 400 250" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none" stroke-dasharray="10 10" />
-<!-- Decorative Dots/Nodes -->
-<circle cx="250" cy="40" r="6" fill="#8B5CF6" />
-<circle cx="250" cy="460" r="6" fill="#3B82F6" />
-<circle cx="40" cy="250" r="4" fill="rgba(255,255,255,0.3)" />
-<circle cx="460" cy="250" r="4" fill="rgba(255,255,255,0.3)" />
-<!-- Shine Effect -->
-<path d="M150 100 Q 250 50 350 100" stroke="white" stroke-width="2" stroke-opacity="0.2" fill="none" />
-</svg>
-
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css">
-
   <style>
-  /* SOCIAL ICONS */
-  .socials{
-    display:flex;
-    justify-content:center;
-    gap:18px;
-    flex-wrap:wrap;
-    margin-top:20px;
-  }
-  .socials a{
-    width:52px;
-    height:52px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    color:#fff;
-    font-size:22px;
-    text-decoration:none;
-    box-shadow:0 6px 20px rgba(0,0,0,.25);
-    transition:.3s;
-  }
-  .socials a:hover{
-    transform:translateY(-6px) scale(1.1);
-  }
-  .whatsapp{background:#25D366;}
-  .facebook{background:#1877F2;}
-  .youtube{background:#FF0000;}
-  .instagram{
-    background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4);
-  }
-  .tiktok{background:#000;}
-  .telegram{background:#229ED9;}
+    :root {
+      --primary: #8B5CF6;
+      --secondary: #3B82F6;
+      --dark: #0f0f14;
+      --light: #f8fafc;
+      --accent: #a78bfa;
+    }
 
-  /* FLOATING WHATSAPP */
-  .float-whatsapp{
-    position:fixed;
-    bottom:22px;
-    right:22px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#fff;
-    font-size:28px;
-    box-shadow:0 10px 30px rgba(0,0,0,.4);
-    z-index:9999;
-    text-decoration:none;
-    animation:pulse 2s infinite;
-  }
-  @keyframes pulse{
-    0%{transform:scale(1)}
-    50%{transform:scale(1.1)}
-    100%{transform:scale(1)}
-  }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--light);
+      color: #334155;
+      line-height: 1.6;
+    }
+
+    /* ========== NAVBAR ========== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-container svg {
+      width: 45px;
+      height: 45px;
+    }
+
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #64748b;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: 0.3s;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--primary);
+    }
+
+    .menu-icon {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ========== HERO SECTION ========== */
+    .huduma-hero {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(59, 130, 246, 0.9)), 
+                  url('https://images.unsplash.com/photo-1516280440614-37939bb912cd?auto=format&fit=crop&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 0 20px;
+    }
+
+    .huduma-hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: -1px;
+    }
+
+    .huduma-hero-content p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+
+    /* ========== HUDUMA GRID ========== */
+    .huduma-wrapper {
+      max-width: 1200px;
+      margin: -60px auto 60px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .huduma-card {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .huduma-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(139, 92, 246, 0.15);
+      border-color: var(--accent);
+    }
+
+    .huduma-card i {
+      font-size: 3rem;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+
+    .huduma-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: #1e293b;
+    }
+
+    .huduma-card p {
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    /* ========== CTA + SOCIALS ========== */
+    .huduma-cta {
+      background: var(--dark);
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .huduma-cta h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 18px 40px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 30px 0;
+      transition: 0.3s;
+      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+    }
+
+    .cta-btn:hover {
+      background: var(--secondary);
+      transform: scale(1.05);
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .socials a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: white;
+      font-size: 1.2rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      transform: translateY(-5px);
+    }
+
+    .whatsapp { background: #25D366; }
+    .facebook { background: #1877F2; }
+    .youtube { background: #FF0000; }
+    .instagram { background: linear-gradient(45deg,#F58529,#DD2A7B,#8134AF,#515BD4); }
+    .tiktok { background: #000; }
+    .telegram { background: #229ED9; }
+
+    /* ========== FLOATING WHATSAPP ========== */
+    .float-whatsapp {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 30px;
+      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+      z-index: 1000;
+      text-decoration: none;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      background: #09090b;
+      color: #4b5563;
+      font-size: 0.9rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .huduma-hero-content h1 { font-size: 2.5rem; }
+      nav { display: none; }
+      .menu-icon { display: block; }
+    }
   </style>
 </head>
 <body>
 
 <!-- ========== NAVBAR ========== -->
 <header class="navbar">
-  <div class="logo">MGM</div>
+  <a href="index.html" class="logo-container">
+    <!-- Hapa ndipo nembo yako ya SVG inakaa -->
+    <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="coinGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+          <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+        </linearGradient>
+      </defs>
+      <circle cx="250" cy="250" r="220" stroke="url(#coinGradient)" stroke-width="20" fill="rgba(15, 15, 20, 0.9)" />
+      <g transform="translate(110, 160) scale(1.2)">
+        <path d="M20 120 V40 L60 80 L100 40 V120" stroke="url(#coinGradient)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M60 80 L100 120 H140 V40 H110" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" stroke-linejoin="round" />
+        <path d="M140 120 V40 L180 80 L220 40 V120" stroke="url(#coinGradient)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" />
+      </g>
+    </svg>
+    <span class="logo-text">MGM</span>
+  </a>
+  
   <nav id="navMenu">
     <a href="index.html">Home</a>
     <a href="nyimbo.html">Nyimbo</a>
     <a href="kuhusu.html">Kuhusu</a>
-    <a href="huduma.html#huduma-zetu" class="active">Huduma</a>
+    <a href="huduma.html" class="active">Huduma</a>
     <a href="mgm-token.html">MGM Token</a>
   </nav>
   <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
@@ -135,21 +302,19 @@
   <div class="huduma-hero-content">
     <h1>Huduma Zetu</h1>
     <p>
-      Tunamtumikia Mungu kwa kusifu, kuabudu, kufundisha Neno,
-      kuombea watu na kuhubiri Injili kupitia muziki.
+      Kujenga Ufalme wa Mungu kupitia sifa, mafundisho thabiti na maombezi ya kweli kwa ajili ya kizazi hiki.
     </p>
   </div>
 </section>
 
-<!-- ========== HUDUMA ZETU ========== -->
+<!-- ========== HUDUMA ZETU GRID ========== -->
 <section id="huduma-zetu" class="huduma-wrapper">
 
   <div class="huduma-card">
     <i class="fas fa-music"></i>
     <h3>Kusifu</h3>
     <p>
-      Huduma ya kusifu inalenga kumshukuru Mungu kwa sauti na ala za muziki.
-      Kupitia nyimbo za sifa tunainua jina la Bwana.
+      Tunainua jina la Bwana kwa nyimbo za sifa zenye upako, tukiamini kuwa Mungu anakaa katikati ya sifa za watu wake.
     </p>
   </div>
 
@@ -157,15 +322,15 @@
     <i class="fas fa-hands-praying"></i>
     <h3>Kuabudu</h3>
     <p>
-      Kuabudu ni huduma ya kumkaribia Mungu kwa unyenyekevu na kweli.
+      Kuleta mazingira ya utulivu yanayomwezesha mwamini kuungana na Roho Mtakatifu kupitia kuabudu kwa dhati.
     </p>
   </div>
 
   <div class="huduma-card">
-    <i class="fas fa-book-bible"></i>
+    <i class="fas fa-book-open"></i>
     <h3>Mafundisho</h3>
     <p>
-      Tunafundisha Neno la Mungu ili waamini wakue kiroho.
+      Neno la Mungu ndio msingi. Tunatoa mafundisho ya Biblia yanayolenga kuimarisha imani na maarifa ya kiroho.
     </p>
   </div>
 
@@ -173,31 +338,37 @@
     <i class="fas fa-dove"></i>
     <h3>Maombezi</h3>
     <p>
-      Tunaombea wagonjwa, familia, vijana na taifa.
+      Tunasimama kama daraja la maombezi kwa wagonjwa, wenye mahitaji, vijana na kuliombea taifa letu kwa ujumla.
     </p>
   </div>
 
   <div class="huduma-card">
-    <i class="fas fa-microphone"></i>
-    <h3>Tamasha</h3>
+    <i class="fas fa-microphone-alt"></i>
+    <h3>Matamasha</h3>
     <p>
-      Tunahubiri Injili kupitia matamasha ya muziki wa Injili.
+      Kuandaa matukio makubwa ya Injili (Concerts) yanayokusanya watu wengi kumsifu Mungu na kuvuna roho za watu.
+    </p>
+  </div>
+
+  <div class="huduma-card">
+    <i class="fas fa-heart"></i>
+    <h3>Ushauri</h3>
+    <p>
+      Kutoa mwongozo na ushauri wa kiroho kwa vijana na familia wanaopitia changamoto mbalimbali za kimaisha.
     </p>
   </div>
 
 </section>
 
-<!-- ========== CTA + SOCIALS ========== -->
+<!-- ========== CTA SECTION ========== -->
 <section class="huduma-cta">
-  <h2>Unahitaji Huduma Yetu?</h2>
-  <p>Wasiliana nasi au jiunge nasi kupitia mitandao yetu ya kijamii</p>
+  <h2>Je, Ungependa Tuhudumu Kwako?</h2>
+  <p>Tunapatikana kwa ajili ya mikutano, makanisa, na matukio ya kijamii.</p>
 
-  <!-- CTA BUTTON -->
   <a href="https://wa.me/255765498947" class="cta-btn" target="_blank">
-    📲 Wasiliana WhatsApp
+    <i class="fab fa-whatsapp"></i> Wasiliana Nasi Sasa
   </a>
 
-  <!-- SOCIAL ICONS -->
   <div class="socials">
     <a href="https://wa.me/255765498947" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
     <a href="https://www.facebook.com/profile.php?id=61585363697953" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -210,7 +381,7 @@
 
 <!-- ========== FOOTER ========== -->
 <footer>
-  <p>© 2026 Masanja Gospel Melody | Huduma ya Injili</p>
+  <p>© 2026 Masanja Gospel Melody | Huduma ya Injili ya Kweli</p>
 </footer>
 
 <!-- FLOATING WHATSAPP -->
@@ -218,7 +389,25 @@
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<script src="js/script.js"></script>
+<script>
+  function toggleMenu() {
+    var x = document.getElementById("navMenu");
+    if (x.style.display === "flex") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "flex";
+      x.style.flexDirection = "column";
+      x.style.position = "absolute";
+      x.style.top = "70px";
+      x.style.left = "0";
+      x.style.width = "100%";
+      x.style.background = "white";
+      x.style.padding = "20px";
+    }
+  }
+</script>
+
 </body>
 </html>
+
 
